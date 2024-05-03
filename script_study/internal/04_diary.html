@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_diary</title>
+    <style>
+        img{
+            width: 300px;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>04_diary</h1>
+    <script>
+        /*
+            마지막날 , 첫째날 요일, 토요일
+        */
+        let now = new Date(2024,9-1,31)
+        console.log(now)
+        now = new Date(2024,10-1,1)
+        console.log(now)
+        now = new Date(2024,10-1,0)
+        console.log(now)
+        let today = new Date()
+        console.log(today)
+        let last = new Date(today.getFullYear(), today.getMonth()+1,0).getDate()
+        console.log(last)
+        today.setDate(1)
+        console.log(today)
+        let first = today.getDay()
+        console.log(first)
+    </script>
+
+    <table border="">
+        <tr>
+            <td colspan="7">
+                <img src="../fff/car.jpg" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">
+                <h2>
+                <script>
+                    document.write(today.getFullYear(),"년",today.getMonth()+1,"월")
+                </script>
+                </h2>
+            </td>
+        </tr>
+        <tr>
+            <script>
+                for (const dd of "일,월,화,수,목,금,토".split(",")) {
+                    document.write("<td>",dd,"</td>")   
+                }
+            </script>
+        </tr>
+
+        <tr>
+            <script>
+                // 시작일 앞 빈칸
+                for (let i = 0; i<first;i++) {
+                    document.write("<td></td>")   
+                }
+
+                // 일자
+                for (let i = 1; i<=last;i++) {
+                    document.write("<td>",i,"</td>") 
+                    today.setDate(i) 
+                    //console.log(today.getDay()) 
+                    if(today.getDay()==6){
+                        document.write("</tr><tr>")  
+                    }
+                }
+            </script>
+        </tr>
+
+    </table>   
+</body>
+</html>
