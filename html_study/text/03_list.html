@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>03_list</title>
+    </head>
+    <body>
+        <h1>03_list</h1>
+        <h2>Order List</h2>
+        <ol> <!--순서가 있는 목록-->
+            <li>html</li><!-- ol 태그 안에 있어야 한다.-->
+            <li>css</li>
+            <li>javascript</li>
+        </ol>
+        <!--<li>포토샵</li> ol 태그 밖에 있어서 새로운 요소-->
+
+        
+        <ol start="5"> <!-- 5번으로 시작-->
+            <li>html</li>
+            <li>css</li>
+            <li value="20">javascript</li><!-- 20 으로 변경-->
+            <li>node</li><!-- 자동으로 21-->
+            <li>react</li><!-- 자동으로 22-->
+        </ol>
+
+        <ol type="A"> <!--type 변경-->
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+        </ol>
+
+        <ol start="5" type="a"> <!-- 5번으로 시작-->
+            <li>html</li>
+            <li>css</li>
+            <li value="20">javascript</li><!-- 20 으로 변경-->
+            <li value="x">node</li><!-- value는 숫자로 입력 'x' 적용안됌-->
+            <li>react</li>
+        </ol>
+
+        <ol type="ㄱ"> <!-- 한글 등 불가-->
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+        </ol>
+
+        <h2>Unordered List</h2>
+        <ul>
+            <li>손예진</li>
+            <li>발예진</li>
+            <li>목예진</li>
+        </ul>
+
+        <ul type="square"> <!-- square , disc, circle-->
+            <li>한가인</li>
+            <li>두가인</li>
+            <li>세가인</li>
+            <li>네가인</li>
+        </ul>
+
+        <h2>Definition List</h2>
+
+        <dl><!-- 정의목록-->
+
+            <dt>cbr500r</dt>    <!-- 제목1 -->
+                <dd>혼다</dd>       <!-- 설명1-1 -->
+                <dd>레플리카</dd>   <!-- 설명1-2 -->
+                <dd>쿼터급</dd>     <!-- 설명1-3 -->
+            
+            <dt>gs 1250</dt>    <!-- 제목2 -->
+                <dd>bmw</dd>        <!-- 설명2-1 -->
+
+            <dt>팻보이</dt>     <!-- 제목3 -->
+                <dd>할리데이빗슨</dd>   <!-- 설명3-1 -->
+                <dd>아메리칸</dd>       <!-- 설명3-2 -->
+        </dl>
+
+    <hr/>
+        <dl><!-- 정의목록-->
+            <dt>김치찌개</dt>    <!-- 제목1  설명이 없어서 구조가 좋지않음-->
+            <dt>된장찌개</dt>     <!-- 제목2 -->
+                <dd>한식</dd>       <!-- 설명2-1 -->
+                <dd>7500</dd>       <!-- 설명2-2 -->
+        </dl>
+
+    <hr/>    
+        <dl><!-- 정의목록-->
+               <dd>라면사리</dd>    <!-- 설명만 있어서 구조가 좋지않음-->
+            <dt>팥빙수</dt>     <!-- 제목1 -->
+                <dd>팥</dd>       <!-- 설명1-1 -->
+                <dd>얼음</dd>       <!-- 설명1-2 -->
+        </dl>
+    <hr/>    
+        <dl><!-- 정의목록-->
+            <dt>아이패드</dt><!-- 제목1 -->
+               <dd>애플</dd>   <!-- 설명1 -->
+            <h3>난 h3</h3>   <!-- 목록태그가 아니어서 구조가 좋지않음--> 
+            <dt>어른패드</dt>     <!-- 제목2 -->
+                <dd>호박</dd>       <!-- 설명2 -->
+                
+        </dl>
+
+
+        <h2>중첩</h2>
+        <ol>
+            <li>
+                <h4>파일</h4>
+                <ul>
+                    <li>새로만들기</li>
+                    <li>개로만들기</li>
+                    <li>소로만들기</li>
+                </ul>
+            </li>
+            <li>
+                편집
+                <ol  type="a">
+                    <li>복사</li>
+                    <li>이동</li>
+                    <li>삭제</li>
+                </ol>
+            </li>
+            <li>
+                보기
+                <dl>
+                    <dt>핸드폰</dt>
+                        <dd>320~480</dd>
+                    <dt>태블릿</dt>
+                        <dd>500~900</dd>
+                    <dt>데스크탑</dt>
+                        <dd>900~</dd>
+                </dl>
+            </li>
+        </ol>
+
+
+    </body>
+</html>
