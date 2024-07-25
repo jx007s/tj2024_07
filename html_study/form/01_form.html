@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>01_form</title>
+    </head>
+    <body>
+        <h1>01_form</h1>
+        이름 : <input type="text" name="pname">
+        <input type="submit" value="가입1">
+        <!-- form 에 포함되지 않아 전송불가 -->
+
+        <form >
+            아이디 : <input type="text" name="pid">
+            <input type="submit" value="가입2">
+            <!-- submit : 전송  
+             자신이 포함된 form 태그 내부 요소만 전달
+             form 에 포함되지 않으면 전송불가
+             -->
+        </form>
+
+        <form action="02_join.html">
+            <!-- form 마다 전송 구분-->
+            어른디 : <input type="text" name="adid">
+            <input type="submit" value="가입3">
+        </form>
+
+        <form action="02_join.html" method="get">
+            <!-- method="get"(기본값) url 주소에 포함 -->
+            아저씨디 : <input type="text" name="cid"><br/>
+            암호 : <input type="text" name="cpw"><br/>
+            <input type="submit" value="가입4">
+        </form>
+
+        <form action="02_join.html" method="post">
+            <!-- method="post" 패킷에 숨겨서 전송 -->
+            아줌마디 : <input type="text" name="mid"><br/>
+            암호 : <input type="text" name="mpw"><br/>
+            <input type="submit" value="가입5">
+        </form>
+    </body>
+</html>

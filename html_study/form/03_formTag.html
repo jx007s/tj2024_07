@@ -1,0 +1,220 @@
+<html>
+    <head>
+        <title>03_formTag</title>
+    </head>
+    <body>
+        <h1>03_formTag</h1>
+        <form action="04_reg.html">
+            <table border="">
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" name="pid" maxlength="10" size="13" value="qwer"/> 
+                        <!-- 
+                        text : 1 줄입력
+                        name : parameter 이름
+                        maxlength : 최대글자수
+                        size : 크기
+                        value : 기본값
+                        placeholder : 입력도움말 (value 내용이 있을 경우 사라짐)
+                        readonly : 읽기전용 (value 내용변경 불가 , parameter 전송)
+                        disabled : value 내용변경 불가 , parameter 전송불가
+                    -->
+                        <input type="button" value="중복확인">
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>별명</td>
+                    <td><input type="text" name="nick" placeholder="별명을 입력하세요"/> </td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" name="pname" value="북두신건" readonly/> 
+                        <input type="image" src="../fff/img/small01.jpg">
+                        <!-- submit 과 동일 -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>직업</td>
+                    <td><input type="text" name="job" disabled  value="개발자"  /> </td>
+                </tr>
+                <tr>
+                    <td>암호</td>
+                    <td><input type="password" name="pw"  /> </td>
+                    <!-- password : 화면에 내용 인지못하게 표시 -->
+                </tr>
+                <tr>
+                    <td>검색</td>
+                    <td><input type="search" name="sch"  /> </td>
+                    <!-- search : 기존입력된 내용 있을 경우 자동보여줌 , 내용삭제버튼 추가 -->
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td>
+                        <input type="radio" name="gender" value="m"/>남
+                        <input type="radio" name="gender" value="f" checked />여
+                        <input type="radio" />it인
+                        <!-- 
+                            radio : 단일선택
+                            name 이 같아야 group 처리
+                            value 생략시 on으로 전송 ( value 필수)
+                            checked : 기본선택
+                        -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>취미</td>
+                    <td>
+                        <input type="checkbox" name="hobby" value="music" checked/>음악감상
+                        <input type="checkbox" name="hobby" value="read"/>독서
+                        <input type="checkbox" name="hobby" value="riding"  checked/>바이크
+                        <!-- 
+                            checkbox : 다중선택
+                            name 으로 선택한 수만큼 전송
+                            value 생략시 on으로 전송 ( value 필수)
+                            checked : 기본선택
+                        -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td><input type="date" name="birth"  min="1999-01-01" max="2010-08-27" value="2002-06-02"  /> </td>
+                    <!-- 달력 
+                    min : 최소날짜
+                    max : 최대날짜
+                    -->
+                </tr>
+                <tr>
+                    <td>접근일시</td>
+                    <td><input type="datetime" name="first"  /> </td>
+                    <!-- 달력+시간  -->
+                </tr>
+                <tr>
+                    <td>학년</td>
+                    <td><input type="number" name="grade" min="1" max="6" value="3" /> </td>
+                    <!-- 숫자
+                    min : 최소
+                    max : 최대
+                    -->
+                </tr>
+
+                <tr>
+                    <td>파일1</td>
+                    <td><input type="file" name="upff1" /> </td>
+                </tr>
+                <tr>
+                    <td>파일2</td>
+                    <td>파일복수선택<input type="file" name="upff2" multiple /> 
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>발사이즈</td>
+                    <td><input type="range" name="foot" 
+                        min="210" max="260" value="230" step="5" /> </td>
+                    <!-- 범위
+                    min : 최소
+                    max : 최대
+                    step : 간격
+                    -->
+                </tr>
+                <tr>
+                    <td>메일</td>
+                    <td><input type="email" name="eee" /> </td>
+                    <!-- 
+                      email
+                      submit 실행시 유효성 검사
+                    -->
+                </tr>
+                <tr>
+                    <td>전화</td>
+                    <td><input type="tel" name="ttt" /> </td>
+                    <!-- 
+                      tel
+                      숫자- 만 입력 : 지원하는 브라우저에서만 적용
+                    -->
+                </tr>
+                <tr>
+                    <td>홈페이지</td>
+                    <td><input type="url" name="homepage" value="http://www.naver.com" /> </td>
+                    <!-- 
+                      url
+                      submit 실행시 유효성 검사
+                    -->
+                </tr>
+                <tr>
+                    <td>색상</td>
+                    <td><input type="color" name="ccc" /> </td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button >기본버튼</button> 
+                        <!-- submit 과 동일 -->
+                        <button type="button">button버튼</button> 
+                        <!-- button -->
+                        <button type="submit">submit버튼</button> 
+                        <!-- submit -->
+                        <button type="reset">reset버튼</button> 
+                        <!-- reset -->
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>도시</td>
+                    <td>
+                        <select name="city">
+                            <option value="seoul">서울</option>
+                            <option value="busan" selected>부산</option>
+                            <option value="inchon">인천</option>
+                            <option value="daejeon">대전</option>
+                        </select>
+                        <!-- 선택 
+                            selected 기본선택 
+                        -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>커피</td>
+                    <td>
+                        <select name="coffee">
+                            <option>아메리카노</option>
+                            <option>아프리카노</option>
+                            <option>아시아노</option>
+                    <!-- option value 없을 경우 텍스트노드 로 전송-->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>디저트</td>
+                    <td>
+                        <select name="dessert" multiple>
+                            <option>아이스크림</option>
+                            <option>핫크림</option>
+                            <option>미디움크림</option>
+                            <option>웰던크림</option>
+                            <option>레어크림</option>
+                           <!-- multiple : 다중선택 가능 --> 
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>남기실말</td>
+                    <td>
+                        <textarea name="msg" rows="5" cols="40">남기실 말
+남기실     개
+    남기실 소
+남기실 닭</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="reset" value="초기화"> 
+                        <input type="submit" value="작성"> 
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </body>
+</html>
