@@ -22,5 +22,28 @@
             <source src="../fff/mmm/sons.mp4">
             
         </video>
+
+        <h2>media</h2>
+        <video width="100%" muted autoplay>
+            <!-- 크기에 따른 재생 source  변경 
+                700px 이상
+            -->
+            <source media="(min-width: 700px)" src="../fff/mmm/SampleVideo_1280x720_1mb.mp4">
+            <!-- 400px 이상 700미만 -->
+            <source media="(min-width: 400px)" src="../fff/mmm/sons.mp4">
+            <!-- 400px 미만 -->
+            <source src="../fff/mmm/sea.mp4">
+
+            <!-- 
+                테이블 기반의 레이아웃을 구성하고 
+                3개의 페이지를 구현해 보세요
+                1. 회원가입
+                2. 제품목록(갤러리)
+                3. 제품상세
+
+                참고 : 상단,메뉴,하단은 3 페이지가 같을 것
+                       메인섹터 항목만 다르게 구성할 것
+            -->
+        </video>
     </body>
 </html>
