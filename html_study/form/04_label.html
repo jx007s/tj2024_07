@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>04_label</title>
+    </head>
+    <body>
+        <h1>04_label</h1>
+        <form action="05_labelReg.html">
+            <input type="hidden" name="kind" value="stud">
+            <!-- 
+                type="hidden" : 화면에 보이지 않으나 parameter 전송
+
+                label : 폼요소에 이름붙이는 태그
+                        for  -  폼요소 id 가 같으면 연결
+                        for 생략 및 label 하위요소에 form요소 존재시 
+                        연결
+            -->
+            <label ><!-- o -->
+                아이디 <input type="text" name="pid">
+            </label>
+            <br/>
+            <label for=""><!-- x -->
+                이름 <input type="text" name="pname">
+            </label>
+            <br/>
+            <label for="nick"><!-- x -->
+                별명 <input type="text" name="nick">
+            </label>
+            <br/>
+            <label for="addr"><!-- o -->
+                주소 <input type="text" name="address" id="addr">
+            </label>
+            <br/>
+
+            <label >어른디</label><!-- x -->
+            <input type="text" name="adid">
+            <br/>
+            <label for="hand">핸드폰</label><!-- o -->
+            <input type="text" name="handphone" id="hand">
+            <br/>
+            이메일 <input type="text" name="email" id="mm">
+            <br/>
+            성별
+            <label><input type="radio" name="gender" value="m">남자</label>
+            <input type="radio" name="gender" value="f">여자
+            <input type="radio" name="gender" value="it">it종사자
+            <FIeldset>
+                <legend>취미</legend>
+                <label><input type="checkbox" name="hobby" value="read">독서</label>
+                <label><input type="checkbox" name="hobby" value="music">음악</label>
+                <label><input type="checkbox" name="hobby" value="sleep">잠</label>
+            </FIeldset>
+
+            <fieldset>
+                <input type="submit" value="등록">
+            </fieldset>
+        </form>
+
+        <hr/>
+        <label for="mm">엠엠</label><!-- o -->
+    </body>
+</html>
