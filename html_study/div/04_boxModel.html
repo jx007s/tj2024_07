@@ -105,7 +105,8 @@
             border-bottom-left-radius: 30px;
         }
         .bm1{
-            border-top: 20px solid #f00;
+            border-top: 20px solid rgba(255, 0, 0, 1);
+            border-left: 20px solid rgba(255, 0, 0, 0.3);
             border-right: 10px dotted #0f0;
             border-bottom-width: 10px;
             border-bottom-style: dashed;
@@ -113,7 +114,11 @@
         }
         .bm2{
             border-radius: 100px;
-            border-color: #f0f;
+            border-color:rgba( 255,   0,   255, 0.5);
+                              /* red, green, blue, alpha
+                              red, green, blue : 0~ 255
+                              alpha(투명도) : 0 ~ 1
+                              */
             border-width: 20px;
             border-style: dotted;
             background-image: url(../fff/img/bg2.jpg);
