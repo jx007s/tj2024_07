@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_boxModel</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #ff0;
+            float: left;
+            border: 1px solid #888;
+        }
+        h2{
+            clear: both;
+        }
+        .pp1{
+            padding: 10px;
+        }
+        .pp2{
+            padding: 50px 20px;
+                /*상하  좌우  */
+        }
+        .pp4{
+            padding: 50px 100px 10px 0px;
+                  /*  위  오른쪽 아래 왼쪽   */
+        }
+        .pp_e{
+            padding-top: 50px;
+            padding-right: 100px;
+            padding-bottom: 10px;
+            padding-left: 0px;
+        }
+
+        .mm1{
+            margin: 10px;
+        }
+        .mm2{
+            margin: 50px 20px;
+                /*상하  좌우  */
+        }
+        .mm4{
+            margin: 50px 100px 10px 0px;
+                  /*  위  오른쪽 아래 왼쪽   */
+        }
+        .mm_e{
+            margin-top: 50px;
+            margin-right: 100px;
+            margin-bottom: 10px;
+            margin-left: 0px;
+        }
+        .m20{
+            margin: 20px;
+
+        }
+        .tt1{
+            border:20px solid #f00;
+           
+        }
+        .tt2{
+            border:20px dotted #f00;
+            
+        }
+        .tt3{
+            border:20px dashed #f00;
+           
+        }
+        .tt4{
+            border:20px double #f00;
+            
+        }
+        .tt5{
+            border:20px groove #f00;
+            
+        }
+        .tt6{
+            border:20px ridge #f00;
+        }
+        .rr1{
+            border-radius: 20px;
+        }
+        .rr2{
+            border-radius: 50px;
+        }
+        .rr3{
+            border-radius: 300px;
+        }
+        .rr4{
+            border-radius: 40px 10px;
+                        /* ↖↘   ↗↙ */
+        }
+        .rr5{
+            border-radius: 10px 0px 50px 30px;
+                          /* ↖  ↗   ↘    ↙   */
+        }
+        .rr6{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 50px;
+            border-bottom-left-radius: 30px;
+        }
+        .bm1{
+            border-top: 20px solid #f00;
+            border-right: 10px dotted #0f0;
+            border-bottom-width: 10px;
+            border-bottom-style: dashed;
+            border-bottom-color: #00f;
+        }
+        .bm2{
+            border-radius: 100px;
+            border-color: #f0f;
+            border-width: 20px;
+            border-style: dotted;
+            background-image: url(../fff/img/bg2.jpg);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>04_boxModel</h1>
+    <h2>padding</h2>
+    <div class="pp1">1개</div>
+    <div class="pp2">2개</div>
+    <div class="pp4">4개</div>
+    <div class="pp_e">각각</div>
+    <h2>margin</h2>
+    <div class="mm1">1개</div>
+    <div class="mm2">2개</div>
+    <div class="mm4">4개</div>
+    <div class="mm_e">각각</div>
+    <h2>border_type</h2>
+    <div class="m20 tt1">타입1</div>
+    <div class="m20 tt2">타입2</div>
+    <div class="m20 tt3">타입3</div>
+    <div class="m20 tt4">타입4</div>
+    <div class="m20 tt5">타입5</div>
+    <div class="m20 tt6">타입6</div>
+    <h2>border-radius</h2>
+    <div class="m20 rr1">반지름1</div>
+    <div class="m20 rr2">반지름2</div>
+    <div class="m20 rr3">반지름3</div>
+    <div class="m20 rr4">반지름4</div>
+    <div class="m20 rr5">반지름5</div>
+    <div class="m20 rr6">반지름6</div>
+    <h2>border_multi</h2>
+    <div class="m20 bm1">멀티1</div>
+    <div class="m20 bm2">멀티2</div>
+</body>
+</html>
