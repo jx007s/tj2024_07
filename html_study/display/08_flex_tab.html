@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_table_tab</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 800px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        .header{
+            width: 800px;
+            height: 50px;
+            background-color: #fa0;
+            line-height: 50px;
+            
+        }
+        .logo{
+            margin-left: 100px;
+            width: 200px;
+            height: 50px;
+            font-weight: 700;
+            float: left;
+        }
+        .menus{
+            margin: 0 50px;
+            width: 400px;
+            height: 50px;
+            display: table;
+            float: left;
+        }
+        .menu{
+            text-align: center;
+            display: table-cell;
+            height: 50px;
+            border-right: 1px solid #fff;
+        }
+        .section{
+            width: 800px;
+            height: 450px;
+        }
+        img{
+            width: 800px;
+            height: 450px;
+        }
+    </style>
+</head>
+<body>
+    <h1>07_table_tab</h1>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">LOGO</div>
+            <div class="menus">
+                <div class="menu">Work01</div>        
+                <div class="menu">Work02</div>
+                <div class="menu">Work03</div>
+                <div class="menu">Work04</div>
+                <div class="menu">Work05</div>
+            </div>    
+        </div>
+        <div class="section">
+            <img src="../fff/car.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

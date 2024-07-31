@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_table_cell</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tt{
+            display: table;
+            /* width: 366px; */
+            width: 700px;
+            height: 100px;
+            background-color: #FF0;
+            margin: 30px;
+        }
+        .cc{
+            display: table-cell;
+            width: 100px; /* 부모 table 의 width 가 없으면 현재 값으로 처리
+                             부모 table 의 width 존재시 다른 cell들과 나누어 width처리
+                             부모 : 700, cell : 3개  인 경우
+                             700px / 3 = ?
+                            */
+            height: 50px;
+            border: 1px solid #ccc;
+            margin: 30px; /* display: table-cell;  일때 
+                             cell 로 사용되어 의미없음*/
+            padding:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>06_table_cell</h1>
+    <div class="tt">
+        <div class="cc">아기상어 뚜루루뚜루</div>
+        <div class="cc">엄마상어 뚜루루뚜루</div>
+        <div class="cc">아빠상어 뚜루루뚜루</div>
+    </div>
+    <!-- float 와 달리 div 는 자동개행-->
+    <div>나는 무너</div>
+</body>
+</html>
