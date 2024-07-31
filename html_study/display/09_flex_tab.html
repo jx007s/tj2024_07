@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>07_table_tab</title>
+    <title>09_flex_tab</title>
     <style>
         *{
             margin: 0;
@@ -22,24 +22,31 @@
             
         }
         .logo{
+            background-color: #ff0;
             margin-left: 100px;
-            width: 200px;
+            width: 100px;
             height: 50px;
             font-weight: 700;
             float: left;
         }
         .menus{
+            background-color: #0f0;
             margin: 0 50px;
-            width: 400px;
+            width: 500px;
             height: 50px;
-            display: table;
+            display: flex;
+            justify-content: space-between;
             float: left;
         }
         .menu{
             text-align: center;
-            display: table-cell;
+            display: block;
+            width: 70px;
             height: 50px;
+            background-color: aqua;
             border-right: 1px solid #fff;
+            text-decoration: none;
+            color: #f00;
         }
         .section{
             width: 800px;
@@ -52,16 +59,16 @@
     </style>
 </head>
 <body>
-    <h1>07_table_tab</h1>
+    <h1>09_flex_tab</h1>
     <div class="wrapper">
         <div class="header">
             <div class="logo">LOGO</div>
             <div class="menus">
-                <div class="menu">Work01</div>        
-                <div class="menu">Work02</div>
-                <div class="menu">Work03</div>
-                <div class="menu">Work04</div>
-                <div class="menu">Work05</div>
+                <a href="#" class="menu">Work01</a>        
+                <a href="#" class="menu">Work02</a>
+                <a href="#" class="menu">Work03</a>
+                <a href="#" class="menu">Work04</a>
+                <a href="#" class="menu">Work05</a>
             </div>    
         </div>
         <div class="section">

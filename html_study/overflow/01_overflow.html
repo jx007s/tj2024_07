@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_overflow</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .big{
+            width: 100px;
+            height: 100px;
+            border: 5px solid #f00;
+            margin-right: 100px;
+            margin-bottom: 100px;
+            float: left;
+        }
+        img{
+            width: 180px;
+            height: 180px;
+        }
+        .vv{
+            overflow: visible;
+        }
+        .ss{
+            overflow: scroll;
+        }
+        .hh{
+            overflow: hidden;
+        }
+        .aa{
+            overflow: auto;
+        }
+        .img_w{
+            width: 380px;
+            height: 70px;
+        }
+        .img_h{
+            width: 70px;
+            height: 380px;
+        }
+    </style>
+</head>
+<body>
+    <h1>01_overflow</h1>
+    <div class="big"><img src="../fff/child_1.jpg" alt=""></div>
+    <div class="big vv"><img src="../fff/child_1.jpg" alt=""></div>
+    <div class="big ss"><img src="../fff/child_1.jpg" alt=""></div>
+    <div class="big hh"><img src="../fff/child_1.jpg" alt=""></div>
+    <div class="big aa"><img src="../fff/child_1.jpg" alt=""></div>
+    <div class="big aa"><img class="img_w" src="../fff/child_1.jpg" alt=""></div>
+    <div class="big aa"><img class="img_h" src="../fff/child_1.jpg" alt=""></div>
+</body>
+</html>
