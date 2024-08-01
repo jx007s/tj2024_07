@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_vw</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+        .wrapper{
+            /* display: table-cell; */
+            position: relative;
+            float: left;
+            background-color: #ff0;
+            width: 25%;
+            height: 100%;
+        }
+
+        .section{
+            position: absolute;
+            overflow: hidden;
+            background-color: #0f0;
+            width: 500px;
+            height: 400px;
+            left : 50%;
+            top:50%;
+            margin-left: -250px;
+            margin-top: -200px;
+        }
+        .long{
+            position: absolute;
+            width: 400%;
+            height: 100%;
+            background-color: #00f;
+            /* display: table; */
+            display: flex;
+        }
+        .ww1{
+            left: 0px;
+        }
+        .ww2{
+            left: 25%;
+        }
+        .ww3{
+            left: 50%;
+        }
+        .ww4{
+            left: 75%;
+        }
+    </style>
+</head>
+<body>
+    <div class="long">
+        <div class="wrapper">
+            <div class="section">
+                <img src="../fff/child_1.jpg" alt="">
+            </div>    
+        </div>
+        <div class="wrapper">
+            <div class="section">
+                <img src="../fff/child_2.jpg" alt="">
+            </div>    
+        </div>
+        <div class="wrapper">
+            <div class="section">
+                <img src="../fff/son_2.jpg" alt="">
+            </div>    
+        </div>
+        <div class="wrapper">
+            <div class="section">
+                <img src="../fff/son_3.jpg" alt="">
+            </div>    
+        </div>
+    </div>
+</body>
+</html>

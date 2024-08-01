@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_z_index</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .big{
+            width:100px;
+            height: 100px;
+            position: absolute;
+        }
+        .b1{
+            background-color: #ff0;
+            left: 50px;
+            top:100px;
+        }
+        .b2{
+            background-color: #fa0;
+            left: 70px;
+            top:120px;
+            z-index: 0;  /*
+                             위 <-------------> 아래
+                            큰수 > 초기값 : 0 > 작은수    
+                         */
+        }
+        .b3{
+            background-color: #0f0;
+            left: 90px;
+            top:140px;
+            
+        }
+        .box1{
+            background-color: #ff0;
+            left: 50px;
+            top:300px;
+            z-index: 100;
+        }
+        .box2{
+            background-color: #ff0;
+            left: 200px;
+            top:300px;
+            z-index: 200;
+        }
+        .box3{
+            background-color: #ff0;
+            left: 350px;
+            top:300px;
+            z-index: 80;
+        }
+        .small{
+            width:50px;
+            height: 50px;
+            position: absolute;
+        }
+        .sm1{
+            background-color: #f00;
+            left: 30px;
+            top:30px;
+            z-index: 1;
+        }
+        .sm2{
+            background-color: #00f;
+            left: 60px;
+            top:60px;
+            z-index: 1;
+        }
+        .sm3{
+            background-color: #070;
+            left: 90px;
+            top:90px;
+            z-index: 500;
+        }
+        .sm1_3{
+            background-color: #0ff;
+            left: 350px;
+            top:80px;
+            z-index: 1;
+        }
+        .sm1_2{
+            background-color: #f0f;
+            left: 200px;
+            top:80px;
+            z-index: 1;
+        }
+        .sm2_2{
+            background-color: #aff;
+            left: -140px;
+            top:60px;
+            z-index: -300;
+        }
+    </style>
+</head>
+<body>
+    <h1>02_z_index</h1>
+    <!-- z-index 가 같을 경우 끝에 작성한 요소가 맨 위로 표시-->
+    <div class="big b1">b1</div>
+    <div class="big b2">b2</div>
+    <div class="big b3">b3</div>
+
+     <!-- z-index 가 같을 경우 끝에 작성한 요소가 맨 위로 표시-->
+     <div class="big box1">box1
+        <div class="small sm1">1_1</div>
+        <div class="small sm1_2">1_2</div>
+        <div class="small sm1_3">1_3</div>
+     </div>
+     <div class="big box2">box2
+        <div class="small sm1">2_1</div>
+        <div class="small sm2_2">2_2</div>
+        <div class="small sm3">2_3</div>
+     </div>
+     <div class="big box3">box3
+        <div class="small sm1">3_1</div>
+        <div class="small sm2">3_2</div>
+        <div class="small sm3">3_3</div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_sra</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .big_st{
+            position: static;
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+        }
+        .big_re{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #0f0;
+        }
+        .big_ab{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #00f;
+        }
+        .small_st{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,0,0,0.3);
+            border: 1px solid #000;
+            position: static; /* 이동 불가*/
+            left : 80px;
+            top:40px;
+        }
+        .small_re{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,255,0,0.3);
+            border: 1px solid #000;
+            position: relative; /* 현재 위치 기준*/
+            left : 80px;
+            top:40px;
+        }
+        .small_ab{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,255,0.3);
+            border: 1px solid #000;
+            position: absolute; /* 부모 위치 기준 
+                                    부모 : relative or absolute
+                                */
+            left : 80px;
+            top:40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>04_sra</h1>
+    <h2>부모가 static</h2>
+    <div class="big_st">
+        <div class="small_st">st_st</div>
+        <div class="small_re">st_re</div>
+        <div class="small_ab">st_ab</div>
+    </div>
+    <h2>부모가 relative</h2>
+    <div class="big_re">
+        <div class="small_st">st_st</div>
+        <div class="small_re">st_re</div>
+        <div class="small_ab">st_ab</div>
+    </div>
+    <h2>부모가 absolute</h2>
+    <div class="big_ab">
+        <div class="small_st">st_st</div>
+        <div class="small_re">st_re</div>
+        <div class="small_ab">st_ab</div>
+    </div>
+</body>
+</html>
