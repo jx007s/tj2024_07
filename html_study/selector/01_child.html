@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_child</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            display: block;
+        }
+
+        /*후손 선택자
+            .box 안에 있는 모든 h3
+
+
+            선택자 우선순위
+
+             id > 자식/후손 >클래스 > 태그
+        */
+        .box h3{
+            color: #f00;
+        }
+        .box span h3{
+            background-color: #ff0;
+        }
+        h3{
+            background-color: #0f0;
+        }
+
+        /*자식 선택자
+            .box 바로 밑에 있는 h2
+        */
+        .box > h2 {
+            color: #00f;
+        }
+
+        #hh22{
+            background-color: #0ff;
+        }
+        .box > span > h2{ 
+            /* 적용 안됨 
+
+            .box > span > h2 보다
+            #hh22 가 우선순위가 높음
+            */
+            background-color: #f0f;
+        }
+        .box > span > div >  #hh22{
+            /* 적용됨
+            
+            #hh22 보다
+            .box > span > div >  #hh22 가 우선순위가 높음
+            */
+            background-color: #f0f;
+        }
+
+        /*
+            자식 / 후손 선택자가 중첩될 경우 
+            나중 작성된 스타일이 적용된다.
+        
+        */
+        
+        .box > div > h3{
+            text-decoration: overline;
+        }
+        .box div h3{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>01_child</h1>
+    <h2>h2 입니다</h2>
+    <h3>h3 입니다</h3>
+    <hr/>
+    <div class="box">
+        box 입니다 1
+        <h2>box > h2 입니다 2</h2>
+        <h3>box > h3 입니다 3</h3>
+        <div>
+            box > div 입니다 4
+            <h2>box > div > h2 입니다 5</h2>
+            <h3>box > div > h3 입니다 6</h3>
+        </div>
+    </div>
+    <hr/>
+    <div class="box">
+        box 입니다 7
+        <span>
+            box > span 입니다 8
+            <h2 id="hh22">box > span > h2 입니다 9</h2>
+            <h3>box > span > h3 입니다 10</h3>
+            <div>
+                box > span > div 입니다 11
+                <h2 id="hh22">box > span > div > h2 입니다 12</h2>
+                <h3>box > span > div > h3 입니다 13</h3>
+            </div>
+        </span>
+    </div>
+
+
+</body>
+</html>

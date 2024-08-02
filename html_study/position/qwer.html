@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>그라폴리오</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            a{/* a 태그 디자인 설정 */
+                color: #090; /* 글자색 */
+                text-decoration: none; /* 글자 꾸미기 : 없음 -> 밑줄제거 */
+                text-align: center;
+                line-height: 30px;
+            }
+            a:hover{
+                color: #f0f;
+            }
+            .wrapper{
+                position: absolute;
+                width: 800px;
+                height: 3000px;
+            }
+            .nav{
+                position: fixed;
+                width: 800px;
+                height: 30px;
+                z-index: 1;
+                background-color: #fff;
+            }
+            .section{
+                position: relative;
+               
+                width: 800px;
+                height: 600px;
+                overflow: hidden;   
+            }
+            
+            h1{
+                margin-top: 100px;
+            }
+
+
+
+            .big{
+                position: relative;
+                width: 600px;
+                height: 320px;
+                border: 2px solid #f00;
+                overflow: auto;
+            }
+
+            .long{
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                display: flex;
+                width: 2400px;
+                height: 300px;
+            }
+            img{
+                width: 600px;
+                height: 300px;
+            }
+            .btn{
+                position: sticky;
+                width: 50px;
+                height: 50px;
+                background-color: rgba(255, 255,0,0.5);
+                border-radius: 25px;
+                
+                top:125px;
+                text-align: center;
+                line-height: 50px;
+                font-size: 2rem;
+                z-index: 1;
+            }
+            .back{
+                left: 0px;
+            }
+            .next{
+
+                left: 550px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <hr/>
+            <a href="#grapolio">그라폴리오</a>
+            |
+            <a href="#fashion">패션</a>
+            |
+            <a href="#design">디자인</a>
+            |
+            <a href="#image">이미지변신</a>
+            <hr/>
+        </div>
+        <div class="wrapper">
+            <div class="section" id="grapolio">
+                <h1 >그라폴리오</h1>
+                <img src="../fff/imgs05/a01.jpg" alt="">
+            </div>
+            <div class="section" id="fashion">
+                <h1 >패션</h1>
+                <div class="big">
+                    <div class="btn back"><</div>
+                    <div class="btn next">></div> 
+                    <div class="long">
+                        <img src="../fff/img/apple_image01.jpg" class="apple" alt="">
+                        <img src="../fff/img/apple_image02.jpg" class="apple" alt="">
+                        <img src="../fff/img/apple_image03.jpg" class="apple" alt="">
+                        <img src="../fff/img/apple_image04.jpg" class="apple" alt="">
+                    </div>    
+                </div>
+                
+            </div>
+            <div class="section" id="design">
+                <h1>디자인</h1>
+                <img src="../fff/imgs05/a03.jpg" alt="">
+            </div>
+            <div class="section" id="image">
+                <h1>이미지변신</h1>
+                <img src="../fff/imgs05/a04.jpg" alt="">
+            </div>
+        </div>
+    </body>
+</html>

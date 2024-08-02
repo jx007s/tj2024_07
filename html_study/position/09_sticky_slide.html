@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_sticky_slide</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper{
+            position: relative;
+            width: 600px;
+            height: 320px;
+            border: 2px solid #f00;
+            overflow: auto;
+            margin: 100px 0px;
+        }
+
+        .long{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: flex;
+            width: 2400px;
+            height: 300px;
+        }
+        img{
+            width: 600px;
+            height: 300px;
+        }
+        .btn{
+            position: sticky;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255,0,0.5);
+            border-radius: 25px;
+            
+            top:125px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 2rem;
+            z-index: 1;
+        }
+        .back{
+            left: 0px;
+        }
+        .next{
+
+            left: 550px;
+        }
+        .top{
+            position: fixed;
+            width: 100px;
+            height: 40px;
+            background-color: rgba(255,0,0,0.4);
+            text-align: center;
+            line-height: 40px;
+            font-size: 2rem;
+            bottom: 100px;
+            right: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="tt">09_sticky_slide</h1>
+    <a class="top" href="#tt">top</a>
+
+    <div class="wrapper">
+        <div class="btn back"><</div>
+        <div class="btn next">></div> 
+        <div class="long">
+            <img src="../fff/child_1.jpg" alt="">
+            <img src="../fff/child_2.jpg" alt="">
+            <img src="../fff/son_2.jpg" alt="">
+            <img src="../fff/son_4.jpg" alt="">
+        </div>   
+    </div>
+    <div class="wrapper">
+        <div class="btn back"><</div>
+        <div class="btn next">></div> 
+        <div class="long">
+            <img src="../fff/img/apple_image01.jpg" alt="">
+            <img src="../fff/img/apple_image02.jpg" alt="">
+            <img src="../fff/img/apple_image03.jpg" alt="">
+            <img src="../fff/img/apple_image04.jpg" alt="">
+        </div>   
+    </div>
+    <div class="wrapper">
+        <div class="btn back"><</div>
+        <div class="btn next">></div> 
+        <div class="long">
+            <img src="../fff/son_3.jpg" alt="">
+            <img src="../fff/winter.jpg" alt="">
+            <img src="../fff/car.jpg" alt="">
+            <img src="../fff/son_4.jpg" alt="">
+        </div>   
+    </div>
+
+    
+</body>
+</html>

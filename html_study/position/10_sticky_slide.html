@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_sticky_slide</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            position: fixed;
+            left: 100px;
+            width: 800px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            display: table;
+            z-index: 1;
+            background-color: #aaa;
+        }
+        li{
+            height: 40px;
+            display: table-cell;
+            border: 1px solid #444;
+        }
+        
+        .wrapper{
+            
+            position: absolute;
+            left: 100px;
+            top: 40px;
+            width: 800px;
+            height: 2400px;
+           
+        }
+
+        .section{
+            padding-top: 100px;
+            position: relative;
+            width: 800px;
+            height: 500px;
+            overflow: hidden;
+        }
+
+
+        .big{
+            position: relative;
+            width:800px;
+            height: 360px;
+            overflow: auto;
+        }
+
+        .long{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: flex;
+            width: 3200px;
+            height: 340px;
+        }
+        img{
+            width: 800px;
+            height: 340px;
+        }
+        .btn{
+            position: sticky;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255,0,0.5);
+            border-radius: 25px;
+            
+            top:160px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 2rem;
+            z-index: 1;
+        }
+        .back{
+            left: 0px;
+        }
+        .next{
+
+            left: 750px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#detail">상세정보</a></li>
+        <li><a href="#review">리뷰</a></li>
+        <li><a href="#qna">Q&A</a></li>
+        <li><a href="#change">반품/교환정보</a></li>
+    </ul>
+    <div class="wrapper">
+        <div class="section" id="detail">
+            <h2>상세정보</h2>
+            <img src="../fff/child_1.jpg" alt="">
+        </div>
+        <div class="section" id="review">
+            <h2>리뷰</h2>
+            <div class="big">
+                <div class="btn back"><</div>
+                <div class="btn next">></div> 
+                <div class="long">
+                    <img src="../fff/img/apple_image01.jpg" alt="">
+                    <img src="../fff/img/apple_image02.jpg" alt="">
+                    <img src="../fff/img/apple_image03.jpg" alt="">
+                    <img src="../fff/img/apple_image04.jpg" alt="">
+                </div>   
+            </div>
+        </div>
+        <div class="section" id="qna">
+            <h2>Q&A</h2>
+            <img src="../fff/child_2.jpg" alt="">
+        </div>
+        <div class="section" id="change">
+            <h2>반품/교환정보</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Quis omnis hic similique nam, excepturi iste cupiditate
+              et dolores quidem ducimus quos aliquam ut inventore
+               vitae vel veritatis animi obcaecati odit?
+        </div>
+    </div>
+    
+</body>
+</html>

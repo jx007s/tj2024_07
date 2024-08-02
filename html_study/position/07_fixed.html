@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_fixed</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 4px solid #333;
+            z-index:1;
+        }
+        .st{
+            background-color: #ff0;
+        }
+        .re{
+            position: relative;
+            background-color: rgba(255,0,0,0.5);
+            left: 200px;
+            top:40px;
+        }
+        .ab{
+            position: absolute;
+            background-color: rgba(0,255,0,0.5);
+            left: 300px;
+            top:40px;
+        }
+        .ff{
+            position: fixed;
+            background-color: rgba(0,0,255,0.5);
+            left: 400px;
+            top:40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>07_fixed</h1>
+    <div class="box st">box st</div>
+    <div class="box re">box re</div>
+    <div class="box ab">box ab</div>
+    <div class="box ff">box ff</div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sed ut dolore at ab quisquam minima ipsam eligendi non, modi quibusdam ducimus inventore sapiente obcaecati quas dignissimos est maxime nulla.
+    <img src="../fff/child_1.jpg" alt="">
+    <img src="../fff/child_2.jpg" alt="">
+    <img src="../fff/son_2.jpg" alt="">
+    
+</body>
+</html>
