@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_piano</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            transition-duration: 0.5s;
+        }
+        div:hover{
+            width: 300px;
+        }
+        div:nth-of-type(1){
+            background-color: #f00;
+        }
+        div:nth-of-type(2){
+            background-color: #fa0;
+        }
+        div:nth-of-type(3){
+            background-color: #ff0;
+        }
+        div:nth-of-type(4){
+            background-color: #0f0;
+        }
+        div:nth-of-type(5){
+            background-color: #00f;
+        }
+        div:nth-of-type(6){
+            background-color: #006;
+        }
+        div:nth-of-type(7){
+            background-color: #f0f;
+        }
+
+        .menus > dl {
+            width: 100px;
+            height: 50px;
+            overflow: hidden;
+            transition-duration: 0.5s;
+        }
+        .menus > dl:hover{
+            
+            height: 170px;
+            
+        }
+        .menus > dl > dt {
+            width: 100px;
+            height: 50px;
+            background-color: #fa0;
+        }
+        .menus > dl > dd{
+            
+            height: 40px;
+            width: 80px;
+            margin-left: 20px;
+            background-color: #ff0;
+            
+        }
+
+        .menus2{
+            width: 50px;
+            height: 70px;
+            overflow: hidden;
+        }
+        .menus2:hover{
+            width: 500px;
+            height: 200px;
+        }
+        .menus2 > dl {
+            width: 100px;
+            height: 50px;
+            float: left;
+            overflow: hidden;
+            transition-duration: 0.5s;
+        }
+        .menus2 > dl:hover{
+            
+            height: 170px;
+            
+        }
+        .menus2 > dl > dt {
+            width: 100px;
+            height: 50px;
+            background-color: #0f0;
+        }
+        .menus2 > dl > dd{
+            
+            height: 40px;
+            width: 80px;
+            margin-left: 20px;
+            background-color: #0ff;
+            
+        }
+        hr{
+            clear: both;
+        }
+        .menus2 > dl:first-of-type{
+            padding: 10px;
+            width: 30px;
+            height: 50px;
+            background-color: #00f;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+        .menus2 > dl:first-of-type>dt , .menus2 > dl:first-of-type>dd{
+            width: 20px;
+            height: 6px;
+            border-radius: 3px;
+            background-color: #fff;
+           margin-left: 0px;
+            
+        } 
+
+    </style>
+</head>
+<body>
+    <h1>08_piano</h1>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <hr>
+
+    <div class="menus2">
+        <dl>
+            <dt></dt>
+            <dd></dd>
+            <dd></dd>
+        </dl>
+        <dl>
+            <dt>회사 소개</dt>
+            <dd>인사말</dd>
+            <dd>인사개</dd>
+            <dd>인사소</dd>
+        </dl>
+        <dl>
+            <dt>제품</dt>
+            <dd>니품</dd>
+            <dd>내품</dd>
+            <dd>그놈품</dd>
+        </dl>
+        <dl>
+            <dt>갤러리</dt>
+            <dd>봄</dd>
+            <dd>여름</dd>
+            <dd>여~~~름</dd>
+        </dl>
+        <dl>
+            <dt>고객센터</dt>
+            <dd>공지사항</dd>
+            <dd>자주찾는질문</dd>
+            <dd>질문및답변</dd>
+        </dl>
+    </div>
+
+
+
+    <hr>
+
+    <div class="menus">
+        <dl>
+            <dt>회사 소개</dt>
+            <dd>인사말</dd>
+            <dd>인사개</dd>
+            <dd>인사소</dd>
+        </dl>
+        <dl>
+            <dt>제품</dt>
+            <dd>니품</dd>
+            <dd>내품</dd>
+            <dd>그놈품</dd>
+        </dl>
+        <dl>
+            <dt>갤러리</dt>
+            <dd>봄</dd>
+            <dd>여름</dd>
+            <dd>여~~~름</dd>
+        </dl>
+        <dl>
+            <dt>고객센터</dt>
+            <dd>공지사항</dd>
+            <dd>자주찾는질문</dd>
+            <dd>질문및답변</dd>
+        </dl>
+    </div>
+</body>
+</html>
