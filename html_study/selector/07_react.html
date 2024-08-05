@@ -10,7 +10,7 @@
             padding: 0;
         }
         fieldset{
-            width: 500px;
+            width: 600px;
             height: 50px;
             margin: 5px;
         }
@@ -26,6 +26,35 @@
         input:checked{
             width: 50px;
         }
+        .gen+div,  #email_chk ~ label > div{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url(../fff/off.png);
+            background-size: 20px 20px;
+           
+        }
+        .gen:checked+div,  #email_chk:checked ~ label > div{
+            background-image: url(../fff/on.png);
+        }
+        .gen{
+            display: none;
+        }
+        input:hover{
+            background-color: #0f0;
+        }
+
+        #email_chk:checked ~ select{
+            display: none;
+        }
+        #email3, #email_chk{
+            display: none;
+        }
+
+        #email_chk:checked ~ #email3{
+            display: inline-block;
+        }
+      
     </style>
 </head>
 <body>
@@ -51,10 +80,26 @@
         </fieldset>
         <fieldset>
             <legend>성별</legend>
-            <input type="radio" name="gender" id="m" class="gen"><div/><label for="m">남</label>
-            <input type="radio" name="gender" id="f" class="gen"><div/><label for="f">여</label>
-            <input type="radio" name="gender" id="it" class="gen"><div/><label for="it">it</label>
+            <input type="radio" name="gender" id="m" class="gen"><div></div><label for="m">남</label>
+            <input type="radio" name="gender" id="f" class="gen"><div></div><label for="f">여</label>
+            <input type="radio" name="gender" id="it" class="gen"><div></div><label for="it">it</label>
         </fieldset>
+        
+        
+        <fieldset>
+            <legend>이메일</legend>
+            <input type="text">@
+            <input type="checkbox" id="email_chk" >
+            <select name="" >
+                <option value="">나베르</option>
+                <option value="">구그레</option>
+                <option value="">줌</option>
+            </select>
+            <label for="email_chk"><div></div>직접입력</label>
+            <input type="text" id="email3">
+        </fieldset>
+
+
         <fieldset>
             <legend></legend>
             <label><input type="text"></label>
@@ -68,12 +113,8 @@
             <label><input type="text"></label>
         </fieldset>
         <fieldset>
-            <legend></legend>
-            <label><input type="text"></label>
-        </fieldset>
-        <fieldset>
-            <legend></legend>
-            <label><input type="text"></label>
+                <input type="submit" value="가입">
+                <input type="reset" value="초기화">
         </fieldset>
     </form>
 </body>
