@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_struct_diary</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper { /* 50 + (2+1+2) * 2 : 60 *7 = 420   */
+            width:420px;
+            height: 600px;
+            padding: 2px;
+            border: 1px solid #999;
+            margin: 0 auto;
+            text-align: center;
+            /* background-color: #ff0; */
+        }
+        img { 
+            width:420px;
+            height: 200px;
+        }
+
+
+
+        .wrapper > div{ /* 50 + (2+1+2) * 2 : 60 *7 = 420   */
+            width:50px;
+            height: 50px;
+            padding: 2px;
+            border: 1px solid #999;
+            margin: 2px;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+        }
+        .wrapper > div:nth-of-type(7n+1){
+            color: #f00;
+        }
+        .wrapper > div:nth-of-type(7n){
+            color: #00f;
+        }
+        .wrapper > div:first-of-type{
+            color: #fff;
+            background-color: #f00;
+        }
+        .wrapper > div:nth-of-type(7){
+            color: #fff;
+            background-color: #00f;
+        }
+        .wrapper > div:nth-of-type(16){ /* 7+4+5 */
+         
+            background-color: #ff0;
+        }
+    </style>
+</head>
+<body>
+    <h1>06_struct_diary</h1>
+    <div class="wrapper">
+        <img src="../fff/car.jpg" alt="">
+        <h2>2024년 8월</h2>
+        <div>일</div>
+        <div>월</div>
+        <div>화</div>
+        <div>수</div>
+        <div>목</div>
+        <div>금</div>
+        <div>토</div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+        <div>19</div>
+        <div>20</div>
+        <div>21</div>
+        <div>22</div>
+        <div>23</div>
+        <div>24</div>
+        <div>25</div>
+        <div>26</div>
+        <div>27</div>
+        <div>28</div>
+        <div>29</div>
+        <div>30</div>
+        <div>31</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_react</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        fieldset{
+            width: 500px;
+            height: 50px;
+            margin: 5px;
+        }
+        input:focus{    /* 반응 선택자 */
+             background-color: #ff0;
+        }
+        input:read-only{
+            background-color: #f0f;
+        }
+        input:disabled{
+            background-color: #0ff;
+        }
+        input:checked{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>07_react</h1>
+    <form action="">
+        <fieldset>
+            <legend>아이디</legend>
+            <label><input type="text" id="pid"></label>
+        </fieldset>
+        <fieldset>
+            <legend>이름</legend>
+            <label><input type="text" readonly value="정우성"></label>
+        </fieldset>
+        <fieldset>
+            <legend>별명</legend>
+            <label><input type="text" disabled value="잘생김"></label>
+        </fieldset>
+        <fieldset>
+            <legend>취미</legend>
+            <label><input type="checkbox" >잠자기</label>
+            <label><input type="checkbox" >놀기</label>
+            <label><input type="checkbox" >쉬기</label>
+        </fieldset>
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="gender" id="m" class="gen"><div/><label for="m">남</label>
+            <input type="radio" name="gender" id="f" class="gen"><div/><label for="f">여</label>
+            <input type="radio" name="gender" id="it" class="gen"><div/><label for="it">it</label>
+        </fieldset>
+        <fieldset>
+            <legend></legend>
+            <label><input type="text"></label>
+        </fieldset>
+        <fieldset>
+            <legend></legend>
+            <label><input type="text"></label>
+        </fieldset>
+        <fieldset>
+            <legend></legend>
+            <label><input type="text"></label>
+        </fieldset>
+        <fieldset>
+            <legend></legend>
+            <label><input type="text"></label>
+        </fieldset>
+        <fieldset>
+            <legend></legend>
+            <label><input type="text"></label>
+        </fieldset>
+    </form>
+</body>
+</html>
