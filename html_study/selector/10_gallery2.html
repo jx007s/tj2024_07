@@ -16,6 +16,15 @@
             position: relative;
             float: left;
         }
+        .wrapper > div > div{
+            position: absolute;
+            left: 0px;
+            top: 95px;
+            width: 432px;
+            height: 338px;
+            z-index: 1;
+            border: 5px solid #0f0;
+        }
 
         /* 썸네일 */
         .wrapper > div{
@@ -41,6 +50,10 @@
             opacity: 1;
             border: 5px solid #f00;
         }
+        input +label > img:hover{
+            opacity: 1;
+            border: 5px solid #00f;
+        }
 
         
 
@@ -48,19 +61,19 @@
         input+label+img{
             position: absolute;
             display: block;
-            left: 0px;
-            top: 90px;
+            left: -430px;
+            top: 100px;
             width: 422px;
             height: 328px;
             padding: 5px;
-            border: 1px solid #ccc;
-            opacity: 0;
-            transition-duration: 0.5s;
+            
+            /*opacity: 0; 투명도*/
+            transition-duration: 0.5s; /*지연시간*/
         }
 
         input:checked +label+img{
-
-            opacity: 1;
+            left: 5px;
+            /*opacity: 1;*/
         }
         input{
              display: none; 
@@ -72,6 +85,7 @@
     <h1>10_gallery2</h1>
     <div class="wrapper">
         <div>
+            <div></div>
             <input type="radio" name="big" id="c1">
             <label for="c1">
                 <img src="../fff/child_1.jpg" alt="">    
