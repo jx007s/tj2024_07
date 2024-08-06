@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_attribute</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            border: 1px solid #999;
+        }
+        div[ttt-data=abc]{ /* 정확하게 일치 : abc*/
+            color:#f00;
+        }
+        div[ttt-data~=abc]{ /*단어형태, 띄어쓰기 : abc,abc qwe,zzz abc fdew */
+            font-weight: 700;
+        }
+        div[ttt-data|=abc]{ /*단어형태, 시작, - : abc,abc-qwe */
+            font-style: italic;
+        }
+        div[ttt-data*=abc]{ /*포함 : abc,abc qwe, abc-qwe,
+                                    abcsdfadsfgsdc,zzzabcefwew,zzz abc fdew,
+                                    zzz-abc-fdew,zzzevfeabc */
+            text-decoration: underline;
+        }
+        div[ttt-data^=abc]{ /* 시작 : abc,abc qwe,abc-qwe,abcsdfadsfgsdc */
+            text-align: center;
+        }
+        div[ttt-data$=abc]{ /* 끝 : abc,zzzevfeabc */
+            background-color: #ff0;
+        }
+        .abc{
+            background-color: #f0f;
+        }
+        .bbb{
+            font-size: 2rem;
+        }
+        .ccc{
+            text-align: right;
+        }
+        /*
+        .abc .bbb{
+            color: #0f0;
+        }*/
+        div[class="abc bbb"]{ 
+            color: #0f0;
+        }
+        img{
+            width: 100px;
+             /*
+                jpg, jpeg : 테두리색 빨강
+                BMP, GIF : 테두리색 파랑
+                PNG : 테두리색 녹색
+            */
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>11_attribute</h1>
+    <div ttt-data="abc">abc</div>
+    <div ttt-data="eee">eee</div>
+    <div ttt-data="abc qwe">abc qwe</div>
+    <div ttt-data="abc-qwe">abc-qwe</div>
+    <div ttt-data="abcsdfadsfgsdc">abcsdfadsfgsdc</div>
+    <div ttt-data="zzzabcefwew">zzzabcefwew</div>
+    <div ttt-data="zzz abc fdew">zzz abc fdew</div>
+    <div ttt-data="zzz-abc-fdew">zzz-abc-fdew</div>
+    <div ttt-data="zzzevfeabc">zzzevfeabc</div>
+    <div class="abc bbb">abc bbb</div>
+    <div class="abc ccc">abc ccc</div>
+
+    <img src="../fff/child_1.jpg" alt="">
+    <img src="../fff/child_1.jpeg" alt="">
+    <img src="../fff/child_1.png" alt="">
+    <img src="../fff/child_1.bmp" alt="">
+    <img src="../fff/child_1.gif" alt="">
+</body>
+</html>
