@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_gradient</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url(../fff/child_1.jpg);
+            background-size: 200px 150px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border: 1px solid #000;
+        }
+
+        .box:nth-of-type(1){
+            /* Permalink - use to edit and share this gradient. 퍼머링크 - 이 그라디언트를 편집하고 공유하는 데 사용: https://colorzilla.com/gradient-editor/#fcecfc+0,fba6e1+50,fd89d7+51,ff7cd8+100;Pink+Gloss+%232 */
+        background: linear-gradient(to bottom, 
+         #fcecfc 0%,
+         #fba6e1 50%,
+         #fd89d7 51%,
+         #ff7cd8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            
+        }
+
+        .box:nth-of-type(2){
+            background: linear-gradient(135deg, 
+            #fcecfc 0%,
+            #fba6e1 50%,
+            #fd89d7 51%,
+            #ff7cd8 100%);
+        }
+        .box:nth-of-type(3){
+            background: radial-gradient(ellipse at center, 
+            #fcecfc 0%,
+            #fba6e1 50%,
+            #fd89d7 51%,
+            #ff7cd8 100%);
+        }
+        .box:nth-of-type(4){
+            background: linear-gradient(135deg, 
+            #000000 0%,
+            #0000ff 30%,
+            #ffff00 60%,
+            #ff0000 100%);
+        }
+        .box:nth-of-type(5){
+            background: linear-gradient(135deg, 
+            #ff00ff 0%,
+            #ff00ff 30%,
+            #0224ff 31%,
+            #0000ff 59%,
+            #ffff00 60%,
+            #ffff00 85%,
+            #ff0000 86%,
+            #ff0000 100%);
+        }
+        .box:nth-of-type(6){
+            background: linear-gradient(135deg, 
+            rgba(255,0,255,1) 0%,
+            rgba(51,29,255,0) 25%,
+            rgba(2,36,255,0.24) 31%,
+            rgba(168,179,88,1) 50%,
+            rgba(255,255,0,0.6) 60%,
+            rgba(255,159,0,0) 75%,
+            rgba(255,0,0,1) 100%); 
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>01_gradient</h1>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

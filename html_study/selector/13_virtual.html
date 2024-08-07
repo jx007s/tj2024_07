@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_virtual</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: #0f0;
+        }
+        .box::before{ /*가상 선택자     코딩위치 :<box><before위치>난 box야</box> */
+            content: "before입니다";
+            width: 100px;
+            height: 50px;
+            background: #ff0;
+            display: block;
+        }
+        .box::after{ /*가상 선택자     코딩위치 :<box>난 box야<after위치></box> */
+            content: "after";
+            width: 100px;
+            height: 50px;
+            background: #0ff;
+            display: block;
+        }
+        
+
+        .aaa{
+            width: 100px;
+            height: 100px;
+            background: #f0f;
+        }
+        .aaa:hover::before{ /*가상 선택자     코딩위치 :<box><before위치>난 box야</box> */
+            content: "hh before";
+            width: 100px;
+            height: 50px;
+            background: #ff0;
+            display: block;
+        }
+        .aaa:hover::after{ /*가상 선택자     코딩위치 :<box>난 box야<after위치></box> */
+            content: "";
+            width: 100px;
+            height: 50px;
+            background-image: url(../fff/child_2.jpg);
+            background-size: 100px 50px;
+            display: block;
+        }
+        .bbb{
+            width: 100px;
+            height: 50px;
+            background: #fb4;
+            position: relative;
+        }
+        .bbb::before{ /*가상 선택자     코딩위치 :<box><before위치>난 box야</box> */
+            content: "bbb::before";
+            width: 100px;
+            height: 30px;
+            background: rgba(0, 255,0, 0.3);
+            display: block;
+            position: absolute; /*좌표 변경*/
+            left: 250px;
+            top: -200px;
+        }
+        .bbb::after{ /*가상 선택자     코딩위치 :<box>난 box야<after위치></box> */
+            content: "bbb::after";
+            width: 100px;
+            height: 30px;
+            background: rgba(255, 0,0, 0.3);
+            display: block;
+            position: absolute; /*좌표 변경*/
+            left: 250px;
+            top: -300px;
+        }
+
+        .ccc{
+            width: 100px;
+            height: 120px;
+            background: #ff0;
+            position: relative;
+        }
+        .ccc::before{ /*가상 선택자     코딩위치 :<box><before위치>난 box야</box> */
+            content: url(../fff/img/small01.jpg);
+            width: 100px;
+            height: 30px;
+            
+            display: block;
+            
+        }
+        .ddd{
+            width: 100px;
+            height: 80px;
+            background: #fa3;
+            counter-reset: var-count; /* 변수명*/
+        }
+        .ddd > p::before{ /*가상 선택자     코딩위치 :<box><before위치>난 box야</box> */
+            counter-increment: var-count; /* 1씩 증가 */
+            content: counter(var-count) "번 ";
+        }
+    </style>
+</head>
+<body>
+    <h1>13_virtual</h1>
+    <div class="box">난 box야</div>
+    <div class="aaa">난 aaa야</div>
+    <div class="bbb">난 bbb야</div>
+    <div class="ccc">난 ccc야</div>
+    <div class="ddd">
+        <p>문단</p>
+        <p>문단</p>
+        <p>문단</p>
+    </div>
+</body>
+</html>

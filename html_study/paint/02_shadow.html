@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_shadow</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 600px;
+            height: 300px;
+            background-image: url(../fff/img/bg2.jpg);
+            margin: 20px;
+        }
+        .wrapper > div{
+            width: 100px;
+            height: 100px;
+            background-color: #ff0;
+            margin: 20px;
+            float: left;
+        }
+       
+            /* box-shadow */
+        .wrapper:nth-of-type(1) > div:nth-child(1){
+            
+            box-shadow: 5px   10px 20px #000;
+                  
+        }
+
+        .wrapper:nth-of-type(1) > div:nth-child(2){
+           
+            box-shadow: 5px   10px 20px rgba(0,0,0,0.5);
+                    
+        }
+        .wrapper:nth-of-type(1) > div:nth-child(3){
+           
+            box-shadow: 10px   0px 0px #f00;
+                    
+        }
+        .wrapper:nth-of-type(1) > div:nth-child(4){
+           
+            box-shadow: 20px   20px 30px #000;
+                    
+        }
+        .wrapper:nth-of-type(1) > div:nth-child(5){
+            
+            box-shadow: 3px   3px 2px #000;
+                    
+        }
+        .wrapper:nth-of-type(1) > div:nth-child(6){
+            /*  각각 지정으로 여러개 불가 (마지막 것만 적용)
+            box-shadow: 10px 0px 0px #f00;        
+            box-shadow: 0px  10px 0px #0f0;
+             */
+
+             box-shadow: 10px 0px 0px #f00, 
+                        0px  10px 0px #0f0,
+                        -10px  0px 0px #00f,
+                        0px  -10px 0px #fa0;
+                    
+        }
+
+        .wrapper:nth-of-type(1) > div:nth-child(7){
+            background-color: #fff;
+
+             box-shadow: 0px  -10px 0px #fa0,
+                          10px  0px 0px #0f0,
+                           0px 10px 0px #008,    
+                        -10px  0px 0px #000,
+                        -10px  -10px 0px #f00,
+                          10px  -10px 0px #ff0,
+                           10px 10px 0px #00f,    
+                        -10px  10px 0px #f0f;
+                    
+        }
+
+        /*inset - 음각 */
+        .wrapper:nth-of-type(2) > div:nth-child(1){
+            /* 빛이 향하는 각도 ↘ : 음각으로 표현 */
+             box-shadow: inset 10px  10px 20px #000;
+        }
+
+        .wrapper:nth-of-type(2) > div:nth-child(2){
+            
+             box-shadow: inset 10px  0px 0px #f00, /* → */
+                        inset 0px  10px 0px #fa0,  /* ↓ */ 
+                        inset 0px  -10px 0px #0f0,  /* ← */ 
+                        inset -10px  0px 0px #00f  /* ↑ */ 
+             ;
+        }
+
+        .wrapper:nth-of-type(2) > div:nth-child(3){
+            
+             box-shadow: inset 10px  10px 20px #00f, /* 음각 */
+                         10px  10px 20px #f00;       /* 양각 */
+        }
+
+        .wrapper:nth-of-type(2) > div:nth-child(4){
+            border-radius: 50px;
+            box-shadow: inset 10px  10px 20px #00f, /* 음각 */
+                        10px  10px 20px #f00;       /* 양각 */
+       }
+       
+
+       /* sizing */
+       .wrapper:nth-of-type(3) > div:nth-child(1){
+            border: 10px solid #000;
+       }
+       .wrapper:nth-of-type(3) > div:nth-child(2){
+            box-sizing: border-box; /* border, padding 등 보이는 내용을 크기안에 포함
+                                       margin은 포함하지 않음 */
+            border: 10px solid #000;
+       }
+       .wrapper:nth-of-type(3) > div:nth-child(3){
+            border-top: 10px solid #f00;
+            border-right: 10px solid #0f0;
+            border-bottom: 10px solid #00f;
+            border-left: 10px solid #f0f;
+       }
+       .wrapper:nth-of-type(3) > div:nth-child(4){
+            box-sizing: border-box;
+            border-top: 10px solid #f00;
+            border-right: 10px solid #0f0;
+            border-bottom: 10px solid #00f;
+            border-left: 10px solid #f0f;
+       }
+       .wrapper:nth-of-type(3) > div:nth-child(5){
+            padding: 10px;
+       }
+       .wrapper:nth-of-type(3) > div:nth-child(6){
+            box-sizing: border-box;
+            padding: 10px;
+       }
+       .wrapper:nth-of-type(3) > div:nth-child(7){
+            box-sizing: border-box;
+            padding: 10px;
+            border: 10px solid #000;
+       }
+    </style>
+</head>
+<body>
+    <h1>02_shadow</h1>
+    <h2>shadow</h2>
+    <div class="wrapper">
+        <div>그림자1</div>
+        <div>그림자2</div>
+        <div>그림자3</div>
+        <div>그림자4</div>
+        <div>그림자5</div>
+        <div>그림자6</div>
+        <div>그림자7</div>
+    </div>
+    <h2>inset</h2>
+    <div class="wrapper">
+        <div>inset1</div>
+        <div>inset2</div>
+        <div>inset3</div>
+        <div>inset4</div>
+        
+    </div>
+
+    <h2>sizing</h2>
+    <div class="wrapper">
+        <div>sizing1</div>
+        <div>sizing2</div>
+        <div>sizing3</div>
+        <div>sizing4</div>
+        <div>sizing5</div>
+        <div>sizing6</div>
+        <div>sizing7</div>
+    </div>
+</body>
+</html>
