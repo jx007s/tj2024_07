@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_semantic</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        wrapper{
+            width: 800px;
+            height: 1000px;
+            background-color: #ff0;
+            display: block;
+        }
+        header, nav, aside, article, section, main,address, footer{
+            border: 1px solid #f00;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        aside{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        main{
+            width: 400px;
+            height: 500px;
+            float: right;
+        }
+        footer{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h1>03_semantic</h1>
+    <wrapper>
+        <header>
+            헤더입니다
+            <nav>메뉴바입니다</nav>
+        </header>
+        <aside>
+            측면입니다.
+        </aside>
+        <main>
+            main입니다.
+            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Optio quasi, dolor suscipit officiis quaerat exercitationem
+            </article>
+            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Optio quasi, dolor suscipit officiis quaerat exercitationem
+            </article>
+            <section>
+                section 입니다.
+            </section>
+        </main>
+        <footer>
+            바닥입니다.
+            <address>
+                주소입니다. 
+            </address>
+        </footer>
+
+    </wrapper>
+</body>
+</html>

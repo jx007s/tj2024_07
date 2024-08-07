@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_react2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 데스크탑 */
+        .wrapper{
+            width: 1200px;
+            height: 600px;
+            background-color: #ff0;
+            position: absolute;
+            left: 50%;
+            top:50px;
+            margin-left: -600px;
+        }
+        .header{
+            position: relative;
+            width: 320px;
+            height: 100px;
+            background-color: #00f;
+            color: #fff;
+            padding: 10px;
+            left: 430px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 4rem;
+        }
+        .section{
+            background-color: #ffc;
+            width: 1000px;
+            height: 300px;
+            padding: 50px;
+            margin: 50px;
+        }
+        .section > div{
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+            float: left;
+            border: 1px solid #f00;
+            line-height: 100px;
+            font-size: 3rem;
+        }
+
+        /*테블릿*/
+        @media screen and (max-width: 900px){
+            .wrapper{
+                width: 600px;
+                height: 800px;
+                background-color: #0ff;
+                margin-left: -300px;
+            }
+            .header{
+                left: 130px; 
+            }
+            .section{
+                width: 500px;
+                height: 600px;
+                padding: 20px;
+                margin: 30px;
+            }
+        }
+
+        /*핸드폰*/
+        @media screen and (max-width: 540px){
+            .wrapper{
+                width: 360px;
+                height: 1350px;
+                background-color: #f0f;
+                margin-left: -180px;
+            }
+            .header{
+                left: 10px; 
+            }
+            .section{
+                width: 242px;
+                height: 1150px;
+                padding: 20px;
+                margin: 30px;
+
+                
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>02_react2</h1>
+    <div class="wrapper">
+        <div class="header">로고</div>
+        <div class="section">
+            <div>내용1</div>
+            <div>내용2</div>
+            <div>내용3</div>
+            <div>내용4</div>
+            <div>내용5</div>
+            <div>내용6</div>
+            <div>내용7</div>
+            <div>내용8</div>
+        </div>
+    </div>
+</body>
+</html>
