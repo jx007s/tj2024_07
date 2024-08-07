@@ -70,6 +70,53 @@
             z-index: 1;
             box-shadow: 10px 10px 20px rgba(0,0,0,0.7);
         }
+
+        .shortCut{
+            width: 50px;
+            height: 300px;
+            background-color: #fff;
+            position: fixed;
+            right: 50px;
+            top:50%;
+            margin-top: -150px;
+            z-index: 1;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.7);
+            padding:5px;
+            border: 5px double #f00;
+            border-radius: 10px;
+            counter-reset: num;
+        }
+
+        .shortCut > div{
+            width: 50px;
+            height: 68px;
+            margin: 10px 0px;
+            border-bottom: 1px solid #999;
+        }
+
+        .shortCut > div::before{
+            position: absolute;
+            counter-increment: num;
+            content: counter(num);
+        }
+
+        .shortCut > div > img{
+            margin-top: 9px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .shortCut > a{
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            width: 50px;
+            height: 50px;
+            display: block;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 3px;
+        }
+
         /* 최근본상품 이미지 3개 
         
         
@@ -86,11 +133,17 @@
     </style>
 </head>
 <body>
-    <h1>03_shadowNav</h1>
+    <h1 id="top">03_shadowNav</h1>
     <div class="nav">난 메뉴바지롱</div>
+    <div class="shortCut">
+        <div><img src="../fff/img/apple_image01.jpg" alt=""></div>
+        <div><img src="../fff/img/apple_image02.jpg" alt=""></div>
+        <div><img src="../fff/img/apple_image03.jpg" alt=""></div>
+        <a href="#top">top</a>
+    </div>
     <div class="wrapper">
         <div>
-            <div>로고</div>
+            <div >로고</div>
             
             <div>로그인 | 마이페이지 | 회원가입 </div>
         </div>

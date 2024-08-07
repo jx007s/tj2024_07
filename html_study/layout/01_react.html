@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_react</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 600px; 
+            /* width: 80%;*/
+            height: 750px;
+            border: 1px solid #ccc;
+            padding: 30px;
+            margin: auto;
+            background: #ff0;
+        }
+        .wrapper > div{
+            box-sizing: border-box;
+            width: 250px;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding:30px;
+            margin: 25px;
+            float: left;
+            background-color: #0ff;
+        }
+
+        /*반응형   1200px 이상 (데스크탑)  */
+    @media screen and (min-width:1100px){
+        .wrapper{
+            width: 900px; 
+            height: 500px;
+        }
+
+        .wrapper > div{
+            font-size: 1.5rem;
+            color: #0a0;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>01_react</h1>
+    <div class="wrapper">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        <div>box5</div>
+        <div>box6</div>
+    </div>
+</body>
+</html>
