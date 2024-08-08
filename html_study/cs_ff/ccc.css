@@ -1,0 +1,9 @@
+
+/* <style></style> 안에 작성요령과 같음 */
+
+section{
+    background-color: #faa;
+}
+section > div:nth-child(3){
+    background-color: #00f;
+}

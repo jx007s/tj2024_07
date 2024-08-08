@@ -1,0 +1,12 @@
+aside{
+    padding:20px;
+    width: 200px;
+    
+    float: right;
+}
+main{
+    
+    width: 200px;
+    height: 60px;
+    background-color: #777;
+}

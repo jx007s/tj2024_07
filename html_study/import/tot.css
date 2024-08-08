@@ -1,0 +1,10 @@
+@import "../cs_ff/sub1.css";
+
+@import "../cs_ff/sub3.css";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import "../cs_ff/sub2.css"; /* 위에 작성되어야 한다.: 적용불가*/
