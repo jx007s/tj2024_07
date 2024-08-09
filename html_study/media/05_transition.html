@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_transition</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 
+transition-property 
+트랜지션의 대상이 되는 CSS 프로퍼티를 지정한다    all
+
+transition-duration
+트랜지션이 일어나는 지속시간(duration)을 초 단위(s) 또는 밀리 초 단위(ms)로 지정한다 0s
+
+transition-timing-function
+트랜지션 효과를 위한 수치 함수를 지정한다. ease
+
+transition-delay
+프로퍼티가 변화한 시점과 트랜지션이 실제로 시작하는 사이에 대기하는 시간을 초 단위(s) 또는 밀리 초 단위(ms)로 지정한다 0s
+
+transition
+모든 트랜지션 프로퍼티를 한번에 지정한다 (shorthand syntax)
+        */
+
+        div{
+            left: 0px;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background-color: #f00;
+            margin: 5px;
+        }
+        input:checked + div{
+            background-color: #00f;
+            border-radius: 100px;
+            width: 100px;
+            height: 100px;
+            left: 300px;
+        }
+        div:nth-of-type(1){
+            transition-duration: 2s;
+        }
+
+        /*프로퍼티*/
+        div:nth-of-type(2){
+            /*프로퍼티 : 대상만 지연효과 - width*/
+            transition-property: width;
+            transition-duration: 2s;
+        }
+        div:nth-of-type(3){
+            /*프로퍼티 :  전체*/
+            transition-property: all;
+            transition-duration: 2s;
+        }
+        div:nth-of-type(4){
+            /*프로퍼티 :  width, left*/
+            transition-property: width, left;
+            transition-duration: 2s;
+        }
+        div:nth-of-type(5){
+            /*프로퍼티 :  width, left 각 시간 따로 */
+            transition-property: width, left;
+            transition-duration: 4s ,   1s;
+        }
+        div:nth-of-type(6){
+            /*프로퍼티 :  width, left 각 시간 따로   위와 같음*/
+            transition: width 4s, left 1s;
+        }
+
+        /*duration - 시간 지연 */
+        div:nth-of-type(7){
+            
+            transition-duration: 0.5s;
+        }
+        div:nth-of-type(8){
+            /* 1s = 1000ms  */
+            transition-duration: 500ms;
+        }
+
+        .timing_fn:checked ~ div{
+            width: 50px;
+            height: 50px;
+            background-color: #f00;
+            border-radius: 0px;
+            left: 300px;
+            transition-duration: 2s;
+        }
+        .timing_fn:checked +div{
+            transition-timing-function: ease;
+        }
+        .timing_fn:checked +div+div{
+            transition-timing-function: linear;
+        }
+        .timing_fn:checked +div+div+div{
+            transition-timing-function: ease-in;
+        }
+        .timing_fn:checked +div+div+div+div{
+            transition-timing-function: ease-out;
+        }
+        .timing_fn:checked +div+div+div+div+div{
+            transition-timing-function: ease-in-out;
+        }
+        .timing_fn:checked +div+div+div+div+div+div{
+            transition-timing-function:  cubic-bezier(.1,1.24,.93,-0.33);
+        }
+        .timing_fn:checked +div+div+div+div+div+div+div{
+            transition-timing-function:  steps(3);
+        }
+        .timing_fn:checked +div+div+div+div+div+div+div+div{
+            transition-timing-function:  steps(5);
+        }
+        .timing_fn:checked +div+div+div+div+div+div+div+div+div{
+            transition-timing-function:  steps(5, start);
+        }
+        .timing_fn:checked +div+div+div+div+div+div+div+div+div+div{
+            transition-timing-function:  steps(5,end);
+        }
+
+        .delay:checked ~ div{
+            width: 50px;
+            height: 50px;
+            background-color: #f00;
+            border-radius: 0px;
+            left: 300px;
+            transition-duration: 2s;
+        }
+        .delay:checked +div{
+            transition-delay: 0s;
+        }
+        .delay:checked +div+div{
+            transition-delay: 1s;
+        }
+        .delay:checked +div+div+div{
+            transition-delay: 3s;
+        }
+    </style>
+</head>
+<body>
+    <h1>05_transition</h1>
+    <input type="checkbox">
+    <div></div>
+    
+    <h2>transistion-property</h2>
+    <input type="checkbox">width
+    <div></div>
+    <input type="checkbox">all
+    <div></div>
+    <input type="checkbox">width, left
+    <div></div>
+    <input type="checkbox">width 4s, left 1s
+    <div></div>
+    <input type="checkbox">width 4s, left 1s
+    <div></div>
+    
+    <h2>transistion-duration</h2>
+    <input type="checkbox">0.5s
+    <div></div>
+    <input type="checkbox">500ms
+    <div></div>
+    
+    <h2>transistion-timing-function</h2>
+    <input type="checkbox"  class="timing_fn">
+    <div>ease</div>
+    <div >linear</div>
+    <div >ease-in</div>
+    <div >ease-out</div>
+    <div >ease-in-out</div>
+    <div >cubic-bezier</div>
+    <div >steps(3)</div>
+    <div >steps(5)</div>
+    <div >steps_start</div>
+    <div >steps_end</div>
+
+    <h2>transistion-delay</h2>
+    <input type="checkbox"  class="delay">
+    <div>0s</div>
+    <div>1s</div>
+    <div>3s</div>
+</body>
+</html>

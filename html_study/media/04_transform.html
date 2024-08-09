@@ -84,7 +84,7 @@
             transform: rotate(60deg) /*rotateZ 와 같음 */
         }
         .rotate > div:nth-of-type(6){
-            transform: rotate3d(0,0,1000,60deg)
+            transform: perspective(100px)  rotate3d(0,0,1000,60deg)
              /* x, y, z,  각도
                 x,y,z 는 회전축의 벡터 0,0,1 -> rotateZ
              */

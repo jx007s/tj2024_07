@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_tran_menu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            margin: 20px;
+            width: 800px;
+            height: 60px;
+            position: relative;
+            left:100px;
+            overflow: hidden;
+        }
+        nav > div{
+            position: relative;
+            width: 200px;
+            height: 60px;
+            background-color: #ff0;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            
+        }
+        nav > div > div{
+            position: absolute;
+            width: 180px;
+            height: 50px;
+            background-color: rgba(0,255,0,0.5);
+            left: -800px;
+            top:0px;
+            z-index: 1;
+            text-align: center;
+            line-height: 50px;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.08,1.12,.24,.93);
+            box-shadow: 3px 3px 5px #000;
+        }
+        nav > div:hover > div{
+            left: 0px;
+            transform: skewX(30deg);
+        }
+
+
+
+        nav:last-of-type{
+            width: 200px;
+            height: 240px;
+            position: relative;
+            left:100px;
+           
+        }
+
+       
+        nav:last-of-type > div:nth-child(2n+1) > div{
+            position: absolute;
+            width: 180px;
+            height: 50px;
+            background-color: rgba(0,255,0,0.5);
+            left: -200px;
+            top:0px;
+            z-index: 1;
+            text-align: center;
+            line-height: 50px;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.08,1.12,.24,.93);
+            box-shadow: 3px 3px 5px #000;
+            
+        }
+        nav:last-of-type > div:nth-of-type(2n) > div{
+            position: absolute;
+            width: 180px;
+            height: 50px;
+            background-color: rgba(0,255,0,0.5);
+            left: 300px;
+            top:0px;
+            z-index: 1;
+            text-align: center;
+            line-height: 50px;
+            transition-duration: 0.5s;
+            transition-timing-function: cubic-bezier(.08,1.12,.24,.93);
+            box-shadow: 3px 3px 5px #000;
+            
+        }
+
+        nav:last-of-type > div:hover > div{
+            left: 0px;
+            transform: skewX(30deg);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>06_tran_menu</h1>
+    <nav>
+        <div>회사소개<div></div></div>
+        <div>제품<div></div></div>
+        <div>갤러리<div></div></div>
+        <div>고객센터<div></div></div>
+    </nav>
+
+
+    <nav>
+        <div>회사소개<div></div></div>
+        <div>제품<div></div></div>
+        <div>갤러리<div></div></div>
+        <div>고객센터<div></div></div>
+    </nav>
+</body>
+</html>

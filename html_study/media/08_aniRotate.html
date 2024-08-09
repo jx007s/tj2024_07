@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_aniRotate</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        wrapper{
+            display: block;
+            position: relative;
+            left: 100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 200px;
+            background-color: #ff0;
+        }
+
+        @keyframes rrr {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(359deg);
+            }
+        }
+
+
+        wrapper > div{
+            position: absolute;
+            left: 199px;
+            top:50px;
+            width: 2px;
+            height: 150px;
+            background-color: #f00;
+            box-shadow: 3px 3px 5px #000;
+            animation-name: rrr;
+            /* animation-timing-function: linear; */
+            animation-timing-function:steps(60);
+            animation-duration: 60s;
+            transform-origin: bottom center;
+        }
+    </style>
+</head>
+<body>
+    <h1>08_aniRotate</h1>
+    <wrapper>
+        <div></div>
+    </wrapper>
+</body>
+</html>
