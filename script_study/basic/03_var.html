@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_var</title>
+</head>
+<body>
+    <h1>03_var</h1>
+    <script>
+       // 5 + 3 = x
+       x = 5 + 3
+       console.log(x)
+
+       var b   // 변수 선언 :   var 변수명
+                // b는 새로운 변수야
+       console.log(b)  //초기값이 없는 변수 : undefined
+
+       //console.log(c)  선언되지 않은 변수 호출 불가
+
+       b = 10   //변수 대입
+                // 변수 b 의 공간에 값 10을 복사
+
+       console.log(b)  // 변수 호출
+                    // 변수 b 공간의 값 10을 복사하여 가져옴
+
+        b = 20
+        console.log(b)  //호출 직전에 대입된 값으로 호출
+
+        var d = 30      //선언과 동시에 대입
+                        //변수 선언 및 초기화
+                        // 초기화 : 변수 선언 이후 최초 대입
+        console.log(d) 
+        console.log(b+d) //호출 후 연산 
+
+        var b = 1234    //중첩선언 가능 (대입과 유사) - 사용안하는 것을 권장
+        console.log(b)
+
+        var d = 88 , e = '아기상어', f = 99 // 변수 동시 선언 가능
+        console.log(d)
+        console.log(e);
+        console.log(f);
+
+        d = 777 , e = 543, f = '엄마상어' // ,  기준으로 다중대입가능 - 사용안하는 것을 권장
+        console.log(d) , console.log(e) , console.log(f)
+
+        d = 777 ; e = 543 ; f = '엄마상어' // ; 명령구문 종결표시 -사용권장
+        console.log(d) ; console.log(e) ; console.log(f)
+
+        var g = h , h = 200 // g = h 대입시 h 가 선언 및 초기화 되지않아 값을 모름
+        console.log(g)
+        console.log(h)
+        g = h
+        console.log(g)
+        console.log(h)
+
+        var i = 300, j = i
+        console.log(i)
+        console.log(j)
+
+        // 변수선언 이름 규칙
+        //var var = 8 예약어 불가
+        //var 87 = 63 숫자로 시작불가
+        //var 6asd
+        var q12rt = 400
+        console.log(q12rt)
+        //var + = 500  특수기호 불가  예외  _ 
+        var _ = 600
+        console.log(_)
+        var $ = 700
+        console.log($)
+        //var t y = 800  공백 불가
+        var aBcD = 678  // 대소문자 구분
+        var AbCd = 890
+        console.log(aBcD)
+        console.log(AbCd)
+
+        var 국어 = 88       //한글사용가능하나 금지
+        console.log(국어)
+
+/*
+
+bit                                         byte
+                            BCD     ASCII   EBCDIC
+1       2   3       4   5   6       7       8
+2       4   8       16  32  64      128     256
+--------------------------------------------------------------------
+0(off)  00  000 0   0~9     0~9 10  +기호   +부호(0:양수 / 1:음수)
+1(on)   01  001 1           a~z 26
+        10  010 2           A~Z 26
+        11  011 3               62
+            100 4
+            101 5
+            110 6
+            111 7
+*/
+        var aa = 19, bb = 15, cc = 10
+        
+        var dd = aa + bb + cc
+        var ee = aa * bb / 2
+        console.log(dd)
+        console.log(ee)
+
+        //학생번호
+        var studentnumber = 65
+        console.log(studentnumber)
+
+        var stnum = 23
+        console.log(stnum)
+
+        var stNum = 17  //카멜표기법
+        var st_num = 34
+        console.log(stNum)
+        console.log(st_num)
+
+        /*
+        05_member.html
+회원의 이름, 나이, 키, 근무시작,근무종료 시각을 작성하고
+근무시간을 계산하여 출력하세요
+ 
+*/
+
+
+        var zz      //변수 선언만 가능
+        //const xx  //상수 선언만 불가
+        const vv = 1234 //상수선언 - 선언시 초기화 필수
+
+        console.log(vv) //상수 호출 가능
+        //vv = 5678     //상수 대입불가
+        
+        //const vv = 2468 재선언 불가
+        //var vv       변수명과 중첩불가
+
+        const PI = 3.141592     //변경되지 않는 값 선언시 사용
+                            // 관례상 대문자로 표기
+        const MEM_NUM = 19  // 스네이크 표기법 사용
+
+
+    </script>
+</body>
+</html>

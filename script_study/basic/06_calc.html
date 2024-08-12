@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_calc</title>
+</head>
+<body>
+    <h1>06_calc</h1>
+    <script>
+        document.write("<h2>2.1 산술연산자</h2>")
+        /*
+            항 : 숫자,boolean(+,-,*,/,%),   문자(+ : 문자열결합)
+                 true : 1, false : 0
+            결과:숫자                문자
+
+            
+        */
+
+        var a = 15, b = 7
+        
+        document.write(a + b)
+        document.write("<br/>")
+        document.write(a - b)
+        document.write("<br/>")
+        document.write(a * b)
+        document.write("<br/>")
+        document.write(a / b)
+        document.write("<br/>")
+        document.write(a % b)
+        document.write("<br/>")
+
+        a = 100; b = "장서건"
+        
+        document.write(a + b)
+        document.write("<br/>")
+        document.write(a - b)
+        document.write("<br/>")
+        document.write(a * b)
+        document.write("<br/>")
+        document.write(a / b)
+        document.write("<br/>")
+        document.write(a % b)
+        document.write("<br/>")
+
+        a = false; b = true // true : 1, false : 0
+        
+        document.write(a + b)
+        document.write("<br/>")
+        document.write(a - b)
+        document.write("<br/>")
+        document.write(a * b)
+        document.write("<br/>")
+        document.write(a / b)
+        document.write("<br/>")
+        document.write(a % b)
+        document.write("<br/>")
+
+        document.write(2+3 * 4)
+        document.write("<br/>")
+        document.write( (2+3) * 4)
+        document.write("<br/>")
+        a = 15 ; b = 7
+        document.write(a +" + "+ b+" : "+ (a + b)+ "<br/>")
+        document.write(a +" - "+ b+" : "+ (a - b)+ "<br/>")
+        document.write(a +" * "+ b+" : "+ a * b+ "<br/>")
+        document.write(a +" / "+ b+" : "+ a / b+ "<br/>")
+        document.write(a +" % "+ b+" : "+ a % b+ "<br/>")
+
+
+        document.write("<h2>2.2 비교연산자</h2>")
+        /*
+            항 : 숫자,문자,boolean(>,>=,<=,<,==,!=)   다른자료형(==, !=)
+                 true : 1, false : 0
+            결과: boolean
+
+            문자 : a < z , A < a , ㄱ < ㅎ, ㅏ < | ,  z < ㄱ
+                            비교순서 : 초성, 중성, 종성
+
+
+        */
+
+        a = 20; b = 10
+        
+        document.write(a > b)
+        document.write("<br/>")
+        document.write(a >= b)
+        document.write("<br/>")
+        document.write(a <= b)
+        document.write("<br/>")
+        document.write(a < b)
+        document.write("<br/>")
+        document.write(a == b)
+        document.write("<br/>")
+        document.write(a != b)
+        document.write("<hr/>")
+        
+        a = 97; b = "a"
+        
+        document.write(a > b)
+        document.write("<br/>")
+        document.write(a >= b)
+        document.write("<br/>")
+        document.write(a <= b)
+        document.write("<br/>")
+        document.write(a < b)
+        document.write("<br/>")
+        document.write(a == b)
+        document.write("<br/>")
+        document.write(a != b)
+        document.write("<hr/>")
+
+        a = true; b = false
+        
+        document.write(a > b)
+        document.write("<br/>")
+        document.write(a >= b)
+        document.write("<br/>")
+        document.write(a <= b)
+        document.write("<br/>")
+        document.write(a < b)
+        document.write("<br/>")
+        document.write(a == b)
+        document.write("<br/>")
+        document.write(a != b)
+        document.write("<hr/>")
+
+        a = 20; b = 10
+        
+        
+        document.write(a +" > "+b +" : " + (a > b)+"<br/>")
+
+
+        document.write("<h2>2.3 논리연산자</h2>")
+        /*
+            항 : boolean
+            결과: boolean
+
+            and &&  : A && B  - A, B 모두 true 인경우 true
+            or  ||  : A || B  - A, B 중 한개이상 true 인경우 true
+
+                    true       ,    false
+            문자 : '내용',' '        '' , ""
+            숫자 : 0 제외              0
+
+        */
+
+        a = false; b = false
+        
+        document.write(a && b)
+        document.write("<br/>")
+        document.write(a || b)
+        document.write("<hr/>")
+
+        a = 123; b = 456
+        
+        document.write(a && b)
+        document.write("<br/>")
+        document.write(a || b)
+        document.write("<hr/>")
+
+        a = "아기상어"; b = ''
+        
+        document.write(a && b)
+        document.write("<br/>")
+        document.write(a || b)
+        document.write("<hr/>")
+
+        a = "아기상어"; b = false
+        
+        document.write(a && b)
+        document.write("<br/>")
+        document.write(a || b)
+        document.write("<hr/>")
+
+        a = "아기상어"; b = 0
+        
+        document.write(a && b)
+        document.write("<br/>")
+        document.write(a || b)
+        document.write("<hr/>")
+
+        var age = 50 , color = '녹색'
+        //var ageChk = age <= 25
+        //var colorChk = color == '빨강'
+        //document.write('And : ' + (ageChk && colorChk) +"<br/>")
+        //document.write('Or : ' + (ageChk || colorChk) +"<br/>")
+
+        document.write('And : ' + (age <= 25 && color == '빨강') +"<br/>")
+        document.write('Or : ' + (age <= 25+30 || color == '빨강') +"<br/>")
+
+
+        document.write("<h2>2.5 shift연산자</h2>")
+        /*
+            항 : 숫자
+            결과: 숫자
+
+            <<  : 왼쪽 shift 자리밀기
+            6 << 2
+            0110 << 2
+            0110 00
+            01 1000
+            16 + 8   ----- 24
+
+            >>  : 오른쪽 shift 자리밀기
+
+            6 >> 2
+            0110 >> 2
+            00 0110 
+            0001 10
+                 -- 삭제
+            0001  ----- 1
+            
+            
+            -6 >> 2           -2
+            
+         1111 1111 1111 1111 1111 1111 1111 1010 >> 2
+         11 1111 1111 1111 1111 1111 1111 1111 10   10
+                                                   ---- 삭제
+         1111 1111 1111 1111 1111 1111 1111 1110
+
+         -6 >>> 2   1073741822
+         1111 1111 1111 1111 1111 1111 1111 1010 >>> 2
+         00 1111 1111 1111 1111 1111 1111 1111 10   10
+                                                   ---- 삭제
+         0011 1111 1111 1111 1111 1111 1111 1110  --- 1,073,741,822
+
+
+
+         1byte                2byte
+         0000 0000  0     0   0000 0000 0000 0000
+         0000 0001  1     1   0000 0000 0000 0001  
+         ...
+         0111 1101  125   125 0000 0000 0111 1101
+         0111 1110  126   126 0000 0000 0111 1110
+         0111 1111  127   127 0000 0000 0111 1111
+         1000 0000 -128   128 0000 0000 1000 0000
+         1000 0001 -127   129 0000 0000 1000 0001
+         1000 0010 -126   130 0000 0000 1000 0010
+         ...
+         1111 1101   -3   253 0000 0000 1111 1101
+         1111 1110   -2   254 0000 0000 1111 1110
+         1111 1111   -1   255 0000 0000 1111 1111
+        */
+        
+        document.write(6 >> 2)
+        document.write("<br/>")
+        document.write(6 << 2)
+        document.write("<br/>")
+        document.write(-6 >> 2)
+        document.write("<br/>")
+        document.write(-6 >>> 2)
+        document.write("<br/>")
+
+        /*우선순위
+        ()
+        *,/,% 
+        +,-
+        shift
+        비교
+        bit
+        논리
+        */
+
+    </script>
+</body>
+</html>
