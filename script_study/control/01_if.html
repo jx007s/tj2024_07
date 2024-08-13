@@ -22,9 +22,125 @@
         
         */
        if(0){
-            document.write("if 참이지롱<br/>")
+            document.write("if 참이지롱1<br/>")
+            document.write("if 참이지롱1<br/>")
+            document.write("if 참이지롱1<br/>")
        }
-       document.write("if 종료 -----------<br/>")
+       document.write("if 종료 1-----------<br/>")
+       if(0)
+            document.write("if 참이지롱2<br/>") //이하 1개 구문만 if문에 종속
+        
+        
+        document.write("if 참이지롱2<br/>")
+        document.write("if 참이지롱2<br/>")
+       
+       document.write("if 종료 2-----------<br/>")
+       if(0){
+       }
+       document.write("if 종료 3-----------<br/>")
+       //if(0)  이하 1개 구문 if문에 종속되어야 함
+
+       if(0){   //머리
+            document.write("if~else 참이지롱1<br/>")
+       }else{   //꼬리  -- 단독 사용 불가 , 위치 변경 불가
+            document.write("if~else 거짓부렁1<br/>")
+       }
+       document.write("if~else 종료 1-----------<br/>")
+      
+/*
+       else{
+            document.write("if~else 거짓부렁2<br/>")
+       }if(0){
+            document.write("if~else 참이지롱1<br/>")
+       }
+*/
+
+       var jum = 88
+       if(jum >= 80){
+
+            document.write("우수<br/>")
+       }
+
+
+
+
+       if(jum >= 60){       //새로운 if
+            document.write("양호<br/>")
+        }
+        else{  
+            document.write("미흡<br/>")
+        }
+       document.write("if~else 종료 2-----------<br/>")
+
+
+        jum = 35
+        if(jum >= 80){
+
+            document.write("우수1<br/>")
+        }
+        else if(jum >= 60){    
+            document.write("양호1<br/>")
+        }
+        else{  
+            document.write("미흡1<br/>")
+        }
+        document.write("if~else if~else 종료 1-----------<br/>")
+
+        // else if(jum >= 60){    
+        //     document.write("양호1<br/>")
+        // }
+
+        // if(jum >= 80){
+
+        //     document.write("우수1<br/>")
+        // }
+        // else{  
+        //     document.write("미흡1<br/>")
+        // }
+        // else if(jum >= 60){    
+        //     document.write("양호1<br/>")
+        // }
+
+
+        // else if(jum >= 60){    
+        //     document.write("양호1<br/>")
+        // }
+        // if(jum >= 80){
+
+        //     document.write("우수1<br/>")
+        // }
+        
+        if(jum >= 80){
+            document.write("우수2<br/>")
+        }
+        else if(jum >= 60){    
+            document.write("양호2<br/>")
+        }
+        document.write("if~else if~else 종료 2-----------<br/>")
+        
+        //  점층구조   80 > 60 > 40 
+        if(jum >= 80){
+
+            document.write("우수3<br/>")
+        }
+        else if(jum >= 60){    
+            document.write("양호3<br/>")
+            if(jum % 2){    //if 문 안에 if문
+                document.write("홀수<br/>")
+            }else{
+                document.write("짝수<br/>")
+            }
+        }
+        else if(jum >= 40){    
+            document.write("정상3<br/>")
+        }
+        // else if(jum >= 60){    
+        //     document.write("양호3<br/>")
+        // }
+        else{  
+            document.write("미흡3<br/>")
+        }
+        document.write("if~else if~else 종료 3-----------<br/>")
     </script>
 </body>
 </html>

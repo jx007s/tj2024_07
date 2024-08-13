@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>07_exam</title>
     <script>
-        const kor = 76, eng = 88, mat = 94
+        const kor = 86, eng = 88, mat = 89
         var tot = kor + eng + mat
         var avg = tot / 3
         var avg2 = (tot - tot % 3) / 3
@@ -14,6 +14,24 @@
                     avg >= 80 ? "우" :
                     avg >= 70 ? "미" :
                     avg >= 60 ? "양" : "가"
+
+        var grade2
+
+        if(avg >= 90){
+            grade2 = "수"
+        }else if(avg >= 80){
+            grade2 = "우"
+            if(kor >= 80 && eng >= 80 && mat  >= 80 ){
+                grade2 += "(균등)"
+            }
+
+        }else if(avg >= 70){
+            grade2 = "미"
+        }else if(avg >= 60){
+            grade2 = "양"
+        }else{
+            grade2 = "가"
+        }
     </script>
 </head>
 <body>
@@ -46,6 +64,10 @@
         <tr>
             <td>등급</td>
             <td><script>document.write(grade)</script></td>
+        </tr>
+        <tr>
+            <td>등급2</td>
+            <td><script>document.write(grade2)</script></td>
         </tr>
     </table>
     

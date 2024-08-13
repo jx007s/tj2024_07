@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_varScope</title>
+</head>
+<body>
+    <h1>02_varScope</h1>
+
+    <script>
+
+        /*
+            var : 외부변수 - if 내부에서 선언해도 외부에서 접근가능
+            const - if문 내부에서 상수 선언 -- 선언한 블록내에서만 접근가능, 외부 접근불가
+            let - 내부(블록)변수 - 선언한 블록 구간내에서만 접근 가능, 외부 접근 불가
+        */
+        var a = 10, b = 20, c = 30
+        const cc = 40
+        let aaa = 1000
+
+        document.write("메인1 : "+a+","+b+","+c+","+cc+","+aaa+"<br/>")
+
+        if(1){
+            var aa = 100    //if문 내부에서 선언한 외부변수
+            const dd = 400  //if문 내부에서 상수 선언 -- 블록내에서만 접근가능
+            let bbb = 2000 //if문 내부에서 변수선언 -- 내부(블록)변수, 선언한 블록 구간내에서만 접근 가능, 외부 접근 불가
+            let b = 1234    // 외부 var 변수와 내부 변수 이름 중첩 선언
+
+            //외부에서 선언한 외부변수 호출, 대입 가능
+            // b : let b = 1234로 인지 : 우선순위 - 블록내부 > 메인 
+            document.write("&nbsp;&nbsp; if1 : "+a+","+b+","+c+","+cc+","+aaa+"<br/>")
+            document.write("&nbsp;&nbsp; if1 : "+aa+","+dd+","+bbb+"<br/>")
+            a++ ; b++ ; c++ ; aa++ ; aaa++
+            //cc++
+        }else{
+            document.write("&nbsp;&nbsp; else : "+a+","+b+","+c+","+cc+"<br/>")
+            //if 안에서 선언한 변수 호출불가
+            document.write("&nbsp;&nbsp; else : "+aa+","+dd+"<br/>")
+            // 다른 블록의 const  접근 불가
+            //document.write("&nbsp;&nbsp; else : "+dd+"<br/>")
+        }
+
+        //var - if문 내부에서 선언한 외부변수 호출, 대입 가능
+        //const - if문 내부에서 상수 선언 -- 블록내에서만 접근가능, 외부 접근불가
+        //let - 내부(블록)변수 - 선언한 블록 구간내에서만 접근 가능, 외부 접근 불가
+        // b : let b 가 소멸되었으므로 메인에서 선언한 var b 로 인지
+        //document.write("메인2 : "+dd+","+bbb+"<br/>")
+        document.write("메인2 : "+a+","+b+","+c+","+cc+","+aa+","+aaa+"<br/>")
+        a++ ; b++ ; c++ ; aa++ ; aaa++
+
+
+        if(1){
+            
+            document.write("&nbsp;&nbsp; if2 : "+a+","+b+","+c+","+cc+","+aaa+"<br/>")
+            document.write("&nbsp;&nbsp; if2 : "+aa+"<br/>")
+            //const - 다른 블록에서 선언한 상수 접근 불가
+            //let -  다른 블록에서 선언한 내부(블록)변수 접근 불가
+            //document.write("&nbsp;&nbsp; if2 : "+aa+","+dd+","+bbb+"<br/>")
+            a++ ; b++ ; c++ ; aa++ ; aaa++
+            
+        }
+
+
+        document.write("메인3 : "+a+","+b+","+c+","+cc+","+aa+","+aaa+"<br/>")
+
+
+    </script>
+
+
+</body>
+</html>
