@@ -372,7 +372,32 @@
         document.write(a)
         document.write("<br/>")
 
+        document.write("<h2>3. 조건연산자</h2>")
+        /*
+            boolean ?  true 값 : false 값
 
+        */
+        
+        document.write(true ? "참이지롱" : 123)
+        document.write("<br/>")
+        document.write(false ? "참이지롱" : 123)
+        document.write("<br/>")
+
+        var jum = 88
+
+        var res = jum >=80 ? "합격" : "불합격"
+
+        document.write(res)
+        document.write("<br/>")
+
+        // 순차처리 :  80 > 60 >40
+        res =   jum >= 80 ? "우수" : 
+                jum >= 60 ? "양호" :
+                //jum >= 80 ? "우수" : 
+                jum >= 40 ? "정상" : "미달"
+
+        document.write(res)
+        document.write("<br/>")
 
         /*우선순위
         ()
@@ -383,7 +408,20 @@
         비교
         bit
         논리
+        조건(3항)
         복합대입
+
+
+
+07_exam.html
+국어, 영어, 수학 점수를 가지고
+총점, 평균을 계산하세요
+평균의 점수를 이용하여 등급을 출력하세요
+90 점이상 : 수
+80 점이상 : 우
+70 점이상 : 미
+60 점이상 : 양
+나머지 : 가
         */
 
     </script>
