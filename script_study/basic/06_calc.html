@@ -8,6 +8,98 @@
 <body>
     <h1>06_calc</h1>
     <script>
+         document.write("<h2>1. 1항연산자</h2>")
+        /*
+                 param               ret
+            ! : boolean   !true =>  false
+            - :  숫자                -5
+        ++/-- : 숫자  
+            
+        */
+
+        var c = true
+        
+        document.write(c)
+        document.write("<br/>")
+        document.write(!c)
+        document.write("<hr/>")
+        c = 123
+        document.write(c)
+        document.write("<br/>")
+        document.write(!c)
+        document.write("<hr/>")
+        c = 0
+        document.write(c)
+        document.write("<br/>")
+        document.write(!c)
+        document.write("<hr/>")
+        c = "아기상어"
+        document.write(c)
+        document.write("<br/>")
+        document.write(!c)
+        document.write("<hr/>")
+        c = ''
+        document.write(c)
+        document.write("<br/>")
+        document.write(!c)
+        document.write("<hr/>")
+
+        c = 5
+        document.write(c)
+        document.write("<br/>")
+        document.write(-c)
+        document.write("<hr/>")
+
+        c = 5
+        document.write(c)
+        document.write("<br/>")
+        //c = c + 1
+        c++         //후치연산
+        document.write(c)
+        document.write("<br/>")
+        c--
+        document.write(c)
+        document.write("<br/>")
+        //c**
+        //c//
+        //c%%
+        
+        ++c         //전치연산
+        document.write(c)
+        document.write("<br/>")
+
+        c = 10
+        document.write(c++) //호출 -> 후치연산
+        document.write("<br/>")
+        document.write(c)
+        document.write("<br/>")
+
+        c = 20
+        document.write(++c) //전치연산 -> 호출
+        document.write("<br/>")
+        document.write(c)
+        document.write("<hr/>")
+
+        var aa=5, bb = 6, cc = 10
+        var dd = aa++ + ++cc - bb-- * --aa + aa++
+        /*
+                  5   +   11  - 6   *  5   +  5
+                  5   +   11  -   30       +  5   : -9
+
+            aa:   6                    5      6
+            bb:                 5
+            cc:           11
+        
+        */
+        document.write(aa) 
+        document.write("<br/>")
+        document.write(bb) 
+        document.write("<br/>")
+        document.write(cc) 
+        document.write("<br/>")
+        document.write(dd) 
+
+
         document.write("<h2>2.1 산술연산자</h2>")
         /*
             항 : 숫자,boolean(+,-,*,/,%),   문자(+ : 문자열결합)
@@ -252,14 +344,46 @@
         document.write(-6 >>> 2)
         document.write("<br/>")
 
+
+        document.write("<h2>2.6 복합대입연산자</h2>")
+        /*
+            항 : 숫자
+            결과: 숫자
+
+        */
+        a = 5
+        document.write(a)
+        document.write("<br/>")
+
+        //a = a + 3
+        a += 3
+        document.write(a)
+        document.write("<br/>")
+        a -= 2
+        document.write(a)
+        document.write("<br/>")
+        a *= 5
+        document.write(a)
+        document.write("<br/>")
+        a /= 2
+        document.write(a)
+        document.write("<br/>")
+        a %= 7
+        document.write(a)
+        document.write("<br/>")
+
+
+
         /*우선순위
         ()
+        ++ , --
         *,/,% 
         +,-
         shift
         비교
         bit
         논리
+        복합대입
         */
 
     </script>
