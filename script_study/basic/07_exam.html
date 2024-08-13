@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_exam</title>
+    <script>
+        const kor = 76, eng = 88, mat = 94
+        var tot = kor + eng + mat
+        var avg = tot / 3
+        var avg2 = (tot - tot % 3) / 3
+
+        var grade = avg >= 90 ? "수" :
+                    avg >= 80 ? "우" :
+                    avg >= 70 ? "미" :
+                    avg >= 60 ? "양" : "가"
+    </script>
+</head>
+<body>
+    <h1>07_exam</h1>
+    <table border="">
+        <tr>
+            <td>국어</td>
+            <td><script>document.write(kor)</script></td>
+        </tr>
+        <tr>
+            <td>영어</td>
+            <td><script>document.write(eng)</script></td>
+        </tr>
+        <tr>
+            <td>수학</td>
+            <td><script>document.write(mat)</script></td>
+        </tr>
+        <tr>
+            <td>총점</td>
+            <td><script>document.write(tot)</script></td>
+        </tr>
+        <tr>
+            <td>평균</td>
+            <td><script>document.write(avg)</script></td>
+        </tr>
+        <tr>
+            <td>평균2</td>
+            <td><script>document.write(avg2)</script></td>
+        </tr>
+        <tr>
+            <td>등급</td>
+            <td><script>document.write(grade)</script></td>
+        </tr>
+    </table>
+    
+    
+
+</body>
+</html>
