@@ -8,7 +8,35 @@
 <body>
     <h1>06_mulFor</h1>
     <script>
-        
+        for(let h = 1 ; h <= 12 ; h++){
+            document.write("<h3>",h,"시</h3>")
+
+            for(let m = 0 ; m < 60 ; m++){
+                document.write(h," : ",m,"<br/>")
+            }
+            //document.write(h," : ",m,"<br/>")
+        }
+        document.write("<hr/>")
+
+        for(let dan = 2 ; dan < 10 ; dan++){
+            document.write("<h3>",dan,"단</h3>")
+
+            for(let gob = 1 ; gob < 10 ; gob++){
+                document.write(dan+" x "+gob+" = "+dan*gob+"<br/>")
+            }
+        }
+        document.write("<hr/>")
+        for(let gob = 1 ; gob < 10 ; gob++){
+            for(let dan = 2 ; dan < 10 ; dan++){
+
+                document.write(dan+" x "+gob+" = "+dan*gob)
+                if(dan*gob <10){
+                    document.write("&nbsp")    
+                }
+                document.write("&nbsp;&nbsp;&nbsp;&nbsp;")
+            }
+            document.write("<br/>")
+        }
     </script>
 </body>
 </html>
