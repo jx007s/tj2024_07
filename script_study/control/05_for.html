@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_for</title>
+</head>
+<body>
+    <h1>05_for</h1>
+    <script>
+        /*
+        무한반복
+        for(  ;  ;  ){
+           // document.write("for문 실행 <br/>")
+           console.log("for문 실행")
+        }*/
+
+        for(let i = 0  ; i<10  ; i++  ){
+           //초기값    ;  조건  ; 증감
+           //console.log("for문 실행", i)
+           document.write("for문 실행", i,"<br/>")
+        }
+        document.write("<hr/>")
+
+        var tot = 0
+        for(let i = 1  ; i<=10  ; i++ ){
+           tot += i
+           document.write( i," -> " ,tot , "<br/>")
+        }
+
+        /*  1 -> 100 짝수들의 합 */
+        tot = 0
+        for(let i = 1 ; i<=100 ; i++){
+            if(i%2 == 0){
+                tot += i
+                document.write( i," -> " ,tot , "<br/>")
+            }
+        }
+        document.write( "방법1 : " ,tot , "<br/>")
+
+        tot = 0
+        for(let i = 2 ; i<=100 ; i+=2){
+           
+            tot += i
+            document.write( i," -> " ,tot , "<br/>")
+           
+        }
+        document.write( "방법2 : " ,tot , "<br/>")
+
+        tot = 0
+        for(let i = 1 ; i<=100 ; i+=2){
+            i += i % 2
+            tot += i
+            document.write( i," -> " ,tot , "<br/>")
+           
+        }
+        document.write( "방법3 : " ,tot , "<br/>")
+
+
+    </script>
+</body>
+</html>
