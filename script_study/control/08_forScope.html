@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_forScope</title>
+</head>
+<body>
+    <h1>08_forScope</h1>
+    <script>
+
+        let a = 100
+        for(let i = 0; i<3;i++){
+            //let i 반복변수 : 구간 반복할지라도 최초 선언 후 소멸되지 않고 유지
+                            // for문 탈출시 소멸
+
+            let j = 10  //내부변수 : 구간 반복마다 선언, 소멸 반복
+            var k = 20  //외부변수 : 구간 반복마다 선언 --> 재 초기화
+
+            a++
+            j++
+            k++
+            document.write("for 1 : ", i," , ", j ," , ", a ," , ", k , "<br/>")
+        }
+        document.write("for 1 종료 ",a," , ", k,"------- <br/>")
+
+        let b = 200
+        for( ;b <400; b+=100){ //반복변수를 외부변수로 사용
+            document.write("for 2 : ", b , "<br/>")
+        }
+        document.write("for 2 종료 ",b,"------- <br/>")
+
+        let c = 300
+        for(c = 100 ;c <400; c+=100){ //반복변수를 외부변수로 사용
+            //초기값 대입
+            document.write("for 3 : ", c , "<br/>")
+        }
+        document.write("for 3 종료 ",c,"------- <br/>")
+
+        let d = 100
+        for(d ;d <400; d+=100){ //반복변수를 외부변수로 사용
+            //초기값
+            document.write("for 4 : ", d , "<br/>")
+        }
+        document.write("for 4 종료 ",d,"------- <br/>")
+
+        for(var e = 10; e < 50 ; e+=10){ 
+            //반복변수를  var로 선언 : 외부변수로 선언
+            
+            document.write("for 5 : ", e , "<br/>")
+        }
+        //반복문 이후에도 외부변수로 사용
+        document.write("for 5 종료 ",e,"------- <br/>")
+
+        for(let f = 0; f<3;f++){
+            //let f 반복변수 
+            
+            //document.write("for 6 시작: ", f," <br/>")
+            //f 를 내부변수로 인지 -- 선언 전으로 해석 ==> 에러발생
+
+
+            let j = 10  //내부변수 : 구간 반복마다 선언, 소멸 반복
+            let f = 1234    //반복변수와 내부변수 중첩가능 - 내부 > 반복
+        
+            document.write("for 6  끝: ", f," , ", j  , "<br/>")
+        }
+        document.write("for 6 종료 ------- <br/>")
+
+        let g = 456
+        for(let g = 0; g<3;g++){ //반복(내부) 변수 와 외부변수 중첩가능
+               //우선순위 :  내부 > 반복 > 외부
+
+            document.write("for 7  끝: ", g," , " , "<br/>")
+        }
+
+        //외부 변수 g 호출
+        document.write("for 7 종료 : ",g,"------- <br/>")
+
+        /*
+        3.6.9 게임을 구현하세요
+        1 -> 20
+        1 2 짝 4 5 짝 7 8 짝 10 11 12 짝 14 15 짝 17 18 짝 20
+        
+        */
+    </script>
+</body>
+</html>

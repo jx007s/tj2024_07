@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_forStep</title>
+</head>
+<body>
+    <h1>07_forStep</h1>
+    <script>
+        var tot = 0                                 // --- 1
+        for(let i = 1;     i<4;   i++){
+            //let i = 1                                 ---2
+            //           i(1)<4                         ---3
+
+            //                    i(2)++                ---6
+            //           i(2)<4                         ---7
+
+            //                    i(3)++                ---10
+            //           i(3)<4                         ---11
+
+            //                    i(4)++                ---14
+            //           i(4)<4                         ---15  : for문 탈출
+
+            tot += i
+            // tot(1) += i(1)                           ---4
+            // tot(3) += i(2)                           ---8
+            // tot(6) += i(3)                           ---12
+
+
+            document.write(i," ", tot, "<br/>")       //---5,9,13
+        }
+        document.write("for 문 종료<br/>")              //--- 16
+    </script>
+</body>
+</html>
