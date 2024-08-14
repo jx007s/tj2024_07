@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_tsn</title>
+</head>
+<body>
+    <h1>09_tsn</h1>
+    <script>
+         document.write("숫자 one  one%3<br/>")
+        for(let i = 1; i <= 20 ; i++){
+            let one = i%10
+            // if(one%3 || !one){
+            //     document.write(i)
+            // }else{
+            //     document.write("짝")
+            // }
+            // document.write("<br/>")
+            document.write(i," --- ",one," ---- ", one%3,"<br/>")  
+        }
+        document.write("<hr/>")
+
+        for(let i = 1; i <= 100 ; i++){
+            let one = i%10
+            let ten = (i-one)/10
+
+            let ttt = ""
+
+            if(!(one%3) && one){
+                ttt += "짝"
+            }
+            if(!(ten%3) && ten){
+                ttt += "짝"
+            }
+            if(ttt == ""){
+                ttt = i
+            }
+
+            document.write(i," --- ",ten," ---- ",one ,"------",ttt,"<br/>")  
+        }
+
+    </script>
+</body>
+</html>
