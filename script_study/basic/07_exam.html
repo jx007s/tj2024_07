@@ -32,6 +32,29 @@
         }else{
             grade2 = "가"
         }
+        
+        var grade3
+
+        switch(avg2-avg2%10){
+            case 90:
+                grade3 = "수"
+                break
+            case 80:
+                grade3 = "우"
+                break
+            case 70:
+                grade3 = "미"
+                break
+            case 60:
+                grade3 = "양"
+                break
+            default:
+                grade3 = "가"
+                break
+
+        }
+
+
     </script>
 </head>
 <body>
@@ -68,6 +91,10 @@
         <tr>
             <td>등급2</td>
             <td><script>document.write(grade2)</script></td>
+        </tr>
+        <tr>
+            <td>등급3</td>
+            <td><script>document.write(grade3)</script></td>
         </tr>
     </table>
     

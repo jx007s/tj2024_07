@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_switch</title>
+</head>
+<body>
+    <h1>03_switch</h1>
+    <script>
+/*
+switch - 값에 의한 분기
+case 구간 순서대로 작성하지 않아도 됨
+break - 현재 구간 탈출
+값 - 정수, 실수, boolean , 문자열 모두 가능
+default - 기본값 
+
+*/
+
+        switch(20){ //찾고자 하는 값 : 20
+            case 30:
+                document.write("30입니다. <br/>")
+            case 10:
+                document.write("10입니다. <br/>")
+            case 20:    //동일한 값이 있는 case로 이동
+                document.write("20입니다. <br/>")
+            case 40:
+                document.write("40입니다. <br/>")
+            case 30:
+                document.write("30입니다.2 <br/>") 
+        }
+        document.write("switch 종료 1 --------------<br/>") 
+
+        switch(40){ //찾고자 하는 값 : 20
+            case 30:
+                document.write("30입니다. <br/>")
+                break 
+            case 10:
+                document.write("10입니다. <br/>")
+                break 
+            case 20:    //동일한 값이 있는 case로 이동
+                document.write("20입니다. <br/>")
+                break       // 현재 구간 탈출
+            case 40:
+                document.write("40입니다. <br/>")
+                break 
+            case 30:
+                document.write("30입니다.2 <br/>") 
+        }
+        document.write("switch 종료 2 --------------<br/>")
+        
+        switch("아기상어"){
+            case 30:
+                document.write("30입니다. <br/>")
+                break 
+            case true:
+                document.write("true입니다. <br/>")
+                break 
+            case "아기상어": 
+                document.write("아기상어 입니다. <br/>")
+                break  
+            case 123.456:
+                document.write("123.456입니다. <br/>")
+                break 
+        }
+        document.write("switch 종료 3 --------------<br/>")
+
+        switch(70){
+            case 30:
+                document.write("30입니다. <br/>")
+                break 
+            case 10:
+                document.write("10입니다. <br/>")
+                break
+            default:  // case 에 없는 기본값 처리 (else 와 같음)
+                document.write("기본값입니다. <br/>")
+                break
+            case 50: 
+                document.write("50 입니다. <br/>")
+                break  
+        }
+        document.write("switch 종료 4 --------------<br/>")
+
+        var basic = 300 , grade = "파견"
+
+        var bonus
+
+        switch(grade){
+            case "부장":
+                bonus = 0.5
+                break
+            case "과장":
+                bonus = 0.3
+                break
+            case "대리":
+                bonus = 0.2
+                break
+            case "사원":
+                bonus = 0.1
+                break
+            default:
+                bonus = 0
+        }
+
+         var money = basic + basic * bonus
+
+         document.write(money)
+
+    </script>
+</body>
+</html>

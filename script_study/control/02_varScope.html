@@ -14,6 +14,11 @@
             var : 외부변수 - if 내부에서 선언해도 외부에서 접근가능
             const - if문 내부에서 상수 선언 -- 선언한 블록내에서만 접근가능, 외부 접근불가
             let - 내부(블록)변수 - 선언한 블록 구간내에서만 접근 가능, 외부 접근 불가
+
+            중첩 - var, const, let 중첩 가능
+            var - 일반적인 var 중첩과 동일 -- 대입과 동일
+            내부 const, let : 외부 var 중첩될 경우 내부 변수가 우선순위를 가짐
+            내부 const, let > var
         */
         var a = 10, b = 20, c = 30
         const cc = 40
@@ -26,13 +31,26 @@
             const dd = 400  //if문 내부에서 상수 선언 -- 블록내에서만 접근가능
             let bbb = 2000 //if문 내부에서 변수선언 -- 내부(블록)변수, 선언한 블록 구간내에서만 접근 가능, 외부 접근 불가
             let b = 1234    // 외부 var 변수와 내부 변수 이름 중첩 선언
+            const c = 5678  // 외부 var 변수와 const 이름 중첩 선언
+            var a = 9012    //일반적인 var 사용과 동일
 
             //외부에서 선언한 외부변수 호출, 대입 가능
-            // b : let b = 1234로 인지 : 우선순위 - 블록내부 > 메인 
+            // b : let b = 1234로 인지 : 우선순위 - 블록내부, const > 메인 
             document.write("&nbsp;&nbsp; if1 : "+a+","+b+","+c+","+cc+","+aaa+"<br/>")
             document.write("&nbsp;&nbsp; if1 : "+aa+","+dd+","+bbb+"<br/>")
-            a++ ; b++ ; c++ ; aa++ ; aaa++
+            //a++ ; b++ ; c++ ; aa++ ; aaa++
+            a++ ; b++ ;  aa++ ; aaa++
             //cc++
+
+             
+            if(1){
+                let qq = "let_qq"
+                document.write("&nbsp;&nbsp;&nbsp;&nbsp; if1_sub : "+a+","+b+","+c+","+cc+","+aaa+"<br/>")
+                document.write("&nbsp;&nbsp;&nbsp;&nbsp; if1_sub : "+aa+","+dd+","+bbb+","+qq+"<br/>")
+            }
+
+            //document.write("&nbsp;&nbsp; if1 : "+qq+"<br/>")
+
         }else{
             document.write("&nbsp;&nbsp; else : "+a+","+b+","+c+","+cc+"<br/>")
             //if 안에서 선언한 변수 호출불가
