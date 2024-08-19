@@ -16,6 +16,47 @@
 
             document.write("<br/>")
         }
+        document.write("<h3>2</h3>")
+
+        for(let line=0; line<5; line++){
+            for(let star = line; star < 5; star++){
+                document.write("*")    
+            }
+
+            document.write("<br/>")
+        }
+
+        /*
+&&&&*
+&&&**
+&&***
+&****
+*****
+
+*/
+        document.write("<h3>3</h3>")
+
+        for(let line=0; line<5; line++){
+            for(let star = line+1; star < 5; star++){
+                document.write("&nbsp;")    
+            }
+            for(let star = 0; star <= line; star++){
+                document.write("*")    
+            }
+
+            document.write("<br/>")
+        }
+        document.write("<h3>5</h3>")
+        for(let line=0; line<5; line++){
+            for(let star = line+1; star < 5; star++){
+                document.write("&nbsp;")    
+            }
+            for(let star = 0; star <= line*2; star++){
+                document.write("*")    
+            }
+
+            document.write("<br/>")
+        }
 
     </script>
 </body>

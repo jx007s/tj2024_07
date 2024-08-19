@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_breakContinue</title>
+</head>
+<body>
+    <h1>11_breakContinue</h1>
+    <script>
+        for(let i = 0; i < 5; i++) /* 중괄호 없이 사용할 경우 1개의 구문만 종속*/
+            document.write("for문 실행 1 :"+i+"</br>")
+
+        /* for문에 종속되지 않음
+        document.write("for문 실행 2 :"+i+"</br>")
+        document.write("for문 실행 3 :"+i+"</br>")
+        document.write("for문 실행 4 :"+i+"</br>")
+        */
+        document.write("for문 종료 --------------</br>")
+
+        for(let i = 0; i < 5; i++){
+            document.write("break 시작 :"+i+"</br>")
+            if(i==2){   //탈출검사를 중간에 하겠다
+                break
+            }
+            document.write("break 끝 :"+i+"</br>")
+        }
+        document.write("break 종료 --------------</br>")  
+
+        for(let i = 0; i < 5; i++){
+            document.write("continue 시작 :"+i+"</br>")
+            if(i==2){   
+                continue // 이하 구문을 실행하지 않겠다
+            }
+            document.write("continue 끝 :"+i+"</br>")
+        }
+        document.write("continue 종료 --------------</br>")
+
+        for(let i = 0; i < 5; i++){
+
+            document.write("if 시작 :"+i+"</br>")
+            if(i!=2){   
+                document.write("if 끝 :"+i+"</br>")
+            } 
+        }
+        document.write("if 종료 --------------</br>")
+    </script>
+</body>
+</html>
