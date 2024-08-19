@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_mulBreak</title>
+</head>
+<body>
+    <h1>13_mulBreak</h1>
+    <script>
+        for(let big=100; big <= 500 ; big+=100){
+            document.write(`big ${big} 시작 </br>`)
+
+            for(let small=1 ; small <= 4 ; small++){
+                document.write(`>>>>>> small ${small} 시작 </br>`)
+
+                if(small==2){
+                //if(big==200){
+                    break  // break를 포함하고 있는 가장 작은 for문 탈출
+                }
+
+                document.write(`>>>>>> small ${small} 끝 </br>`)
+            }
+
+            document.write(`big ${big} 끝 </br>`)
+        }
+
+        document.write("<hr/>")
+
+        /// BBB  반복문의 레이블(이름)
+        BBB:for(let big=100; big <= 500 ; big+=100){
+            document.write(`big ${big} 시작 </br>`)
+
+            SSS:for(let small=1 ; small <= 4 ; small++){
+                document.write(`>>>>>> small ${small} 시작 </br>`)
+
+                if(small==2){
+            
+                    break BBB // 레이블에 해당하는 반복문 탈출
+                }
+
+                document.write(`>>>>>> small ${small} 끝 </br>`)
+            }
+
+            document.write(`big ${big} 끝 </br>`)
+        }
+    </script>
+</body>
+</html>

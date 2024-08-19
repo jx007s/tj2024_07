@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_while</title>
+</head>
+<body>
+    <h1>15_while</h1>
+    <script>
+        let i = 1       //초기값
+        while(i<5){     //조건
+            document.write("while 실행 : "+i+"<br/>")
+            i++         //증감
+        }
+        document.write("while 종료 ---------------- <br/>")
+
+        /*
+            1 -> 50 prime number 를 출력하세요 - for문 사용금지
+        */
+       i = 1
+       while(i<=50){
+            //document.write(i+"<br/>")
+
+            let no = 2
+            let pp = true
+            while(no<i){  //     8(i)  :  1:x,   2,3,4,5,6,7,(no)   8:x
+                //document.write(no+" , ")
+                if(i%no==0){
+                    pp = false
+                }
+                no++
+                
+            }
+            //document.write("<br/>")
+            if(pp){
+                document.write(i+"<br/>")
+            }
+            
+            i++
+       }
+    </script>
+</body>
+</html>
