@@ -104,14 +104,21 @@
 
         let exam = [45,6,89,12,34,8,23,19,3,88,62,56,21,5,17]
         tot = 0
-        let cnt = 0
+        //let cnt = 0
+        let arr50 = []
         for (const e of exam) {
             if(e >= 50){
+           //     arr50[cnt] = e
+                arr50[arr50.length] = e
                 tot += e
-                cnt ++
+          //      cnt ++
+                
             }
+            document.write(e," ->" , arr50, "<br/>")
         }
-        document.write(tot," : ", tot/cnt, "<br/>")
+        //document.write(tot," : ", tot/cnt, "<br/>")
+        document.write(tot," : ",tot/arr50.length,  "<br/>")
+        document.write(arr50, "<br/>")
     </script>
 </body>
 </html>
