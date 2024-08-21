@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_rank</title>
+</head>
+<body>
+    <h1>04_rank</h1>
+    <script>
+        // 1. 입력부
+        let jum = [77,55,99,77,88]
+        let pname = ["한가인","두가인","세가인","네가인","오가인"]
+        let rank = new Array()
+
+        //2. 연산부
+        //등수계산
+        for (const me in jum) { //내 점수 및 순서 
+            rank[me] = 1 //내 등수 초기화
+
+            for (const you of jum) { //비교할 각 점수(배열)
+                //document.write(you, "<br/>")
+                if(jum[me] < you){  //내점수 < 비교점수
+                    rank[me] ++     //등위증가
+                }
+            }
+            //document.write(me," -> ",pname[me],"  ", jum[me]," : ", rank[me], "<br/>")
+        }
+
+
+        //3. 출력부
+        // 배열순서대로 출력
+        for (const me in jum) { 
+            document.write(me," -> ",pname[me],"  ", jum[me]," : ", rank[me], "<br/>")
+        }
+        document.write("<hr/>")
+
+        // 등위 순서대로 출력
+        for (let r = 1 ; r<= pname.length ; r++) { //출력할 등수 
+            //document.write(r, "<br/>")
+
+            for (const me in pname) {  //학생데이터
+                if(r==rank[me]){  //출력하려는 등위: r == 현재 돌리고 있는 학생등수 rank[me]
+                    document.write(me," -> ",pname[me],"  ", jum[me]," : ", rank[me], "<br/>")
+                    //break
+                }
+            }
+        }
+    </script>
+</body>
+</html>
