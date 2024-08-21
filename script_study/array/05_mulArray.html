@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_mulArray</title>
+</head>
+<body>
+    <h1>05_mulArray</h1>
+    <script>
+
+        //2차원 배열
+        let arr = [                                  // 1차원
+            ["0_0",     "0_1",    "0_2",    "0_3"],  //arr[0]
+            ["1_0",     "1_1",    "1_2",    "1_3"],  //arr[1]
+            ["2_0",     "2_1",    "2_2",    "2_3"]   //arr[2]
+    //2차원 arr[?][0] arr[?][1] arr[?][2] arr[?][3]
+        ]
+
+        document.write("arr : "+arr+"<br/>")
+        document.write("arr[0] : "+arr[0]+"<br/>")
+        document.write("arr[1] : "+arr[1]+"<br/>")
+        document.write("arr[2] : "+arr[2]+"<br/>")
+        document.write("arr[1][2] : "+arr[1][2]+"<br/>")
+        document.write("arr.length : "+arr.length+"<br/>")
+        document.write("arr[0].length : "+arr[0].length+"<br/>")
+        document.write("arr[1].length : "+arr[1].length+"<br/>")
+        document.write("arr[2].length : "+arr[2].length+"<br/>")
+
+        for (const big in arr) {
+            document.write("arr["+big+"] : "+arr[big]+"<br/>")
+            for (const ss of arr[big]) {
+                document.write(ss+"<br/>")
+            }
+        }
+
+        document.write("<hr/>")
+
+        //1. 입력부
+        let stud = [
+            ['현빈',87,88,82],
+            ['원빈',57,58,52],
+            ['투빈',77,78,72],
+            ['장희빈',97,98,92],
+            ['커피빈',67,68,62]
+        ]
+
+        //2. 연산부
+        //stud[0][4] = 234
+        for(let me = 0; me<stud.length;me++ ){
+            //console.log(stud[me][0]) 
+
+            //총점
+            stud[me][4] = 0
+            for(let i = 1; i <4; i++){
+                stud[me][4] += stud[me][i]
+            }
+            //평균
+            stud[me][5] = stud[me][4]/3   
+        }
+
+        console.log(stud)
+
+    </script>
+    <!-- 3. 출력부-->
+    <table border="">
+        <tr>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>총점</td>
+            <td>평균</td>
+        </tr>
+
+        <script>
+            for (const st of stud) {
+                let ttt = "<tr>"
+                    for (const dd of st) {
+                        ttt+="<td>"
+                        ttt+=dd
+                        ttt+="</td>"
+                    }
+                ttt += "</tr>"
+
+                document.write(ttt)
+            }
+
+
+ /*
+  다음은 주문 메뉴의 배열이다
+  각 날짜의 주문 합계를 출력하세요
+  
+  주문번호 : 
+  0 - 아메리카노 (2000)
+  1 - 아프리카노 (2300)
+  2 - 아시아노  (2700)
+  
+        아메리카노 ,아프리카노, 아시아노
+  4/10 -     1       2        0
+  4/11 -     2       0        1
+  4/12 -     0       3        0
+  4/13 -     1       1        1
+  
+  
+  4/10 -    6600
+  4/11 -    6700
+  4/12 -    6900
+  4/13 -    7000
+  
+  * */
+
+        </script>
+    </table>
+
+
+</body>
+</html>
+
