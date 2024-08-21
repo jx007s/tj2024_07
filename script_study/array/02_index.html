@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>02_index</title>
+    <style>
+        .수{
+            background-color: #f00;
+        }
+        .우{
+            background-color: #fa0;
+        }
+        .미{
+            background-color: #ff0;
+        }
+        .양{
+            background-color: #0f0;
+        }
+        .가{
+            background-color: #00f;
+        }
+    </style>
 </head>
 <body>
     <h1>02_index</h1>
@@ -41,6 +58,64 @@
         </script>
     </table>
 
+
+
+
+    <script>
+
+        //1. 입력부
+        pname = ["이효리","삼효리","사효리","오효리"]
+            let kor = [77,      97,     67,      87]
+            let eng = [76,96,66,86]
+            let mat = [72,92,62,82]
+            let totArr = []
+            let avgArr = []
+            const gradeTitle = new Array('가','가','가','가','가','가','양','미','우','수','수')
+            let rankArr = new Array()
+            let tttArr = new Array()
+
+            //2. 연산부
+            //2.1 총점, 평균
+            for (let i = 0; i < pname.length; i++) {
+                totArr[i] = kor[i]+eng[i]+mat[i]
+                avgArr[i] = totArr[i] / 3
+            }
+
+            //2.2 등수
+            for (let me = 0; me < pname.length; me++) {
+                rankArr[me] = 1
+                for (let you = 0; you < pname.length; you++) {
+                    if(avgArr[me] < avgArr[you]){
+                        rankArr[me]++
+                    }
+                }
+            }
+
+            //2.3 출력내용
+            for (const i in pname) {
+                
+                const gt = gradeTitle[(avgArr[i]-avgArr[i]%10)/10]
+
+                tttArr[i] = "<tr class='"+gt+"'>"
+                    tttArr[i] += "<td>"+i+"</td>"
+                    tttArr[i] += "<td>"+pname[i]+"</td>"
+                    tttArr[i] += "<td>"+kor[i]+"</td>"
+                    tttArr[i] += "<td>"+eng[i]+"</td>"
+                    tttArr[i] += "<td>"+mat[i]+"</td>"
+                    tttArr[i] += "<td>"+totArr[i]+"</td>"
+                    tttArr[i] += "<td>"+avgArr[i]+"</td>"
+                    tttArr[i] += "<td>"+rankArr[i]+"</td>"
+                    tttArr[i] += "<td>"+gt+"</td>"
+                    tttArr[i] += "</tr>"
+                //console.log((avgArr[i]-avgArr[i]%10)/10)
+                //document.write(ttt)
+
+            }
+
+    </script>
+
+    <!--3. 출력부   -->
+    <h2>3.1 배열순서</h2>
     <table border="">
         <tr>
             <td>번호</td>
@@ -50,57 +125,49 @@
             <td>수학</td>
             <td>총점</td>
             <td>평균</td>
+            <td>등수</td>
+            <td>등급</td>
         </tr>
         <script>
-            //1. 입력부
-            pname = ["이효리","삼효리","사효리","오효리"]
-            let kor = [77,      97,     67,      87]
-            let eng = [78,98,68,88]
-            let mat = [72,92,62,82]
-            let totArr = []
-            let avgArr = []
-
-
             
-            //2. 연산부
-            // totArr[0] = kor[0]+eng[0]+mat[0]
-            // totArr[1] = kor[1]+eng[1]+mat[1]
-            // totArr[2] = kor[2]+eng[2]+mat[2]
-            // totArr[3] = kor[3]+eng[3]+mat[3]
+            for (const tt of tttArr) {
+                
+               
+                document.write(tt)
 
-            // avgArr[0] = totArr[0] / 3
-            // avgArr[1] = totArr[1] / 3
-            // avgArr[2] = totArr[2] / 3
-            // avgArr[3] = totArr[3] / 3
-
-            for (let i = 0; i < pname.length; i++) {
-                totArr[i] = kor[i]+eng[i]+mat[i]
-                avgArr[i] = totArr[i] / 3
-            }
-
-
-            //3. 출력부
-            // let ttt = "<tr><td>"+pname[0]+kor[0]+"</td></tr>"
-            // document.write(ttt)
-            // let tot = kor[0] + eng[0] + mat[0]
-
-            for (const i in pname) {
-                let tot = kor[i] + eng[i] + mat[i]
-                let avg = tot / 3
-                let ttt = "<tr>"
-                    ttt += "<td>"+i+"</td>"
-                    ttt += "<td>"+pname[i]+"</td>"
-                    ttt += "<td>"+kor[i]+"</td>"
-                    ttt += "<td>"+eng[i]+"</td>"
-                    ttt += "<td>"+mat[i]+"</td>"
-                    ttt += "<td>"+totArr[i]+"</td>"
-                    ttt += "<td>"+avgArr[i]+"</td>"
-                    ttt += "</tr>"
-
-                document.write(ttt)
             }
 
         </script>
     </table>
+
+    <h2>3.2 등수 내림차순</h2>
+    <table border="">
+        <tr>
+            <td>번호</td>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>총점</td>
+            <td>평균</td>
+            <td>등수</td>
+            <td>등급</td>
+        </tr>
+        <script>
+            for(let r = 1; r<=pname.length; r++){
+                for (const i in pname) {
+                    
+                    if(r==rankArr[i]){
+                        
+                        document.write(tttArr[i])
+                    }
+                }
+            }
+
+        </script>
+    </table>
+
+
+
 </body>
 </html>
