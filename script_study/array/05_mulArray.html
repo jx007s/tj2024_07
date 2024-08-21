@@ -112,8 +112,52 @@
 
         </script>
     </table>
+    <script>
+        let order = [
+            ['4/10', 1,       2,        0],
+            ['4/11', 2,       0,        1],
+            ['4/12', 0,       3,        0],
+            ['4/13', 1,       1,        1]
+        ]
 
+        const price = [
+            ["아메리카노", 2000],
+            ["아프리카노", 2300],
+            ["아시아노", 2700]
+        ]
 
+        for (let ord of order) {
+            ord[4] = 0
+            for(let i = 0; i<price.length;i++){
+                ord[4] += ord[i+1]*price[i][1]
+            }
+        }
+
+    </script>
+    <table border="">
+        <tr>
+            <td>날짜</td>
+            <script>
+                for (const pp of price) {
+                    document.write("<td>",pp[0],"</td>")
+                }
+            </script>
+            <td>합계</td>
+        </tr>
+        <script>
+            for (const ord of order) {
+                let ttt = "<tr>"
+                for (const tt of ord) {
+                    ttt+="<td>"
+                    ttt+=tt
+                    ttt+="</td>"
+                }
+                ttt += "<tr>"
+
+                document.write(ttt)
+            }
+        </script>
+    </table>
 </body>
 </html>
 
