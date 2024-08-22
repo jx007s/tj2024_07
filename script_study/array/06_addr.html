@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_addr</title>
+</head>
+<body>
+    <h1>06_addr</h1>
+    <script>
+        let a = 10
+        let b = a
+        const C = a
+        a = 20
+        //C = 30 상수 대입 불가
+        let arr1 = [11,22,33]
+        let arr2 = [
+            [100,200,300,400],
+            [99,88],
+            arr1,
+            new Array(123,456,789)
+        ]
+        let arr3 = arr2[1]
+        let arr4 = arr1
+        const ARR5 = arr1
+        document.write("a : ",a,"<br/>")
+        document.write("b : ",b,"<br/>")
+        document.write("C : ",C,"<br/>")
+        document.write("arr1 : ",arr1,"<br/>")
+        document.write("arr2 : ",arr2,"<br/>")
+        document.write("arr3 : ",arr3,"<br/>")
+        document.write("arr4 : ",arr4,"<br/>")
+        document.write("arr5 : ",ARR5,"<br/>")
+        document.write(arr2.length,"<br/>")
+        document.write(arr2[0].length,"<br/>")
+        document.write(arr2[1].length,"<br/>")
+        document.write(arr2[2].length,"<br/>")
+        document.write(arr2[3].length,"<br/>")
+        arr1[1] = 2222
+        arr2[1][0] = 9999
+        ARR5[2] = 3333      //상수에 대입이 아님
+                            // 상수가 가리키는 위치의 원소값을 대입
+        document.write("arr1 : ",arr1,"<br/>")
+        document.write("arr2 : ",arr2,"<br/>")
+        document.write("arr3 : ",arr3,"<br/>")
+        document.write("arr4 : ",arr4,"<br/>")
+        document.write("arr5 : ",ARR5,"<br/>")
+        arr1 = ["나는무너","꿈을꾸는무너"]  //변수 생성 및 대입
+        arr3 = arr1
+        //ARR5 = arr1 상수 대입불가
+        document.write("arr1 : ",arr1,"<br/>")
+        document.write("arr2 : ",arr2,"<br/>")
+        document.write("arr3 : ",arr3,"<br/>")
+        document.write("arr4 : ",arr4,"<br/>")
+        document.write("arr5 : ",ARR5,"<br/>")
+    </script>
+</body>
+</html>

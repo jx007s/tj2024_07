@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_addrExam</title>
+</head>
+<body>
+    <h1>07_addrExam</h1>
+    <script>
+        //1. 입력부
+        let stud = [
+            ['원빈',39,67,96],
+            ['투빈',99,67,36],
+            ['현빈',39,57,76,94],
+            ['젤리빈',99,77,56,34],
+            ['장희빈',69,67,66,64],
+            ['텅빈',69,67,66]
+        ]
+
+        let res = []        //결과 배열
+        /*
+            res = [
+                [원빈:구분, 원빈:총점, 원빈:평균],
+                [투빈:구분, 투빈:총점, 투빈:평균],
+                ...
+                [텅빈:구분, 투빈:총점, 투빈:평균]
+            ]
+        */
+
+        const kindTitle = ["일반","특기생"]
+
+                        //국 , 영, 수, 예  - 가중치
+        const specRate = [0.05,0.1,0.15,0.7]
+
+        //2. 연산부
+        for (const i in stud) {// i = 0,1,2,3,4,5
+            const st = stud[i]
+            let kind = kindTitle[st.length-4]
+
+            let tot = 0
+            let avg = 0
+            for(let j=1;j<st.length;j++){
+                tot += st[j]
+                avg += st[j] * specRate[j-1]
+            }
+            if(kind=="일반"){
+                avg = tot / (st.length-1)
+            // }else if(kind=="특기생"){
+            //     avg = st[1]*0.05+ st[2]*0.1+ st[3]*0.15+ st[4]*0.7
+            }
+            res[i] = [kind, tot, avg]
+            console.log(res[i])
+            /*
+            res = [
+                ["일반"],
+                ["일반"],
+                ["특기생"],
+                ["특기생"],
+                ["특기생"],
+                ["일반"]
+            ]
+            */
+        }
+
+        //3. 출력부
+    </script>
+    <table border="">
+        <tr>
+            <td>구분</td>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>예체능</td>
+            <td>총점</td>
+            <td>평균</td>
+        </tr>
+        <script>
+            for (const i in stud) {
+                let ttt = "<tr>" 
+
+                    ttt += "<td>"
+                    ttt += res[i][0]  //i:사람 0:구분
+                    ttt += "</td>"
+                    
+                    //원시데이터:이름,과목
+                    for (const dd of stud[i]) {
+                        ttt += "<td>"
+                        ttt += dd
+                        ttt += "</td>"
+                    } 
+
+                    //일반 빈칸넣기
+                    if(res[i][0]=="일반"){
+                        ttt += "<td></td>"
+                    }
+
+                    //총점
+                    // ttt += "<td>"
+                    // ttt += res[i][1]  //i:사람 1:총점
+                    // ttt += "</td>"
+
+                    // //평균
+                    // ttt += "<td>"
+                    // ttt += res[i][2]  //i:사람 1:평균
+                    // ttt += "</td>"
+                    for (let j = 1;j<res[i].length; j++) {
+                        ttt += "<td>"
+                        ttt += res[i][j]
+                        ttt += "</td>"
+                    } 
+                    ttt += "</tr>"
+                document.write(ttt)  
+                
+                /*
+   5,
+   5,6,
+   5,6,8,
+   10,4,
+   8,
+   10,6,13
+  도형의 넓이와 둘레를 출력하세요
+  
+ 도형명         선분                넓이	             둘레
+ 원	            반지름	            반지름*반지름*pi 	반지름*2*pi
+ 직사각형       가로, 세로 	        가로*세로	        (가로+세로)*2
+ 직각삼각형	    밑변, 높이, 빗변	 밑변*높이/2	    밑변+높이+빗변
+*/
+            }
+        </script>
+
+    </table>
+</body>
+</html>
