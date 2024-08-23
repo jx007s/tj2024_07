@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_arrayFunc</title>
+</head>
+<body>
+    <h1>09_arrayFunc</h1>
+    <script>
+        let arr = [33,55,66,33,77]
+        document.write("arr : ",arr,"<br/>")
+
+
+        /* 배열 변경 */
+        //추가
+        arr[5] = 100
+        document.write("원소대입으로추가 : ",arr,"<br/>")
+        arr.push(200)   
+        document.write("push(200) : ",arr,"<br/>")
+        arr.unshift(300)
+        document.write("unshift(300) : ",arr,"<br/>")
+
+        //삭제
+        delete arr[3]  // 내용만 삭제 , 
+                        //배열칸은 남아있음-undefined
+        document.write("delete arr[3] : ",arr,"<br/>")
+
+        let vv = arr.pop()
+        document.write("arr.pop() : ",arr,"<br/>")
+        document.write("vv : ",vv,"<br/>")
+        vv = arr.shift()
+        document.write("shift() : ",arr,"<br/>")
+        document.write("vv : ",vv,"<br/>")
+
+        //중간처리
+
+        //중간삽입
+        arr.splice(4,      0,     123,456,789)
+        //      시작위치,삭제갯수, 추가 원소들...
+        document.write("arr.splice(4,0,123,456,789) : ",arr,"<br/>")
+
+        //중간삭제
+        arr.splice(3,5)
+        //      시작위치,삭제갯수, 추가 원소들...
+        document.write("arr.splice(3,5) : ",arr,"<br/>")
+
+        //중간삭제삽입
+        arr.splice(1,       2,    999,888,777)
+        //      시작위치,삭제갯수, 추가 원소들...
+        document.write("arr.splice(1,2,999,888,777) : ",arr,"<br/>")
+        
+
+        /* 배열 검색 */
+        let a = 10
+        arr = [33,999,888,777,444,888,555,222,999,888,222,111,888,100]
+        document.write("arr : ",arr,"<br/>")
+        //배열인지,아닌지
+        document.write("Array.isArray(arr) : " +Array.isArray(arr) +"<br/>")
+        document.write("Array.isArray(a) : " +Array.isArray(a) +"<br/>")
+        //원소존재유무
+        document.write("arr.includes(888) : " +arr.includes(888) +"<br/>")
+        document.write("arr.includes(246) : " +arr.includes(246) +"<br/>")
+        //원소순서
+        document.write("arr.indexOf(888) : " +arr.indexOf(888) +"<br/>")
+        document.write("arr.indexOf(246) : " +arr.indexOf(246) +"<br/>") //없으면 -1
+        document.write("arr.indexOf(888,3) : " +arr.indexOf(888,3) +"<br/>")
+                                //찾을값,시작위치
+        //뒤에서부터
+        document.write("arr.lastIndexOf(888) : " +arr.lastIndexOf(888) +"<br/>")
+                                //찾을값
+    </script>
+</body>
+</html>
