@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_addrShape</title>
+</head>
+<body>
+    <h1>08_addrShape</h1>
+    <script>
+/*
+   5,
+   5,6,
+   5,6,8,
+   10,4,
+   8,
+   10,6,13
+  도형의 넓이와 둘레를 출력하세요
+  
+ 도형명         선분                넓이	             둘레
+ 원	            반지름	            반지름*반지름*pi 	반지름*2*pi
+ 직사각형       가로, 세로 	        가로*세로	        (가로+세로)*2
+ 직각삼각형	    밑변, 높이, 빗변	 밑변*높이/2	    밑변+높이+빗변
+*/
+      let arr = [
+   [5],
+   [5,6],
+   [5,6,8],
+   [10,4],
+   [8],
+   [10,6,13]
+      ]
+
+      let res = []
+      const PI = 3.141592
+       for (const i in arr) {
+          
+           const sh = arr[i]
+           switch(sh.length){
+                case 1:
+                    res[i] = ['원', sh[0] * sh[0] * PI, sh[0] * 2 * PI]
+                    break
+                case 2: 
+                    res[i] = ['직사각형', sh[0] * sh[1], (sh[0] + sh[1]) * 2]
+                    break
+                case 3:
+                    res[i] = ['직각삼각형', sh[0] * sh[1] / 2, sh[0] + sh[1]+ sh[2]]
+                    break
+           }
+           
+
+       }
+
+    </script>
+
+    <table border="">
+        <tr>
+            <td>종류</td>
+            <td>넓이</td>
+            <td>둘레</td>
+        </tr>
+        <script>
+           for(const shapes of res){
+               let ttt = "<tr>"
+                for (const sh of shapes) {
+                    ttt += "<td>"
+                    ttt += sh
+                    ttt += "</td>"
+                }
+
+                ttt += "</tr>"
+                document.write(ttt)
+           }
+
+        </script>
+
+
+    </table>
+</body>
+</html>
