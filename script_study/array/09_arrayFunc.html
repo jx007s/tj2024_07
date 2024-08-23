@@ -69,6 +69,106 @@
         //뒤에서부터
         document.write("arr.lastIndexOf(888) : " +arr.lastIndexOf(888) +"<br/>")
                                 //찾을값
+        document.write("arr.lastIndexOf(888,10) : " +arr.lastIndexOf(888,10) +"<br/>")
+                                //찾을값, 시작위치
+
+        
+        
+       /* 배열 to 배열*/
+        let arr1 = [10,20,30]
+        let arr2 = arr1
+        let arr3 = new Array(arr1) // [[10,20,30]]
+        //같은 주소 : arr1, arr2, arr3[0]       얕은복사 : shallow copy
+        let arr4 = [10,20,30]
+
+        let arr5 = []                           //깊은복사 : deep copy
+        for (const vv of arr1) {
+            document.write(vv +"<br/>")
+            arr5.push(vv)    
+        }
+        //다른 주소 : arr1, arr4, arr5
+
+        document.write("arr1 : " +arr1 +"<br/>")
+        document.write("arr2 : " +arr2 +"<br/>")
+        document.write("arr3 : " +arr3 +"<br/>")
+        document.write("arr4 : " +arr4 +"<br/>")
+        document.write("arr5 : " +arr5 +"<br/>")
+        console.log(arr1)
+        console.log(arr2)
+        console.log(arr3)
+        console.log(arr4)
+        arr1[1] = 2222
+        document.write("<hr/>")
+        document.write("arr1 : " +arr1 +"<br/>")
+        document.write("arr2 : " +arr2 +"<br/>")
+        document.write("arr3 : " +arr3 +"<br/>")
+        document.write("arr4 : " +arr4 +"<br/>")
+        document.write("arr5 : " +arr5 +"<br/>")
+
+        let arr6 = [12,34,56,78]
+        let arr7 = [1122,3344,5566]
+        let arr8 = arr6 + arr7  //문자열결합
+        let arr9 = arr6.concat(arr7)    //배열 결합, 새로운 배열 생성
+        console.log(arr6)
+        console.log(arr7)
+        console.log(arr8)   //문자열
+        console.log(arr9)
+        document.write("arr8[5] : " +arr8[5] +"<br/>")
+        document.write("arr9[5] : " +arr9[5] +"<br/>")
+        arr6[1] = 300
+        console.log(arr6)
+        console.log(arr7)
+        console.log(arr8)   //문자열
+        console.log(arr9)
+
+        //slice : deep Copy
+        let arr10 = arr9.slice(2,5) // 2 -> 5-1
+        document.write("arr9 : " +arr9 +"<br/>")
+        document.write("slice(2,5) : " +arr10 +"<br/>")
+        let arr11 = arr9.slice(4) // 4 -> 끝
+        document.write("slice(4) : " +arr11 +"<br/>")
+        arr9[4] = 9753
+        document.write("arr9 : " +arr9 +"<br/>")
+        document.write("slice(2,5) : " +arr10 +"<br/>")
+        document.write("slice(4) : " +arr11 +"<br/>")
+        let arr12 = [11,22,33,44,55,66,77,88,99]
+        document.write("arr12 : " +arr12 +"<br/>")
+        arr12.copyWithin(2,4,7)
+        document.write("copyWithin(2,4,7) : " +arr12 +"<br/>")
+        /*
+        11,22,33,44,55,66,77,88,99
+        0   1 2   3 4  5  6  7  8
+                    |-----|
+
+        copyWithin(2,4,7)  4 -> 7-1  의 내용을  2번위치부터 붙여넣기(바꾸기)
+
+              55,66,77
+               ↓ ↓  ↓
+        11,22,33,44,55,66,77,88,99
+        0   1 2   3 4  5  6  7  8
+
+        11,22,55,66,77,66,77,88,99
+        0   1 2   3 4  5  6  7  8
+        */
+
+        arr12.fill(918273, 3, 7)   //918273  을  3 -> 7-1 에 채우기
+        document.write("fill(918273, 3, 7) : " +arr12 +"<br/>")
+
+        arr12.reverse()
+        document.write("reverse() : " +arr12 +"<br/>")
+
+        arr12.sort()
+        document.write("sort() : " +arr12 +"<br/>")
+
+        /* 배열 <-> 문자열 */
+        let ttt = "여긴 참나무숲 장수 풍뎅이와 사슴 벌레가 살지"
+        document.write("ttt : " + ttt + "<br/>")
+        let arr13 = ttt.split(' ')
+        document.write("ttt.split(' ') : " + arr13 + "<br/>")
+        let arr14 = ["피카츄","라이츄","파이리","꼬부기","버터풀","야도란"]
+        document.write("arr14 : " + arr14 + "<br/>")
+        let ttt2 = arr14.join("@")
+        document.write('arr14.join("@") : ' + ttt2 + "<br/>")
     </script>
 </body>
 </html>
