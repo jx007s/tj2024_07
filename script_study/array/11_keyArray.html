@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_keyArray</title>
+</head>
+<body>
+    <h1>11_keyArray</h1>
+    <script>
+        // 일반배열
+        let arr1 = [10,20,30,40]
+        //          0  1   2  3
+        // 키배열(연관배열) = Object 
+        let arr2 = {"사자":"포유류", "악어":"파충류","상어":"어류","오타니":"이도류",
+                    "악어":"가방류" ,"간첩":"포유류"  
+                    //key 중첩가능 : 마지막 값을 호출, value : 중첩가능
+                    // key : value  
+                    // ID  : PW
+        }
+        //            0  -- 순서형태의 인덱스 없음
+        //           
+        document.write(arr1[0],"<br/>")
+        document.write(arr2[0],"<br/>")
+        document.write(arr2["악어"],"<br/>")
+        //document.write(arr1.0,"<br/>")
+        //document.write(arr2.0,"<br/>")
+        document.write(arr2.상어,"<br/>")
+        document.write(arr2["사자"],"<br/>")
+        document.write(arr2["간첩"],"<br/>")
+    </script>
+</body>
+</html>

@@ -8,7 +8,7 @@
 <body>
     <h1>10_wordCnt</h1>
     <script>
-        const lyrics = "Ay ay ay ay ay 거울 속에 내 표정 봐 봐" +
+        let lyrics = "Ay ay ay ay ay 거울 속에 내 표정 봐 봐" +
 " 느낌 So good 기다려온 D-day 연습했던 손든 인사도 그대로 하면 돼"+
 " Hairstyle check 하고 한 번 Turn around 발걸음은 매일 걷던 그 길로" +
 " 계획은 완벽 빨리 말 걸어보고 싶어, Hey Woo 문 앞에서 만날까, Yeh " +
@@ -21,17 +21,35 @@
 " 우리의 사이 Beautiful 내일도 내일모레도 기억해, 영원히 반짝일 순간 Wait wait!"+
 " Na na na- 이렇게 만나서 반가워 내일 또 봐 안녕"
         document.write(lyrics,"<br/>")
+
+        const mwm = [",","(",")","!","-","?"]
+
+        for (const mm of mwm) {
+            let ttts = lyrics.split(mm)
+            lyrics = ttts.join("")
+                
+        }
+        
+        document.write(lyrics,"<br/>")
+
         let arr = lyrics.split(" ")
         let cnt = 0
 
         // 만남은, 만남, 만나서, 만날까, 만득이
+        const sample = "만남은,만남,만나서,만날까,만득이".split(",")
+        console.log(sample)
         for (const tt of arr) {
-            if("만남은"==tt){
+            //if("만남은"==tt){
+            if(sample.includes(tt)){
                 cnt++
             }
-            document.write(tt," " ,"만남은"==tt ,"<br/>")
+            document.write(tt," " ,sample.includes(tt) ,"<br/>")
         }
         document.write(cnt,"<br/>")
+        /*
+        포켓몬 혹은 동물 노래등을 선택하여 등장하는 동물(캐릭터)의 수를 출력하세요
+        
+        */
     </script>
 </body>
 </html>
