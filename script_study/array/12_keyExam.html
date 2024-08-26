@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_keyExam</title>
+</head>
+<body>
+    <h1>12_keyExam</h1>
+    <script>
+        //1. 입력부
+        let stud = [
+            {'name':'장동건', jum:[78,79,72]},
+            {'name':'장서건', jum:[58,59,52]},
+            {'name':'장남건', jum:[98,99,92]},
+            {'name':'장중건', jum:[68,69,62]},
+            {'name':'북두신건', jum:[88,89,82]}
+        ]
+
+
+        //2. 연산부
+        for (const i in  stud) {
+            let st = stud[i]
+            st["tot"] = 0      //총점 추가
+            for(const j of st.jum){ //각학생의 과목점수 반복
+                st.tot += j     //총점 누적
+            }
+            st.avg = st.tot / st.jum.length
+        }
+
+    </script>
+
+    <table border="">
+        <tr>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>총점</td>
+            <td>평균</td>
+        </tr>
+        <script>
+            const ta = "tot,avg".split(",")
+            console.log(ta)
+            //3. 출력부
+            for (const i in  stud) {
+                let st = stud[i]
+                let ttt = "<tr>"
+                ttt += "<td>"+st.name+"</td>"
+
+                for (const j of st.jum) {
+                    ttt += "<td>"+j+"</td>"
+                }
+                for (const a of ta) {
+                    ttt += "<td>"+st[a]+"</td>"  
+                }
+                //ttt += "<td>"+st[ta[0]]+"</td>"
+                //ttt += "<td>"+st[ta[1]]+"</td>"
+                ttt += "</tr>"
+                document.write(ttt)
+            }
+            /*
+            다음은 주문 메뉴의 배열이다
+  각 날짜의 주문 합계를 출력하세요
+  
+  주문번호 : 
+  0 - 아메리카노 (2000)
+  1 - 아프리카노 (2300)
+  2 - 아시아노  (2700)
+  
+        아메리카노 ,아프리카노, 아시아노
+  4/10 -     1       2        0
+  4/11 -     2       0        1
+  4/12 -     0       3        0
+  4/13 -     1       1        1
+  
+  
+  4/10 -    6600
+  4/11 -    6700
+  4/12 -    6900
+  4/13 -    7000
+            
+            
+            */
+            
+        </script>
+
+    </table>    
+</body>
+</html>

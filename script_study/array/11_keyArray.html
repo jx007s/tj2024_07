@@ -11,7 +11,8 @@
         // 일반배열
         let arr1 = [10,20,30,40]
         //          0  1   2  3
-        // 키배열(연관배열) = Object 
+
+        // 키배열(연관배열) = Object    생성
         let arr2 = {"사자":"포유류", "악어":"파충류","상어":"어류","오타니":"이도류",
                     "악어":"가방류" ,"간첩":"포유류"  
                     //key 중첩가능 : 마지막 값을 호출, value : 중첩가능
@@ -25,9 +26,67 @@
         document.write(arr2["악어"],"<br/>")
         //document.write(arr1.0,"<br/>")
         //document.write(arr2.0,"<br/>")
-        document.write(arr2.상어,"<br/>")
-        document.write(arr2["사자"],"<br/>")
+        document.write(arr2.상어,"<br/>")       //호출
+        document.write(arr2["사자"],"<br/>")    //호출
         document.write(arr2["간첩"],"<br/>")
+        arr2["사자"] = "팔자"  //대입
+        document.write(arr2["사자"],"<br/>")    //호출
+        arr2["호랑이"] = "포유류"  //추가
+        
+
+        console.log(arr1)
+        console.log(arr2)
+        console.log(arr1.length)    // 일반배열 원소갯수
+        console.log(arr2.length)    // key 배열은 length 가 없다
+        delete arr2["상어"]     // 삭제
+        delete arr1[2]
+        console.log(arr1)
+        console.log(arr2)
+
+        ////  CRUD
+        ////  Create Read Update Delete
+        //    생성   읽기  수정   삭제
+        //   글쓰기  목록   수정  삭제
+        //           상세
+
+        //검색
+        document.write(2 in arr1,"<br/>")  //index 유무
+        document.write(3 in arr1,"<br/>")
+        document.write("악어" in arr2,"<br/>")
+        document.write("악뮤" in arr2,"<br/>")
+
+        for (const i in arr1) {
+            document.write(i,"<br/>")
+        }
+        document.write("<hr/>")
+        for (const i in arr2) {
+            document.write(i,"<br/>")
+        }
+        document.write("<hr/>")
+        for (const i of arr1) {
+            document.write(i,"<br/>")
+        }
+        document.write("<hr/>")
+        // for (const i of arr2) {  //순서대로 되어 있지 않아 불가
+        //     document.write(i,"<br/>")
+        // }
+        
+        //추출
+        let kk = Object.keys(arr1)  //index 로 구성된 배열
+        document.write(kk,"<br/>") //0,1,3
+        kk = Object.keys(arr2)  //key 로 구성된 배열
+        document.write(kk,"<br/>")  //사자,악어,오타니,간첩
+        let vv = Object.values(arr1) // value 로 구성된 배열
+        document.write(vv,"<br/>") //10,20,40
+        vv = Object.values(arr2) // value 로 구성된 배열
+        document.write(vv,"<br/>")
+        for (const i of vv) { 
+            document.write(i,"<br/>")
+        }
+        document.write("<hr/>")
+        for (const i of Object.values(arr2)) { 
+            document.write(i,"<br/>")
+        }
     </script>
 </body>
 </html>
