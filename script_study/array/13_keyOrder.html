@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_keyOrder</title>
+</head>
+<body>
+    <h1>13_keyOrder</h1>
+    <script>
+        //1. 입력부
+        const menu = {"아메리카노":2000, 아프리카노:2300, 아시아노:2700}
+        let orders = [
+            {날짜:"4/10",아메리카노:1, 아프리카노:2},
+            {아메리카노:2, 날짜:"4/11",아시아노:1},
+            {아프리카노:3,날짜:"4/12"},
+            {날짜:"4/13", 아프리카노:1, 아메리카노:1,아시아노:1},
+        ]
+
+        
+
+        //2. 연산부
+        for (let od of orders) {
+            od.합계 = 0
+            for (const i in menu) { // i : 아메리카노 ? 아프리카노 ? 아시아노?
+                if(i in od){ // 아시아노 in  {날짜:"4/10",아메리카노:1, 아프리카노:2} : false
+                            //아시아노 in  {아메리카노:2, 날짜:"4/11",아시아노:1} : true
+
+                    od.합계 += od[i] * menu[i]
+                            // od[아시아노]:1 * menu[아시아노]:2700
+                }
+               // document.write(i,i in od)
+            }
+        }
+    </script>
+
+    <!--3. 출력부-->
+    <table border="">
+        <script>
+            let ttTitle = Object.keys(menu)
+            ttTitle.unshift("날짜")
+            ttTitle.push("합계")
+            //[날짜,아메리카노,아프리카노,아시아노,합계]
+            
+            document.write("<tr>")
+            for (const kk of ttTitle) {
+                document.write("<td>",kk,"</td>")
+            }
+            document.write("</tr>")
+            for (const od of orders) {
+                document.write("<tr>")
+                for (const kk of ttTitle) { //[날짜,아메리카노,아프리카노,아시아노,합계]
+                    let ttt = 0
+                    if(kk in od){  // 아시아노 in  {날짜:"4/10",아메리카노:1, 아프리카노:2} : false
+                                    //아시아노 in  {아메리카노:2, 날짜:"4/11",아시아노:1} : true
+                        ttt=od[kk] //ttt = od[아시아노]:1
+                    }
+                    document.write("<td>",ttt,"</td>")
+                }
+                document.write("</tr>")
+            }
+        </script>
+        
+    </table>
+</body>
+</html>
