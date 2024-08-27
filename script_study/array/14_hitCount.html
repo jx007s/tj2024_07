@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_hitCount</title>
+</head>
+<body>
+    <h1>14_hitCount</h1>
+    <script>
+        
+        const ori = [32,14,5,77,32,5,26,8,32,14,5,26,39]
+        let res = {}
+        for (const oo of ori) {
+            document.write(oo,"<br/>")
+            if(oo in res){
+                res[oo]++
+            }else{
+                res[oo] = 1
+            }
+        }
+        document.write("<hr/>")
+
+        for (const k in res) {
+            document.write(k," : ",res[k],"<br/>")
+        }
+
+        // 뉴스를 발췌하여 각 단어가 몇번 등장하는지 출력하세요
+        // 단어 : 띄어쓰기로 구분
+        // 무의미한 특수기호 모두 제거 할 것
+    </script>
+</body>
+</html>
