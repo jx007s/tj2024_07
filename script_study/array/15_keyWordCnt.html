@@ -46,9 +46,147 @@
             
         }
         document.write("<hr/>")
+        let max = 0
         for (const k in res) {
+            if(max < res[k]){
+                max = res[k]
+            }
             document.write(k ," : " ,res[k],"<br/>")
         }
+        document.write("<hr/>")
+        //document.write(Object.keys(res).sort(),"<br/>")
+        for (const k of Object.keys(res).sort()) {
+            document.write(k ," : " ,res[k],"<br/>")
+        }
+        document.write("max : " ,max,"<br/>")
+        document.write("<hr/>")
+        for (let mm = max; mm > 0; mm--) {
+            
+            document.write("mm --------------- : " ,mm,"<br/>")
+
+            for (const k of Object.keys(res).sort()) {
+                if(mm==res[k]){
+                    document.write(k ," : " ,res[k],"<br/>")
+                }
+            }
+        }
+        /*
+Ay : 1
+Dday : 1
+Hairstyle : 1
+So : 1
+Turn : 1
+around : 1
+ay : 4
+check : 1
+good : 1
+거울 : 1
+그대로 : 1
+기다려온 : 1
+내 : 4
+속에 : 1
+
+
+봐 : 3
+느낌 : 1
+
+
+
+연습했던 : 1
+손든 : 1
+인사도 : 1
+
+하면 : 1
+돼 : 1
+
+
+번 : 1
+
+발걸음은 : 1
+매일 : 1
+걷던 : 1
+그 : 1
+길로 : 1
+계획은 : 1
+완벽 : 1
+빨리 : 1
+말 : 1
+걸어보고 : 1
+싶어 : 1
+Hey : 2
+Woo : 1
+문 : 1
+앞에서 : 1
+만날까 : 2
+Yeh : 3
+셋 : 2
+둘 : 2
+
+첫 : 6
+만남은 : 4
+너무 : 4
+어려워 : 4
+계획대로 : 2
+되는 : 2
+게 : 2
+없어서 : 2
+이름은 : 2
+말야 : 1
+만득이 : 3
+안녕 : 2
+마디를 : 1
+건넬 : 1
+때 : 1
+주변 : 1
+소린 : 1
+Canceled : 1
+네 : 1
+말소리는 : 1
+Playlist : 1
+질문은 : 1
+만나서 : 2
+나의 : 2
+용기 : 1
+알려줘 : 1
+너의 : 1
+이름이 : 1
+뭐야 : 1
+와 : 1
+거리는 : 1
+세 : 1
+걸음 : 1
+남았어 : 1
+순간 : 2
+Feels : 1
+so : 1
+wonderful : 1
+조금은 : 1
+뚝딱거려도 : 1
+어색한 : 1
+인사까지도 : 1
+너와 : 1
+만남 : 1
+우리의 : 1
+사이 : 1
+Beautiful : 1
+내일도 : 1
+내일모레도 : 1
+기억해 : 1
+영원히 : 1
+반짝일 : 1
+Wait : 1
+wait : 1
+Na : 1
+na : 2
+이렇게 : 1
+반가워 : 1
+내일 : 1
+또 : 1
+표정 : 1 
+하나 : 2    
+하고 : 1
+한 : 1        
+        */
 
     </script>
 </body>

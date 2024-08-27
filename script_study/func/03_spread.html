@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_spread</title>
+</head>
+<body>
+    <h1>03_spread</h1>
+    <script>
+        function fn_1(a,b,c){
+            document.write("fn_1 : ",a, " , " , b , " , " ,c,"<br/>")
+        }
+        function fn_2(arr){
+            document.write("fn_2 시작 ------ <br/>")
+            for (const e of arr) { //arr이 배열이어야 한다.
+                document.write(e,"<br/>")    
+            }
+            document.write("fn_2 끝 ------ <br/>")
+        }
+        function fn_3(...arr){  // ...arr  : spread 인자
+                                // 원소들을 묶어 배열로 가져옴
+            document.write("fn_3 시작 ------ <br/>")
+            for (const e of arr) {
+                document.write(e,"<br/>")    
+            }
+            document.write("fn_3 끝 ------ <br/>")
+        }
+
+
+        function fn_4(a,b, ...arr){ 
+            document.write("fn_4 시작 ",a, " , " , b ,"------ <br/>")
+            document.write("arr.length : ",arr.length,"<br/>")
+            for (const e of arr) {
+                document.write(e,"<br/>")    
+            }
+            document.write("fn_4 끝 ------ <br/>")
+        }
+
+        /*  spread 인자 위치 마지막
+        function fn_5(a, ...arr,b){ 
+           
+        }
+            spread 인자 1개만
+        function fn_6(a, ...arr1, ...arr2){ 
+           
+        }
+*/
+                // spread 인자  기본값 매개변수와 혼용가능
+        function fn_7(a,b = "아기상어", ...arr){ 
+            document.write("fn_7 시작 ",a, " , " , b ,"------ <br/>")
+            document.write("arr.length : ",arr.length,"<br/>")
+            for (const e of arr) {
+                document.write(e,"<br/>")    
+            }
+            document.write("fn_7 끝 ------ <br/>")
+        }
+
+        fn_1(10,20,30)
+        fn_2([10,20,30])
+        //fn_2(10,20,30)
+        fn_3([10,20,30])      // arr = [ [10,20,30] ]
+                                //     arr[0] = [10,20,30]
+        fn_3(10,20,30)        // arr = [ 10,20,30 ]
+                                //arr[0] = 10, arr[1] = 20, arr[2] = 30
+
+        fn_4(10,20,30,40,50)//a : 10 , b: 20,  arr = [30,40,50]
+        fn_4(10,20,30)//a : 10 , b: 20,  arr = [30]
+        fn_4(10,20)//a : 10 , b: 20,  arr = []
+        fn_4(10)//a : 10 , b: undefined,  arr = []
+        fn_4()//a : undefined , b: undefined,  arr = []
+
+        fn_7(10,20,30,40,50)//a : 10 , b: 20,  arr = [30,40,50]
+        fn_7(10,20,30)//a : 10 , b: 20,  arr = [30]
+        fn_7(10,20)//a : 10 , b: 20,  arr = []
+        fn_7(10)//a : 10 , b: 아기상어,  arr = []
+        fn_7()//a : undefined , b: 아기상어,  arr = []
+    </script>
+</body>
+</html>

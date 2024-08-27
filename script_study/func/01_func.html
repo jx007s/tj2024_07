@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_func</title>
+</head>
+<body>
+    <h1>01_func</h1>
+    <script>
+        /*
+            함수정의
+            함수이름 : fn
+            매개변수 : aa,bb
+            리턴값 : 1234
+        */
+        function fn(aa, bb){
+
+            document.write("fn 실행 ",aa," , ",bb, "<br/>")   //실행코드
+            return 1234
+        }
+
+        //매개변수 X, 리턴 X
+        function fn_1(){
+
+            document.write("fn_1 실행 : param X, ret X<br/>")
+
+        }
+
+        //매개변수 O, 리턴 X
+        function fn_2(aa,bb,cc){
+
+            document.write("fn_2 실행 : ",aa," , ",bb," , ",cc," , ret X<br/>")
+            return
+        }
+
+        //매개변수 X, 리턴 O
+        function fn_3(){
+
+            document.write("fn_3 실행 : param X, ret O<br/>")
+            return "엄마상어"
+
+        }
+
+        /*
+        function fn_4(var aa,let bb){
+
+            document.write("fn_4 실행 ",aa," , ",bb, "<br/>")   //실행코드
+            return 1234
+        }
+            */
+
+        let rr = fn(10,"아기상어")  //함수 호출
+        document.write("리턴 : ",rr, "<br/>")
+        fn(20) 
+        fn(30,40,50)
+        fn_1() 
+        rr = fn_1(1122) 
+        document.write("리턴 : ",rr, "<br/>")
+        rr = fn_2("티라노","에스라노","브이라노") 
+        document.write("리턴 : ",rr, "<br/>")
+        rr = fn_3() 
+        document.write("리턴 : ",rr, "<br/>")
+
+        function rectangle(ww,hh){
+            let area = ww * hh
+            let border = (ww + hh) * 2
+            document.write("직사각형의 넓이 : ",area , " , 둘레 : " , border ,"<br/>")
+        }
+        rectangle(10,20)
+        rectangle(5,6)
+
+        function circle(r){
+            const PI = 3.14
+            let area = r * r * PI
+            let border = r * 2 * PI
+            document.write("원의 넓이 : ",area , " , 둘레 : " , border ,"<br/>")
+        }
+
+        function triAngle(ww,hh, aa){
+            let area = ww * hh / 2
+            let border = ww + hh + aa
+            document.write("직각삼각형의 넓이 : ",area , " , 둘레 : " , border ,"<br/>")
+        }
+
+        /* 원, 직각삼각형의 넓이와 둘레를 출력하는 함수를 정의하고 호출하세요
+                   넓이                        둘레
+        원   원주율*반지름*반지름       원주율*반지름*2
+    직각삼각형   밑변*높이/2            밑변 + 높이 + 빗변
+        */
+       circle(5)
+       circle(7)
+       triAngle(5,6,8)
+       triAngle(10,20,23)
+    </script>
+</body>
+</html>
+
