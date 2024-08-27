@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_spreadExam</title>
+</head>
+<body>
+    <h1>04_spreadExam</h1>
+    <script>
+        function exam(name, ...jum){
+            const kind = "일반,특기생".split(",")[jum.length-3]
+            //"일반,특기생".split(",") --> ["일반","특기생"]
+            //"???[jum.length-3] --> ["일반","특기생"][jum.length-3]
+            //["일반","특기생"][3?4?-3]
+
+            const rate = [0.05, 0.1, 0.15, 0.7]
+
+            let ttt = "<tr>"
+                ttt += "<td>"+kind+"</td>"
+                ttt += "<td>"+name+"</td>"
+
+            let tot = 0
+            let avg = 0
+            for(let i in jum){
+                ttt += "<td>"+jum[i]+"</td>"
+                tot += jum[i]
+                avg += jum[i] * rate[i]
+            }
+
+            if(kind=="일반"){
+                ttt += "<td></td>"
+                avg = tot / jum.length
+            }
+            ttt += "<td>"+tot+"</td>"
+            ttt += "<td>"+avg+"</td>"
+            ttt += "</tr>"
+            document.write(ttt)
+        }
+
+    </script>
+    <table border="">
+        <tr>
+            <td>구분</td>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>예체능</td>
+            <td>총점</td>
+            <td>평균</td>
+        </tr>
+        <script>
+            exam("정우성",37,68,99)
+            exam("정좌성",97,68,39)
+            exam("정남성",37,58,79,92)
+            exam("정중성",97,78,59,32)
+            exam("북두신성",67,68,69,62)
+        </script>
+    </table>
+</body>
+</html>
