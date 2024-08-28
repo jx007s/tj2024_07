@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_returnExam</title>
+</head>
+<body>
+    <h1>06_returnExam</h1>
+    <script>
+
+        // 데이터 입력 및 계산
+        function inputStud(name,...jum){
+
+            const rate = [0.05, 0.1, 0.15, 0.7]
+            const kind = "일반,특기생".split(",")[jum.length-3]
+            let tot = 0
+            let avg = 0
+            
+            for (const i in jum) {
+                tot += jum[i]  
+                avg += jum[i] * rate[i]  
+            }
+            if(kind=="일반"){
+                avg = tot / jum.length
+            }
+            
+
+            return {kind:kind, name:name, jum:jum, tot:tot, avg:avg}
+        }
+
+        //tr출력
+        function trStud(st){ //st : 학생1명
+            //st : {kind: '일반', name: '이동준', jum: Array(3), tot: 204, avg: 68}
+            //st : {kind: '특기생', name: '삼동준', jum: Array(4), tot: 266, avg: 83.9}
+            //st : ...
+
+            let ttt = "<tr>"
+            ttt += "<td>"+st.kind+"</td>"
+            ttt += "<td>"+st.name+"</td>"
+
+            for(let i in st.jum){
+                ttt += "<td>"+st.jum[i]+"</td>"
+            }
+
+            if(st.kind=="일반"){
+                ttt += "<td></td>"
+            }
+
+            ttt += "<td>"+st.tot+"</td>"
+            ttt += "<td>"+st.avg+"</td>"
+            ttt += "</tr>"
+            document.write(ttt)
+        }
+
+
+        /// 학생들 배열
+        let studs = [
+            inputStud("이동준",37,68,99),
+            inputStud("삼동준",37,58,79,92),
+            inputStud("사동준",97,68,39),
+            inputStud("오동준",97,78,59,32),
+            inputStud("육동준",67,68,69,62),
+            inputStud("칠동준",67,68,69)
+            
+        ]
+        console.log(studs)
+
+    </script>
+
+<table border="">
+    <tr>
+        <td>구분</td>
+        <td>이름</td>
+        <td>국어</td>
+        <td>영어</td>
+        <td>수학</td>
+        <td>예체능</td>
+        <td>총점</td>
+        <td>평균</td>
+    </tr>
+    <script>
+        //trStud(studs[0]) 
+        //학생 배열 출력
+        for (const aa of studs) {
+            //aa : {kind: '일반', name: '이동준', jum: Array(3), tot: 204, avg: 68}
+            //aa : {kind: '특기생', name: '삼동준', jum: Array(4), tot: 266, avg: 83.9}
+            //aa : ...
+            trStud(aa)    
+        }
+
+                    /*
+            다음은 주문 메뉴이다
+  주문 함수와 영수증 함수를 분리하여 출력하세요            
+  주문 함수 : 날짜 , 아메리카노 수량, 아프리카노 수량, 아시아노 수량
+  
+ order('4/10', 1,2,0)
+
+        아메리카노 ,아프리카노, 아시아노
+  4/10 -     1       2        0
+  4/11 -     2       0        1
+  4/12 -     0       3        0
+  4/13 -     1       1        1
+
+ receipt()
+
+  가격
+  아메리카노 (2000)
+  아프리카노 (2300)
+  아시아노  (2700)
+  
+  
+  4/10 -    6600
+  4/11 -    6700
+  4/12 -    6900
+  4/13 -    7000
+
+            */
+        
+    </script>
+</table>
+</body>
+</html>

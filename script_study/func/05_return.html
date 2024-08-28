@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_return</title>
+</head>
+<body>
+    <h1>05_return</h1>
+    <script>
+
+        // return 시점
+        function fn(){
+            document.write("fn 실행 1 <br/>")
+            return      //최초  return 에서 함수 탈출
+            document.write("fn 실행 2 <br/>")
+            return
+            document.write("fn 실행 3 <br/>")
+            return
+        }
+
+        function fn_1(a){
+            document.write("fn_1 실행 1 ",a,"<br/>")
+            if(a >= 90){
+                return
+            }   
+            document.write("fn_1 실행 2 ",a,"<br/>")
+            if(a >= 70){
+                return
+            }   
+            document.write("fn_1 실행 3 ",a,"<br/>")
+            if(a >= 50){
+                return
+            }  
+            document.write("fn_1 실행 4 ",a,"<br/>") 
+        }
+
+        fn()
+        document.write("<hr/>") 
+        fn_1(88)
+        document.write("<hr/>") 
+        fn_1(98)
+        document.write("<hr/>") 
+        fn_1(68)
+        document.write("<hr/>") 
+        fn_1(48)
+
+        // return 값
+        function fn_2(){
+            document.write("fn_2 실행 : return X <br/>")
+            return
+        }
+
+        function fn_3(){
+            document.write("fn_3 실행 : return 100 <br/>")
+            return 100
+        }
+        function fn_4(){
+            document.write("fn_4 실행 : return 100, 200 <br/>")
+            return 100 , 200    // 200 만 리턴
+        }
+        function fn_5(){
+            document.write("fn_5 실행 : return [100, 200] <br/>")
+            return [100 , 200]    // 2개 이상 리턴할 경우 묶어서 (배열로) 리턴
+        }
+
+        var rr = fn_2()
+        document.write("rr : ",rr,"<br/>")
+        rr = fn_3()
+        document.write("rr : ",rr,"<br/>")
+        rr = fn_4()
+        document.write("rr : ",rr,"<br/>")
+        rr = fn_5()
+        document.write("rr : ",rr,"<br/>")
+    </script>
+</body>
+</html>
