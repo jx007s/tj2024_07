@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_funcCall</title>
+</head>
+<body>
+    <h1>08_funcCall</h1>
+    <script>
+        var a = 10
+        let b = 20
+        const c = 30
+        function fn_1(pp){  // 매개변수 -> 지역변수
+            var aa = "아빠상어" //지역변수
+            let bb = "엄마상어"
+            const cc = "할머니상어"
+            d = "할아버지상어" ,e = "삼촌상어" //전역변수 선언 -- 페이지 내 어디서는 접근 가능
+            document.write("fn_1() 시작 ",a," , ",b," , ",c," , ",d," , ",e,"------ <br/>")
+            document.write("fn_1() : ",aa, " , ",bb, " , ",cc, " , ",pp," <br/>")
+            fn_2("이모상어","고모상어")  //함수호출 ; caller - fn_1  ,  callee - fn_2
+            document.write("fn_1() 끝 ------ <br/>")
+        }
+        function fn_2(pp2, pp3){// caller - fn_1
+            //지역 > 외부, 전역
+            let a = "폴리"  //함수 외부 변수 중첩가능
+            var d = "로이"  //전역 변수 중첩가능
+            e = "엠버"  //전역변수 대입
+            var pp2 = "헬리" //매개변수 , var  중첩 가능
+            //let pp3 = "클리니"  //- 매개변수 , let  중첩불가
+            let pre = "&nbsp;&nbsp;&nbsp;&nbsp; "
+            document.write(pre+"fn_2() 시작 ",a," , ",b," , ",c," , ",pp2," , ",pp3,"------ <br/>")
+            document.write(pre+"fn_2() : ",d," , ",e," <br/>")
+            //document.write(pre+"fn_2() : ",aa, " , ",bb, " , ",cc, " , ",pp," <br/>")
+            fn_3() //함수호출
+            document.write(pre+"fn_2() 끝 ------ <br/>")
+        }
+        function fn_3(){
+            let pre = "&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; "
+            document.write(pre+"fn_3() 시작 ",a," , ",b," , ",c,"------ <br/>")
+            document.write(pre+"fn_3() : ",d," , ",e," <br/>")
+            //fn_1()  순환구조
+            document.write(pre+"fn_3() 끝 ------ <br/>")
+        }
+        document.write("main ",a," , ",b," , ",c,"<br/>")
+        // d 가 전역변수라 할지라도 선언되기 전 호출 불가
+        //document.write("main ",a," , ",b," , ",c," , ",d,"<br/>")
+        fn_1("아기상어")
+        document.write("main ",a," , ",b," , ",c," , ",d," , ",e,"<br/>")
+    </script>
+</body>
+</html>
