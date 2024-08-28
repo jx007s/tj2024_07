@@ -58,5 +58,36 @@
             exam("북두신성",67,68,69,62)
         </script>
     </table>
+
+    <script>
+        function num2(...arr){
+            let res = 1
+            //1
+            BIG:for(let i = 1; ; i++){
+                //2
+                let curr = true 
+                for (const no of arr) {
+   //3             
+                    
+                    if(i>no){
+                        break BIG
+                    }
+                    if(no%i != 0){
+                        curr = false
+                    }
+
+
+                    document.write(i, " -> ",no," , ",curr,"<br/>")
+                }
+            }
+            document.write("num2 끝 :",arr,"<br/>")
+
+        }
+        //최대공약수를 구하세요
+        num2(18, 15)
+
+        num2(45,80,36)
+
+    </script>
 </body>
 </html>
