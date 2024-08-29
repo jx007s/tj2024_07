@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_funcCall2</title>
+</head>
+<body>
+    <h1>09_funcCall2</h1>
+    <script>
+        let a = 100
+        function fn_1(aa){
+            let b = 10
+            document.write("fn_1() 시작 ",a," , ",b," , ",aa,"------ <br/>")
+            let res = fn_2(456)
+            a++
+            b++
+            aa++
+            document.write("fn_1() 끝 ",a," , ",b," , ",aa," , ",res,"------ <br/>")
+            return "아빠상어"+res
+        }
+        function fn_2(aa){
+            let b = 20
+            let pre = "&nbsp;&nbsp;&nbsp;&nbsp; "
+            document.write(pre,"fn_2() 시작 ",a," , ",b," , ",aa,"------ <br/>")
+            let res = fn_3(789)
+            a++
+            b++
+            aa++
+            document.write(pre,"fn_2() 끝 ",a," , ",b," , ",aa," , ",res,"------ <br/>")
+            return "엄마상어"+res
+        }
+        function fn_3(aa){
+            let b = 30
+            let pre = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "
+            document.write(pre,"fn_3() 시작 ",a," , ",b," , ",aa,"------ <br/>")
+            a++
+            b++
+            aa++
+            document.write(pre,"fn_3() 끝 ",a," , ",b," , ",aa,"------ <br/>")
+            return "아기상어"
+        }
+        let rr = fn_1(123)
+        document.write("rr : ",rr," , ",a,"------ <br/>")
+
+        let c = 100
+        let d = [11,22,33]
+
+        function fn_4(cc,dd){
+            document.write("fn_4() 시작 ",cc," , ",dd,"------ <br/>")
+            cc = 200
+            dd[1] = 2222
+            document.write("fn_4() 끝 ",cc," , ",dd,"------ <br/>")
+        }
+        document.write(c," , ",d,"<br/>")
+        fn_4(c,d)
+        document.write(c," , ",d,"<br/>")
+
+
+    </script>
+</body>
+</html>

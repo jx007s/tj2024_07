@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_examCall</title>
+</head>
+<body>
+    <h1>10_examCall</h1>
+    <script>
+
+        function inputStud(arr){
+
+            const rate = [0.05, 0.1, 0.15, 0.7]
+            const kind = "일반,특기생".split(",")[arr.length-4]
+            let tot = 0
+            let avg = 0
+            let jum = arr.slice(1)
+
+            for (const i in jum) {
+                tot += jum[i]  
+                avg += jum[i] * rate[i]  
+            }
+            if(kind=="일반"){
+                avg = tot / jum.length
+            }
+
+            return {kind:kind, name:arr[0], jum:jum,  tot:tot, avg:avg}
+        }
+
+        function printPre(title){
+            let ttt = "<table border=''><tr>"
+   
+            for (const t of title.split(",")) {
+                ttt += "<td>"+t+"</td>"    
+            }
+            ttt += "</tr>"
+            document.write(ttt)
+       
+    
+        }
+
+        function printSur(){
+            document.write("</table>")
+        }
+
+
+
+
+        function exam(...mmm){
+            let studs = []
+
+            /*
+            let ss = inputStud(mmm[0])
+            // mmm[0] : ["이동준",37,68,99]
+            //        ↓
+            //ss:{kind: '일반', name: '이동준', jum: [37,68,99], tot: 204, avg: 68}
+
+            console.log(ss)
+            studs.push(ss) 
+
+            ss = inputStud(mmm[1])
+            console.log(ss)
+            studs.push(ss)  
+               studs[  
+                        0:{kind: '일반', name: '이동준', jum: [37,68,99], tot: 204, avg: 68}
+                ]
+            */
+
+            //1. 입력 & 연산부
+            for(const m of mmm){
+                //console.log(m)
+                //let ss = inputStud(m)
+                //console.log(ss)
+                //studs.push(ss) 
+                studs.push(inputStud(m)) 
+            }
+
+
+            //console.log(studs)
+            //2. 출력부
+            printPre("구분,이름,국어,영어,수학,예체능,총점,평균")
+
+            printSur()
+        }
+
+        exam(
+            ["이동준",37,68,99],
+            ["삼동준",37,58,79,92],
+            ["사동준",97,68,39],
+            ["오동준",97,78,59,32],
+            ["육동준",67,68,69,62],
+            ["칠동준",67,68,69]
+        )
+
+        //document.write(studs)
+
+    </script>
+</body>
+</html>
