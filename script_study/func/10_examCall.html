@@ -36,16 +36,30 @@
             }
             ttt += "</tr>"
             document.write(ttt)
-       
-    
+
         }
 
         function printSur(){
             document.write("</table>")
         }
 
+        function trStud(st){
+           
+            let ttt = "<tr>"
+            ttt += "<td>"+st.kind+"</td>"
+            ttt += "<td>"+st.name+"</td>"
 
-
+            for(let i in st.jum){
+                ttt += "<td>"+st.jum[i]+"</td>"
+            }
+            if(st.kind=="일반"){
+                ttt += "<td></td>"
+            }
+            ttt += "<td>"+st.tot+"</td>"
+            ttt += "<td>"+st.avg+"</td>"
+            ttt += "</tr>"
+            document.write(ttt)
+        }
 
         function exam(...mmm){
             let studs = []
@@ -81,7 +95,24 @@
             //2. 출력부
             printPre("구분,이름,국어,영어,수학,예체능,총점,평균")
 
+            for (const aa of studs) {
+                trStud(aa)    
+            }
+
             printSur()
+
+
+            /*
+            
+            직사각형을 출력하는 함수를 구현하세요
+            직사각형 넓이, 둘레 출력
+            직사각형 함수 안에서 
+               직사각형 넓이, 둘레를 계산하는 함수
+               직사각형의 넓이, 둘레를 출력하는 함수를
+               호출하여 구현
+            */
+
+
         }
 
         exam(
@@ -94,6 +125,23 @@
         )
 
         //document.write(studs)
+        function recCalc(ww, hh){
+            //document.write("recCalc",ww,hh)
+            return {area : ww * hh , border : (ww + hh) * 2}
+        }
+
+        function recPPP({area, border}){
+            document.write("recPPP : ",area," , ", border)
+        }
+
+        function rectangle(width, height){
+            //let rr = recCalc(width, height)
+            //console.log(rr)
+            //recPPP(rr)
+            recPPP(recCalc(width, height))
+        }
+
+        rectangle(5,6)
 
     </script>
 </body>
