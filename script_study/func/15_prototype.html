@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_prototype</title>
+</head>
+<body>
+    <h1>15_prototype</h1>
+    <script>
+        /* prototype : 상태와 동작을 멤버로 구성 객체
+        //             멤버요소 접근가능 : this
+        //1. 정의
+        //prototype이름 = 생성자(){
+            멤버요소
+        }
+        */
+        Person = function(){
+            this.name = "정우성"
+            this.age = 54
+            this.marriage = false
+
+            //은닉 변수
+            let hobby = "바이크" //this : 멤버 접근자 , 
+                            //this를 붙이지 않으면 객체에서 접근불가, 정의부에서는 접근가능
+                            //메소드를 통해서만 접근가능
+
+            spec = "질문"   //전역변수
+
+            this.fn_1= function(){
+                document.write("Person.fn_1 실행() ",this.name," , ",this.age," , ",hobby, "<br/>")
+                            //hobby : 바이크 출력 - 정의부에서 접근가능
+            }
+
+            //은닉 함수
+            let fn_2= function(){
+                document.write("Person.fn_2 실행() ",this.name," , ",this.age," , ",hobby, "<br/>")
+            }
+
+            function fn_3(){
+                document.write("fn_3 실행() ",this.name," , ",this.age," , ",hobby, "<br/>")
+            }
+
+            //전역변수 형태의 함수 : 권장하지 않음 - 사용하지 말것
+            fn_4= function(){
+                document.write("fn_4 실행() ",this.name," , ",this.age," , ",hobby, "<br/>")
+            }
+        }
+
+        //2. 생성 (객체를 만든다)
+        //3. 객체변수 선언 및 초기화
+        let pp1 = new Person()  
+        // Person() :  Person.prototype으로 객체생성
+        // pp1 = 생성된 객체의 주소 대입
+
+        let pp2 = new Person()
+
+        console.log(pp1)
+        //console.log(pp2)
+        document.write(pp1,"<br/>")
+        document.write(pp2,"<br/>")
+        document.write(pp1.name," , ",pp1.age," , ",pp1.marriage," , ",pp1.hobby," , ",pp1.spec,"<br/>")
+        document.write(Person.hobby," , ",Person.spec," , ",spec,"<br/>") //spec 전역변수
+        document.write(pp2.name," , ",pp2.age," , ",pp2.marriage,"<br/>")
+        pp1.name = "정좌성"
+        pp2["age"] = 46
+        pp1["marriage"] = true
+        pp1["gender"] = "남"
+        document.write(pp1.name," , ",pp1.age," , ",pp1.marriage," , ",pp1.gender,"<br/>")
+        document.write(pp2.name," , ",pp2.age," , ",pp2.marriage,"<br/>")
+        pp1.fn_1()
+        pp2.fn_1()
+        //pp1.fn_2()
+        //Person.fn_2()
+        //Person.fn_3()
+        //fn_3()
+        fn_4()   // 권장하지 않음 - 사용하지 말것
+
+                //생성자 --> 매개변수 => 멤버변수 초기화
+        Member = function(name, age, marriage){
+            this.name = name
+            this.age = age
+            this.marriage = marriage
+        }
+
+        let mm1 = new Member()
+        let mm2 = new Member("이효리",43,true) //매개변수로 멤버변수 초기화
+        console.log(mm1)
+        console.log(mm2)
+    </script>
+</body>
+</html>
