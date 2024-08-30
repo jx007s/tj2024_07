@@ -156,8 +156,8 @@
         document.write(6,  twt(6),"<br/>")
         document.write(25, twt(25),"<br/>")
         document.write(7,  twt(7),"<br/>")
-
         document.write(15, (num => !(num%2 && num%3))(15),"<br/>")
+        document.write(15, (function(num){ return !(num%2 && num%3)})(15),"<br/>")
 
     </script>
 </body>

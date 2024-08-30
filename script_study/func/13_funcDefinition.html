@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_funcDefinition</title>
+</head>
+<body>
+    <h1>13_funcDefinition</h1>
+    <script>
+        function ff1(aa){
+            document.write("ff1 : ",aa, "<br/>")
+        }
+        function ff2(aa){
+            document.write("ff2 : ",aa, "<br/>")
+        }
+        function ff3(aa){
+            document.write("ff3 : ",aa, "<br/>")
+        }
+
+        ff1("가을")
+        ff2("나을")
+        ff3("다을")
+        document.write("<hr/>")
+        
+        let arr = [ff1, ff2, ff3]
+        arr.push(aa => {document.write("푸시 : ",aa, "<br/>")})
+
+        arr[0]("가갑")
+        arr[1]("가을")
+        arr[2]("가병")
+        arr[3]("가정")
+
+        document.write("<hr/>")
+        let kv = {"호랑":ff1, "여우":ff2, "늑대":ff3, 
+                "곰":function(aa){document.write("아빠곰 : ",aa, "<br/>")},
+                "여우":aa => {document.write("뚱뚱해 : ",aa, "<br/>")}
+            }
+
+        kv["호랑"]("티라노")
+        kv["여우"]("와이셔츠라노")
+        kv["늑대"]("니트라노")
+        kv["곰"]("블라우스라노")
+
+        document.write("<hr/>")
+        for (const i in arr) {
+            document.write(i, " -> ")
+            arr[i]("장수풍뎅이")
+        }
+
+        document.write("<hr/>")
+        for (const i in kv) {
+            document.write(i, " -> ")
+            kv[i]("사슴벌레")
+        }
+
+        let st = {name:"장국영", jum:[78,76,79], 
+                //함수를 직접 원소로 넣을 수 있으나 멤버에 접근 불가
+               // tot:() => jum[0] + jum[1] + jum[2]
+               tot: qqq =>qqq[0] + qqq[1] + qqq[2]  
+            }
+        document.write(st.name,"<br/>")
+        document.write(st.jum,"<br/>")
+        document.write(st.tot(st.jum),"<br/>")
+
+        let zz = 3000
+        function big(uu,yy){
+
+            function small_1(bb){     //함수정의부 내부에서 함수 정의 가능
+                let pre = "&nbsp;&nbsp;&nbsp;&nbsp;"
+
+                let cc = 555
+
+                pp = 777 //전역변수
+
+                //외부함수의 변수,매개변수와 외부 변수 접근가능
+
+                // xx : 외부함수의 지역변수 -->small_1()의 호출위치에 따라 에러발생이 결정됨
+                document.write(pre,"small_1 시작 : ", zz," , ",xx," , ",uu," , ", yy,"<br/>")
+                document.write(pre,"small_1 : ", bb," , ", cc," , ",pp,"<br/>")
+            
+                document.write(pre,"small_1 끝 : ", zz," , ",xx," , ", uu," , ", yy,"<br/>")    
+            }
+
+            //small_1()   //내부함수 호출
+
+            let xx = 40
+            document.write("big 시작 : ", zz," , ",xx," , ",uu," , ", yy,"-----------<br/>")
+            ff1("송아지")
+            //document.write("big : ",aa,"<br/>")
+            small_1(666)   //내부함수 호출
+
+            //document.write("big : ", bb," , ", cc,"<br/>")  내부함수의 매개,지역변수 접근불가
+            document.write("big : ", pp,"<br/>") 
+            document.write("big 끝 : ", zz," , ",xx," , ", uu," , ", yy,"------------<br/>")
+        }
+
+        big(100,200)
+        document.write("main : ", pp,"<br/>")
+        
+        
+
+        ////고차함수 --> 함수에 매개변수로 함수로 대입하여 실행하는 함수
+        document.write("<hr/>")
+
+        function paramFn(aa,bb, qwer){
+            let cc = "요이요이헤"
+            document.write("paramFn 시작 : ", aa," , ",bb," , ",cc,"<br/>")
+            let res = qwer(136,269)    //zzxx(136,269)
+                                        //aass(136,269)
+            document.write("paramFn 끝 : ", aa," , ",bb," , ",cc," , ",res,"<br/>")    
+        }
+        function zzxx(wsx,edc){
+            document.write("zzxx 실행 : ", wsx," , ",edc,"<br/>")
+            return "슈퍼잭"
+        }
+        function aass(rf,tg){
+            document.write("aass 실행 : ", rf," , ",tg,"<br/>")
+            return "파워잭"
+        }
+        //aa = 123 ,bb=456, qwer = zzxx
+        paramFn(123,456, zzxx);
+
+        //aa = 123 ,bb=456, qwer = aass
+        paramFn(123,456, aass);
+        //let rr = zzxx("높이높이","날아올라")
+        //document.write("rr : ", rr,"<br/>") 
+
+        paramFn(789,901, 
+            function(yu,ui){
+                document.write("익명 실행 : ", yu," , ",ui,"<br/>")
+                return "시거잭"
+            }
+        );
+
+        paramFn(404,505, 
+            (poiu,lkjh)=>{
+                document.write("람다 실행 : ", poiu," , ",lkjh,"<br/>")
+                return "애꾸눈잭"
+            }
+        );
+
+        paramFn(1234,5678, 
+            (poiu,lkjh)=> "블랙잭"
+        );
+    </script>
+</body>
+</html>

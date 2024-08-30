@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_lamdaExam</title>
+</head>
+<body>
+    <h1>14_lamdaExam</h1>
+    <script>
+        let spy = {
+            name:"정서윤",
+            jum:[136,55,79,99],
+            gender:"남",
+            money:5000
+        }
+
+        let lsk = {
+            name:"임세운",
+            jum:[88,77,66,55],
+            gender:"남",
+            money:8000
+        }
+
+        let sera = {
+            name:"강세라",
+            jum:[56,67,78,89],
+            gender:"여",
+            money:7000
+        }
+
+        function evaluation(st, uniName, uni){
+            let res= uni(st)
+            document.write(st.name+" "+uniName +" : "+res+"<br/>")
+        }
+
+        //evaluation(spy,"남파특작부대")
+
+        let seoul = mem => {
+            let tot = 0
+            for (const j of mem.jum) {
+                tot += j       
+            }
+            let avg = tot/mem.jum.length
+
+            return avg >= 90 ? "합격" :"불합격("+avg+")"
+        }
+        evaluation(spy,"남파특작부대", mem => "합격")
+        evaluation(spy,"서울대", seoul)
+        evaluation(lsk,"서울대", seoul)
+        evaluation(sera,"서울대", seoul)
+        evaluation(spy,"빨대", mem => mem.money >=6000)
+        evaluation(lsk,"빨대", mem => mem.money >=6000)
+        evaluation(sera,"빨대", mem => mem.money >=6000)
+        evaluation(spy,"군대", mem => mem.gender == "남" ? "입대" :"돌아가")
+        evaluation(lsk,"군대", mem => mem.gender == "남" ? "입대" :"돌아가")
+        evaluation(sera,"군대", mem => mem.gender == "남" ? "입대" :"돌아가")
+        evaluation(spy,"용인대", mem => {
+            let avg = 0
+            const rate = [0.05, 0.1, 0.15,0.7]
+            for (const i in mem.jum) {
+                avg += rate[i] * mem.jum[i]
+            }
+            return avg >= 70 ? "합격" :"불합격"
+        })
+        evaluation(lsk,"용인대", mem => {
+            let avg = 0
+            const rate = [0.05, 0.1, 0.15,0.7]
+            for (const i in mem.jum) {
+                avg += rate[i] * mem.jum[i]
+            }
+            return avg >= 70 ? "합격" :"불합격"
+        })
+        evaluation(sera,"용인대", mem => {
+            let avg = 0
+            const rate = [0.05, 0.1, 0.15,0.7]
+            for (const i in mem.jum) {
+                avg += rate[i] * mem.jum[i]
+            }
+            return avg >= 70 ? "합격" :"불합격"
+        })
+        /*
+        군대 : 남
+        용인대 : 5%, 10% 15% 70%  비율 : 70점이상 합격
+        
+        */
+
+        document.write("<hr/>")
+
+        for(let st of [spy, lsk, sera]){
+            document.write(st.name ,">>>> <br/>")
+
+            for(let uuu of [
+                                {
+                                    name:"서울대",
+                                    ff: seoul  
+                                },
+                                {
+                                    name:"빨대",
+                                    ff: mem => mem.money >=6000  
+                                },
+                                {
+                                    name:"군대",
+                                    ff: mem => mem.gender == "남" ? "입대" :"돌아가"  
+                                },
+                                {
+                                    name:"용인대",
+                                    ff: mem => {
+                                            let avg = 0
+                                            const rate = [0.05, 0.1, 0.15,0.7]
+                                            for (const i in mem.jum) {
+                                                avg += rate[i] * mem.jum[i]
+                                            }
+                                            return avg >= 70 ? "합격" :"불합격"
+                                        }  
+                                }
+                            ]
+            ){
+                evaluation(st,uuu.name, uuu.ff)
+            }
+        }
+
+    </script>
+</body>
+</html>
