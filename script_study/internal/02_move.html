@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_move</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #ff0;
+            /* top: 200px; */
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="바꿔X" onclick="goX()">
+    <input type="button" value="바꿔Y" onclick="goY()">
+    <div id="box"></div>
+    <script>
+        var xx = 200, yy = 200
+        var distX = 5, distY = 5
+        var box = document.getElementById("box")
+        box.style.left = xx+"px"
+        box.style.top = yy+"px"
+
+        function boxMove(){
+            xx+=distX
+            yy+=distY
+            box.style.left = xx+"px"
+            box.style.top = yy+"px"
+        }
+        //boxMove()
+        setInterval(boxMove, 30)
+
+        function goX(){
+            //alert("눌렀냐")
+            distX *= -1
+        }
+        function goY(){
+            //alert("눌렀냐")
+            distY *= -1
+        }
+    </script>
+</body>
+</html>

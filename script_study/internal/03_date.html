@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_date</title>
+</head>
+<body>
+    <h1>03_date</h1>
+    <script>
+        let now = new Date()
+        document.write(now,"<br/>")
+        let birth = new Date(1974,3-1,20,15,23,45)
+        /*
+            1 2 3 4 5 6 7 8 9 10 11 12  - 실제
+            0 1 2 3 4 5 6 7 8  9 10 11  - Date
+        */
+        document.write(birth,"<br/>")
+        birth = new Date("1993-12-07 10:20:35")
+        document.write(birth,"<br/>")
+        birth = new Date(1974,53-1,-67,134,-500,13)
+        document.write(birth,"<br/>")
+       // birth = new Date("1993-42-07 10:20:35")
+        birth = new Date(0) 
+        document.write(birth,"<br/>")
+        birth = new Date(1000*60*60*24) 
+        document.write(birth,"<br/>")
+        document.write("getFullYear : ",now.getFullYear(),"<br/>")
+        document.write("getMonth : ",now.getMonth(),"<br/>")
+        document.write("getDate : ",now.getDate(),"<br/>")
+        document.write("getDay : ",now.getDay(),"<br/>")
+        /*
+        요일번호
+        일 월 화 수 목 금 토
+        0  1  2  3 4  5  6
+        */
+        document.write("getTimezoneOffset : ",now.getTimezoneOffset(),"<br/>")//표준시차
+        document.write("getHours : ",now.getHours(),"<br/>")
+        document.write("getMinutes : ",now.getMinutes(),"<br/>")
+        document.write("getSeconds : ",now.getSeconds(),"<br/>")
+        document.write("getMilliseconds : ",now.getMilliseconds(),"<br/>")
+        document.write("getTime : ",now.getTime(),"<br/>")
+        //1725266644246
+        birth = new Date(1725266644246) 
+        document.write(birth,"<br/>")
+
+        /// 2020-2-10 (월) 10:50  형식으로 출력해 주세요
+        function dateStr(dd){
+            let ttt = dd.getFullYear()+"-"
+            ttt +=(dd.getMonth()+1)+"-"
+            ttt +=dd.getDate()+" ("
+            ttt +="일,월,화,수,목,금,토".split(",")[dd.getDay()]+") "
+            ttt +=dd.getHours()+":"
+            ttt +=dd.getMinutes()+":"
+            ttt +=dd.getSeconds()+"."
+            ttt +=dd.getMilliseconds()
+            ttt += "<br/>"
+            document.write(ttt)
+        }
+
+        dateStr(now)
+
+        dateStr(birth)
+        birth.setFullYear(2002)
+        dateStr(birth)
+        birth.setMonth(6-1)
+        birth.setDate(14)
+        birth.setMonth(200-1)
+        birth.setDate(-123)
+        //birth.setDay(1)
+        birth.setHours(14)
+        birth.setMinutes(35)
+        birth.setSeconds(53)
+        birth.setMilliseconds(100)
+        dateStr(birth)
+        birth.setTime(1000*60*60*24*4)
+        dateStr(birth)
+    </script>
+</body>
+</html>

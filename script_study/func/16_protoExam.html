@@ -80,13 +80,75 @@
                 st.tr()
             }
 
-            /*
+            
+        </script>
+    </table>
+
+<script>
+    /*
             직사각형 prototype을 정의하고 
 
             table 에 맞게 가로,세로, 넓이,둘레를 출력하세요
         
             */
-        </script>
-    </table>
+            function Rectangle(ww, hh){
+                this.ww = ww
+                this.hh = hh
+
+                this.area = ww*hh
+                this.border = (ww + hh) * 2
+                this.ttr()
+
+                /*
+                this.toString = function (){
+                    return this.ww+","+this.hh+","+this.area+","+this.border
+                }*/
+           }
+
+           Rectangle.prototype = {
+
+                toString : function(){
+                    return this.ww+","+this.hh+","+this.area+","+this.border
+                },
+
+                ttr : function(){
+                    let ttt = "<tr>" 
+                    ttt += "<td>"+this.ww+"</td>"
+                    ttt += "<td>"+this.hh+"</td>"
+                    ttt += "<td>"+this.area+"</td>"
+                    ttt += "<td>"+this.border+"</td>"
+                    ttt += "</tr>"
+
+                    document.write(ttt)
+                }
+           }
+           //let rr1 = new Rectangle(5,6)
+           //document.write(rr1.area)
+           //document.write(rr1)
+
+        //    let recs = [
+        //         new Rectangle(5,6),
+        //         new Rectangle(20,20),
+        //         new Rectangle(30,15) 
+        //    ]
+</script>
+
+    <table border="">
+        <tr>
+            <td>가로</td>
+            <td>세로</td>
+            <td>넓이</td>
+            <td>둘레</td>
+        </tr>
+    <script>
+        // for (const rc of recs) {
+        //     rc.ttr()
+        // }
+        new Rectangle(5,6)
+        new Rectangle(20,20)
+        new Rectangle(30,15) 
+    </script>
+
+</table>
 </body>
 </html>

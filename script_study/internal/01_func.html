@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_func</title>
+</head>
+<body>
+    <h1>01_func</h1>
+    <script>
+        //let rr = alert("경고한다")
+        //document.write("rr : ",rr,"<br/>")
+        //rr = prompt("소원을 말해봐")
+        //document.write("rr : ",rr,"<br/>")
+        //let rr = confirm("오토바이를 사시겠습니까?")
+        //document.write("rr : ",rr,"<br/>")
+        document.write("isNaN(123) : ",isNaN(123),"<br/>")
+        document.write("isNaN('아기상어') : ",isNaN('아기상어'),"<br/>")
+        document.write("isNaN('12a3') : ",isNaN('12a3'),"<br/>")
+        document.write("isNaN('123') : ",isNaN('123'),"<br/>")//문자내용이 숫자이면 false
+        document.write("'123'+100 : ",'123'+100,"<br/>")
+        document.write("parseInt('123')+100 : ",parseInt('123')+100,"<br/>")
+        document.write("'123.456'+100 : ",'123.456'+100,"<br/>")
+        document.write("parseInt('123.456')+100 : ",parseInt('123.456')+100,"<br/>")
+        document.write("parseInt(787.654)+100 : ",parseInt(787.654)+100,"<br/>")
+        document.write("parseFloat('123.456')+100 : ",parseFloat('123.456')+100,"<br/>")
+        document.write("'5 + 6 * 2' : ",'5 + 6 * 2',"<br/>")
+        document.write("eval('5 + 6 * 2') : ",eval('5 + 6 * 2'),"<br/>")
+        document.write("String(123)+100 : ",String(123)+100,"<br/>")
+        let no = 0
+        function aaa(){
+            no++
+            document.write("aaa 이다 ",no,"<br/>")
+        }
+        //aaa()
+        //setTimeout(aaa, 3000)
+
+        var ggg = setInterval(aaa,3000)
+
+        //clearInterval(ggg)
+        function bbb(){
+            clearInterval(ggg)
+        }
+
+        setTimeout(bbb, 10000)
+        
+    </script>
+</body>
+</html>
