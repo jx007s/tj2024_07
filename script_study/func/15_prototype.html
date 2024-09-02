@@ -37,6 +37,7 @@
                 document.write("Person.fn_2 실행() ",this.name," , ",this.age," , ",hobby, "<br/>")
             }
 
+            //의미없음
             function fn_3(){
                 document.write("fn_3 실행() ",this.name," , ",this.age," , ",hobby, "<br/>")
             }
@@ -81,12 +82,77 @@
             this.name = name
             this.age = age
             this.marriage = marriage
+
+            //Member.prototype 으로 이후에 함수정의하여도 사라지지 않음
+            this.fn_7= function(){
+                document.write("Member.fn_7 실행() ",this.name," , ",this.age," , ",this.marriage, "<br/>")
+            }
+
+            ///  Member.prototype 에서 다시 정의하였으나 Member 정의부의 this.fn_8() 함수가 호출
+            this.fn_8= function(){
+                document.write("Member.fn_8 실행_1() ",this.name," , ",this.age," , ",this.marriage, "<br/>")
+            }
+        }
+
+
+        //1개 멤버함수정의
+        Member.prototype.fn_1 = function(){
+            document.write("Member.fn_1 실행() ",this.name," , ",this.age," , ",this.marriage, "<br/>")
+        }
+
+        //다수 멤버함수정의 --> 이전의 prototype 멤버함수정의는 사라짐
+        //위의 Member.prototype.fn_1 정의는 사라짐
+        Member.prototype ={ 
+            fn_2 : function(){
+                document.write("Member.fn_2 실행() ",this.name," , ",this.age," , ",this.marriage, "<br/>")
+            },
+            fn_3 : function(){
+                document.write("Member.fn_3 실행() ",this.name," , ",this.age," , ",this.marriage, "<br/>")
+            }
+        }
+        Member.prototype.fn_4 = function(){
+            document.write("Member.fn_4 실행() ",this.name," , ",this.age," , ",this.marriage, "<br/>")
+        }
+
+        //다시 prototype을 정의 할 경우 위의 
+        //fn_1, fn_2, fn_3, fn_4 가 모두 사라지고 재정의함
+        Member.prototype ={ 
+            fn_5 : function(){
+                document.write("Member.fn_5 실행() ",this.name," , ",this.age," , ",this.marriage, "<br/>")
+            },
+            fn_6 : function(){
+                document.write("Member.fn_6 실행() ",this.name," , ",this.age," , ",this.marriage, "<br/>")
+            },
+
+            /// 다시 정의하였으나 Member 정의부의 this.fn_8() 함수가 호출
+            fn_8 : function(){
+                document.write("Member.fn_8_2 실행() ",this.name," , ",this.age," , ",this.marriage, "<br/>")
+            },
+
+            //생성된 객체변수 호출시 toString() 호출 실행
+            toString : function(){
+                return "Member:"+this.name+" , "+this.age+" , "+this.marriage
+            }
         }
 
         let mm1 = new Member()
         let mm2 = new Member("이효리",43,true) //매개변수로 멤버변수 초기화
+        
+        console.log(Member)
         console.log(mm1)
         console.log(mm2)
+        //mm2.fn_1()
+        //mm2.fn_2()
+        //mm2.fn_3()
+        //mm2.fn_4()
+
+        //mm2(객체)  호출시 mm2.toString() 호출 실행
+        document.write("mm2:",mm2,"<br/>")
+        document.write("mm2.toString():",mm2.toString(),"<br/>")
+        mm2.fn_5()
+        mm2.fn_6()
+        mm2.fn_7()
+        mm2.fn_8()///  Member.prototype 에서 다시 정의하였으나 Member 정의부의 this.fn_8() 함수가 호출
     </script>
 </body>
 </html>

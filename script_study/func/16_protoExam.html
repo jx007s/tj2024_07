@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_protoExam</title>
+</head>
+<body>
+    <h1>16_protoExam</h1>
+    <script>
+        let Stud = function(name, ...jum){
+            this.name = name
+            this.jum = jum
+
+            //this.calc()   //함수 정의가 되지 않아 에러발생
+
+            //생성시 연산 가능
+            //document.write("우헬헬")
+            // this.tot = 0
+            // for (const j of this.jum) {
+            //     this.tot += j
+            // }
+
+            this.calc = function(){
+                this.tot = 0
+                for (const j of this.jum) {
+                    this.tot += j
+                }
+                this.avg = this.tot / this.jum.length
+            }
+
+            this.calc()  //생성시 함수 호출
+
+            this.toString = function(){
+                return this.name+","+this.jum+","+this.tot+","+this.avg
+            }
+
+            this.tr = function(){
+                let ttt = "<tr>" 
+                    ttt += "<td>"+this.name+"</td>"
+                    //+","+this.jum+","+this.tot+","+this.avg
+
+                    for (const j of this.jum) {
+                        ttt += "<td>"+ j+"</td>"
+                    }
+
+                    ttt += "<td>"+this.tot+"</td>"
+                    ttt += "<td>"+this.avg+"</td>"
+                    ttt += "</tr>"
+
+                document.write(ttt)
+            }
+        }
+
+        //let st1 = new Stud("장동건",78,79,72)
+        //document.write(st1)
+        let studs = [
+            new Stud("장동건",78,79,72),
+            new Stud("장서건",58,59,52),
+            new Stud("장중건",98,99,92),
+            new Stud("장남건",68,69,62),
+            new Stud("북두신건",88,89,82)
+        ]
+
+        // for(const st of studs){
+        //     document.write(st)
+        // }
+    </script>
+    <table border="">
+        <tr>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>총점</td>
+            <td>평균</td>
+        </tr>
+        <script>
+            for(const st of studs){
+                st.tr()
+            }
+
+            /*
+            직사각형 prototype을 정의하고 
+
+            table 에 맞게 가로,세로, 넓이,둘레를 출력하세요
+        
+            */
+        </script>
+    </table>
+</body>
+</html>
