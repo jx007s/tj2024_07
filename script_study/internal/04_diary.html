@@ -11,6 +11,16 @@
         td{
             text-align: center;
         }
+
+        tr > td:first-child{
+            color: #f00;
+        }
+        tr > td:nth-of-type(7){
+            color: #00f;
+        }
+        .cc{
+            background-color: #ff0;
+        }
     </style>
 </head>
 <body>
@@ -26,7 +36,8 @@
         now = new Date(2024,10-1,0)
         console.log(now)
         let today = new Date()
-        console.log(today)
+        now = today.getDate()
+        console.log(now)
         let last = new Date(today.getFullYear(), today.getMonth()+1,0).getDate()
         console.log(last)
         today.setDate(1)
@@ -67,7 +78,12 @@
 
                 // 일자
                 for (let i = 1; i<=last;i++) {
-                    document.write("<td>",i,"</td>") 
+
+                    let cc = ""
+                    if(i==now){
+                        cc = "class = 'cc'"
+                    }
+                    document.write("<td "+cc+">",i,"</td>") 
                     today.setDate(i) 
                     //console.log(today.getDay()) 
                     if(today.getDay()==6){

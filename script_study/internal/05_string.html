@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_string</title>
+</head>
+<body>
+    <h1>05_string</h1>
+    <script>
+       let tt = "aBcD EfG 더조은 컴퓨터 tjoen computer 123 EEf" 
+       //        0123456789 0 1 23 4 567890123456789012345678
+       document.write("tt : ",tt,"<br/>")
+       document.write("tt[2] : ",tt[2],"<br/>")
+       document.write("tt[-2] : ",tt[-2],"<br/>")
+       document.write("tt.length : ",tt.length,"<br/>")
+       document.write("tt[13] : ",tt[13],"<br/>")
+       document.write("tt[38] : ",tt[38],"<br/>")
+       document.write("tt[39] : ",tt[39],"<br/>")
+       document.write("tt.charAt(13) : ",tt.charAt(13),"<br/>")
+       tt[10] = '나'  //적용안됨, 변경되지 않음
+       tt[39] = 'A'  //적용안됨, 변경되지 않음
+       //tt.push('가')  에러
+       //tt.unshift('다') 에러
+       /*
+       String = function(arr){
+            this.arr = arr
+
+            this.toString = function(){
+                let tt = ""
+                for(let t of arr){
+                    tt += t
+                }
+                return tt
+            }
+       }
+       */
+       //let rr = tt.pop()
+       //let rr = tt.shift()
+       document.write("tt : ",tt,"<br/>")
+       //let stt = new String('abc')
+       //document.write("stt : ",stt,"<br/>")
+
+       document.write("includes('t') : ",tt.includes('t'),"<br/>")
+       document.write("includes('T') : ",tt.includes('T'),"<br/>")
+       document.write("includes('tj') : ",tt.includes('tj'),"<br/>")
+       document.write("includes('tjv') : ",tt.includes('tjv'),"<br/>")
+
+       document.write("indexOf('t') : ",tt.indexOf('t'),"<br/>")
+       document.write("indexOf('T') : ",tt.indexOf('T'),"<br/>")
+       document.write("indexOf('tj') : ",tt.indexOf('tj'),"<br/>")
+       document.write("indexOf('tjv') : ",tt.indexOf('tjv'),"<br/>")
+
+       document.write("indexOf('e') : ",tt.indexOf('e'),"<br/>")
+       document.write("indexOf('e',22) : ",tt.indexOf('e',22),"<br/>")
+       document.write("indexOf('e',30) : ",tt.indexOf('e',30),"<br/>")
+       document.write("indexOf('E') : ",tt.indexOf('E'),"<br/>")
+       document.write("indexOf('E',7) : ",tt.indexOf('E',7),"<br/>")
+       document.write("indexOf('Ef') : ",tt.indexOf('Ef'),"<br/>")
+       document.write("indexOf('Ef',7) : ",tt.indexOf('Ef',7),"<br/>")
+
+       document.write("lastIndexOf('e') : ",tt.lastIndexOf('e'),"<br/>")
+       document.write("lastIndexOf('e',27) : ",tt.lastIndexOf('e',27),"<br/>")
+       document.write("lastIndexOf('e',17) : ",tt.lastIndexOf('e',17),"<br/>")
+
+       document.write("startsWith('aBc') : ",tt.startsWith('aBc'),"<br/>")
+       document.write("startsWith('aBr') : ",tt.startsWith('aBr'),"<br/>")
+       document.write("startsWith('e') : ",tt.startsWith('e'),"<br/>")
+
+       document.write("endsWith('Ef') : ",tt.endsWith('Ef'),"<br/>")
+       document.write("endsWith('fE') : ",tt.endsWith('fE'),"<br/>")
+       document.write("endsWith('E') : ",tt.endsWith('E'),"<br/>")
+
+       let ss = tt.slice(3,10)// 3 -> 10-1
+       document.write("slice(3,10) : ",ss,"<br/>")
+       ss = tt.substring(3,10)// 3 -> 10-1
+       document.write("substring(3,10) : ",ss,"<br/>")
+       ss = tt.substr(3,11) // 3 -> 11글자
+       document.write("substr(3,11) : ",ss,"<br/>")
+
+       document.write("toUpperCase : ",tt.toUpperCase(),"<br/>")
+       document.write("toLowerCase : ",tt.toLowerCase(),"<br/>")
+
+       //Abcd Efg 더조은 컴퓨터 Tjoen Computer 123 Eef
+        let arr = []
+        for (const word of tt.toLowerCase().split(" ")) {
+            //console.log(word[0].toUpperCase()+word.slice(1))
+            arr.push(word[0].toUpperCase()+word.slice(1))
+        }
+        //console.log(arr)
+        document.write("arr : ",arr.join(" "),"<br/>")
+
+        document.write("repeat(4) : ","아기상어".repeat(4),"<br/>")
+        document.write("tt : ",tt,"<br/>")
+        ss = tt.replace("e","이")   //최초 1글자 변경
+        document.write("ss : ",ss,"<br/>")
+        document.write("tt : ",tt,"<br/>")
+        ss = tt.replaceAll("e","이")    //모든글자 변경
+        document.write("ss : ",ss,"<br/>")
+        document.write("repeat(4) : ","아기상어".repeat(4),"<br/>")
+        tt = "     더조은 computer     "
+        console.log(tt, tt.length)
+        console.log(tt.trim(), tt.trim().length)
+
+        tt = "asdf0123"
+        document.write("tt : ",tt,"<br/>")
+        document.write("charCodeAt(0) : ",tt[0] ," => ", tt.charCodeAt(0),"<br/>")
+        document.write("charCodeAt(1) : ",tt[1] ," => ", tt.charCodeAt(1),"<br/>")
+        document.write("charCodeAt(2) : ",tt[2] ," => ", tt.charCodeAt(2),"<br/>")
+        document.write("charCodeAt(3) : ",tt[3] ," => ", tt.charCodeAt(3),"<br/>")
+        document.write("charCodeAt(4) : ",tt[4] ," => ", tt.charCodeAt(4),"<br/>")
+        document.write("charCodeAt(5) : ",tt[5] ," => ", tt.charCodeAt(5),"<br/>")
+        document.write("charCodeAt(6) : ",tt[6] ," => ", tt.charCodeAt(6),"<br/>")
+        document.write("charCodeAt(7) : ",tt[7] ," => ", tt.charCodeAt(7),"<br/>")
+        let num = tt.charCodeAt(4) //'0' -> 48
+        document.write("num : ",num," , ", num-48,"<br/>")
+        document.write("fromCharCode : ",String.fromCharCode(100,65,50,110),"<br/>")
+    </script>
+</body>
+</html>

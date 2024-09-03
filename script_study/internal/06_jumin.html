@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_jumin</title>
+</head>
+<body>
+    <h1>06_jumin</h1>
+    <script>
+        let jumin = "960320-1234567"
+        let arr = []
+        let k = jumin.charCodeAt(7)-48
+        console.log(k)
+        for(let i = 0; i<3;i++){
+            arr.push(eval(jumin.slice(i*2,i*2+2)))
+        }
+
+
+
+        /*
+                    -1  %4      /2      parseInt    +19     *100
+        1   1900    0   0       0       0           19      1900
+        2           1   1       0.5     0
+        -------
+        3   2000    2   2       1       1           20      2000
+        4           3   3       1.5     1
+        -------------------------------
+        5   1900    4   0
+        6           5   1
+        ------
+        7   2000    6   2
+        8           7   3
+        
+        */
+       let year =  (parseInt ((k-1)  %4      /2)  +19)  *100
+
+        arr[0]+= year
+        console.log(year, arr)
+
+        let birth = new Date(arr[0],arr[1],arr[2])
+        let now = new Date()
+        let age = now.getFullYear() - arr[0] + 1
+        document.write("한국나이 : ", age, "<br/>")
+
+        //주민번호를 이용하여 성별, 국적(내국인,외국인) 을 출력하세요
+        //올해 생일을 출력하세요 : 년월일 요일 까지 출력
+        
+    </script>
+</body>
+</html>
