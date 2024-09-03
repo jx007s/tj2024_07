@@ -92,8 +92,29 @@
             arr[0] = now.getFullYear() 
             birth = arrToDate(arr)
             conLog("올해생일", dateStr(birth))
-
             console.log(now.getTime(), birth.getTime())
+
+
+            if(now.getTime() > birth.getTime()){
+                arr[0]++ 
+                birth = arrToDate(arr)
+            }
+            conLog("다가올생일1", dateStr(birth))
+            let ddMinus = 0
+            if(birth.getDay()==0){
+                ddMinus = 2
+            }else if(birth.getDay()==6){
+                ddMinus = 1
+            }
+            arr[2]-=ddMinus 
+            birth = arrToDate(arr)
+
+            conLog("다가올생일2", dateStr(birth))
+            conLog("D-day", parseInt((birth.getTime()-now.getTime())/(1000*60*60*24))+1)
+            // 1000 :  1/1000 -> 1초
+            // 60   : 1분
+            // 60   : 1시간
+            // 24   : 1일
         }
         
     </script>
