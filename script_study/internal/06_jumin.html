@@ -4,47 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>06_jumin</title>
+    <style>
+        #cons{
+            width: 400px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            padding : 30px;
+        }
+    </style>
 </head>
 <body>
     <h1>06_jumin</h1>
+    <input type="text" id="jumin" value="160320-4234567">
+    <input type="button" value="눌러" onclick="gogo()">
+    <div id="cons"></div>
     <script>
-        let jumin = "960320-1234567"
-        let arr = []
-        let k = jumin.charCodeAt(7)-48
-        console.log(k)
-        for(let i = 0; i<3;i++){
-            arr.push(eval(jumin.slice(i*2,i*2+2)))
+        //let jumin = "160320-4234567"
+        let jum = document.getElementById("jumin")
+        let cons = document.getElementById("cons")
+
+        function arrToDate(arr){
+            return new Date(arr[0], arr[1]-1, arr[2])
         }
 
+        function dateStr(dd){
+            let ttt = dd.getFullYear()+"-"
+            ttt +=(dd.getMonth()+1)+"-"
+            ttt +=dd.getDate()+" ("
+            ttt +="일월화수목금토"[dd.getDay()]+") "
+            return ttt
+        }
+
+        function conLog(title, content){
+            
+            cons.innerHTML+=title+" : "+content+"<br/>"
+        }
+
+        function gogo(){
+            cons.innerHTML = ""
+            let arr = []
+            let jumin = jum.value
+            let k = jumin.charCodeAt(7)-48
+            console.log(k)
+            for(let i = 0; i<3;i++){
+                arr.push(eval(jumin.slice(i*2,i*2+2)))
+            }
 
 
-        /*
-                    -1  %4      /2      parseInt    +19     *100
-        1   1900    0   0       0       0           19      1900
-        2           1   1       0.5     0
-        -------
-        3   2000    2   2       1       1           20      2000
-        4           3   3       1.5     1
-        -------------------------------
-        5   1900    4   0
-        6           5   1
-        ------
-        7   2000    6   2
-        8           7   3
-        
-        */
-       let year =  (parseInt ((k-1)  %4      /2)  +19)  *100
 
-        arr[0]+= year
-        console.log(year, arr)
+            /*
+                        -1  %4      /2      parseInt    +19     *100
+            1   1900    0   0       0       0           19      1900
+            2           1   1       0.5     0
+            -------
+            3   2000    2   2       1       1           20      2000
+            4           3   3       1.5     1
+            -------------------------------
+            5   1900    4   0
+            6           5   1
+            ------
+            7   2000    6   2
+            8           7   3
+            
+            */
+        let year =  (parseInt ((k-1)  %4      /2)  +19)  *100
 
-        let birth = new Date(arr[0],arr[1],arr[2])
-        let now = new Date()
-        let age = now.getFullYear() - arr[0] + 1
-        document.write("한국나이 : ", age, "<br/>")
+            arr[0]+= year
+            console.log(year, arr)
 
-        //주민번호를 이용하여 성별, 국적(내국인,외국인) 을 출력하세요
-        //올해 생일을 출력하세요 : 년월일 요일 까지 출력
+            
+            let now = new Date()
+            let age = now.getFullYear() - arr[0] + 1
+            let ttt = "한국나이 : "+age+"<br/>"
+            conLog("한국나이", age)
+
+            //주민번호를 이용하여 성별, 국적(내국인,외국인) 을 출력하세요
+            //올해 생일을 출력하세요 : 년월일 요일 까지 출력
+            //document.write("성별 : ", "여남"[k%2],"<br/>")
+            conLog("성별", "여남"[k%2])
+
+            
+            conLog("국적", "내외"[parseInt(k/5) ]+"국인")
+
+            let birth = arrToDate(arr)
+            conLog("생년월일", dateStr(birth))
+            arr[0] = now.getFullYear() 
+            birth = arrToDate(arr)
+            conLog("올해생일", dateStr(birth))
+
+            console.log(now.getTime(), birth.getTime())
+        }
         
     </script>
 </body>
