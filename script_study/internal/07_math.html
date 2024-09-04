@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_math</title>
+</head>
+<body>
+    <h1>07_math</h1>
+    <script>
+        document.write(0/10,"<br/>")
+        document.write(10/0,"<br/>")
+        let a = 123.43678
+        document.write("a : ",a,"<br/>")
+        document.write("toFixed(2) : ",a.toFixed(2),"<br/>")
+        document.write("toPrecision(2) : ",a.toPrecision(2),"<br/>")
+        document.write("toFixed(4) : ",a.toFixed(4),"<br/>")
+        document.write("toPrecision(4) : ",a.toPrecision(4),"<br/>")
+
+        document.write("'123'+100 : ",'123'+100,"<br/>")
+        // Number : 문자열의 숫자 -> 숫자
+        // eval : 문자열로 된 수식 -> 수식
+        document.write("Number('123')+100 : ",Number('123')+100,"<br/>")
+        document.write("eval('123')+100 : ",eval('123')+100,"<br/>")
+        document.write("'5 + 6 * 2' : ",'5 + 6 * 2',"<br/>")
+        document.write("Number('5 + 6 * 2') : ",Number('5 + 6 * 2'),"<br/>")
+        document.write("eval('5 + 6 * 2') : ",eval('5 + 6 * 2'),"<br/>")
+        //내림
+        document.write("Math.floor(123.456) : ",Math.floor(123.456),"<br/>")
+        document.write("Math.floor(987.654) : ",Math.floor(987.654),"<br/>")
+        document.write("Math.floor(-123.456) : ",Math.floor(-123.456),"<br/>")
+        document.write("Math.floor(-987.654) : ",Math.floor(-987.654),"<br/>")
+        //올림
+        document.write("Math.ceil(123.456) : ",Math.ceil(123.456),"<br/>")
+        document.write("Math.ceil(987.654) : ",Math.ceil(987.654),"<br/>")
+        document.write("Math.ceil(-123.456) : ",Math.ceil(-123.456),"<br/>")
+        document.write("Math.ceil(-987.654) : ",Math.ceil(-987.654),"<br/>")
+        //반올림
+        document.write("Math.round(123.456) : ",Math.round(123.456),"<br/>")
+        document.write("Math.round(987.654) : ",Math.round(987.654),"<br/>")
+        document.write("Math.round(-123.456) : ",Math.round(-123.456),"<br/>")
+        document.write("Math.round(-987.654) : ",Math.round(-987.654),"<br/>")
+        //소숫점 이하 제거
+        document.write("Math.trunc(123.456) : ",Math.trunc(123.456),"<br/>")
+        document.write("Math.trunc(987.654) : ",Math.trunc(987.654),"<br/>")
+        document.write("Math.trunc(-123.456) : ",Math.trunc(-123.456),"<br/>")
+        document.write("Math.trunc(-987.654) : ",Math.trunc(-987.654),"<br/>")
+
+        document.write("Math.abs(123.456) : ",Math.abs(123.456),"<br/>")
+        document.write("Math.abs(-123.456) : ",Math.abs(-123.456),"<br/>")
+
+        document.write("Math.pow(2,4) : ",Math.pow(2,4),"<br/>")
+        document.write("Math.sqrt(2) : ",Math.sqrt(2),"<br/>")
+
+        document.write("Math.max(34,6,89,23,72) : ",Math.max(34,6,89,23,72),"<br/>")
+        document.write("Math.min(34,6,89,23,72) : ",Math.min(34,6,89,23,72),"<br/>")
+
+        document.write("Math.log(10) : ",Math.log(10),"<br/>")
+        document.write("Math.PI : ",Math.PI,"<br/>")
+        
+        document.write("Math.sin(30) : ",Math.sin(30),"<br/>")
+        document.write("Math.sin(30*Math.PI/180) : ",Math.sin(30*Math.PI/180),"<br/>")
+        document.write("Math.cos(30*Math.PI/180) : ",Math.cos(30*Math.PI/180),"<br/>")
+        document.write("Math.tan(30*Math.PI/180) : ",Math.tan(30*Math.PI/180),"<br/>")
+
+        document.write("Math.atan2(1,1) : ",Math.atan2(1,1),"<br/>")
+        document.write("Math.atan2(1,1)/Math.PI*180 : ",Math.atan2(1,1)/Math.PI*180,"<br/>")
+
+        // 0 < x < 1  난수 발생
+        document.write("Math.random() : ",Math.random(),"<br/>")
+        // 20 <= x < 60 : 정수 형태의 난수 발생
+        document.write("Math.trunc(Math.random()*40+20) : ",Math.trunc(Math.random()*40+20),"<br/>")
+    </script>
+</body>
+</html>

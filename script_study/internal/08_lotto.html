@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_lotto</title>
+</head>
+<body>
+    <h1>08_lotto</h1>
+    <script>
+        let arr = []
+        while(arr.length!=6){
+            let no = parseInt(Math.random()*45+1)
+            if(!arr.includes(no)){
+                arr.push(no)
+            }
+            
+        }
+
+        arr.sort()
+        document.write(arr)
+/*
+
+빙고를 구현해 주세요
+
+ 숫자 범위 : 1-> 100
+
+ 출력모양 : 5 x 5
+
+ * * * * *
+ * * * * *
+ * * * * *
+ * * * * *
+ * * * * *
+
+
+
+
+*/      document.write("<hr/>")
+        arr = []
+        while(arr.length<25){
+            let no = parseInt(Math.random()*100+1)
+            if(!arr.includes(no)){
+                arr.push(no)
+            }
+            
+        }
+        document.write("<table border=''><tr>")
+        //document.write(arr)
+        for (let i in arr) {
+            document.write("<td>"+arr[i]+"</td>")
+            
+            if (!((eval(i)+1)%5)) {
+                document.write("</tr><tr>")
+                
+            }
+        }
+
+        document.write("</tr></table>")
+    </script>
+</body>
+</html>
