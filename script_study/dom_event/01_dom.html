@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_dom</title>
+    <style>
+        #cons{
+            border: 1px solid #ccc;
+            padding:10px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+
+        function conLog(msg){
+            let cons = document.getElementById("cons")
+            cons.innerHTML += msg+"<br/>"
+        }
+
+        //conLog()
+
+        window.onload = function(){
+            //conLog("와 cons다")
+            //전체
+            var rtrt = document.documentElement
+            //console.log(rtrt)
+
+            var rtChilds = rtrt.childNodes
+            console.log(rtChilds)
+            console.log(rtrt.childElementCount) //2개 - head, body 
+            let rtChildChilds = rtChilds[2].childNodes
+            console.log(rtChildChilds)
+            console.log(rtChildChilds[1])
+
+            //tag - 배열
+            let spans = document.getElementsByTagName("span")
+            console.log(spans)
+            
+            conLog(spans[0].innerHTML) //innerHTML : text 노드
+            spans[0].innerHTML = "스팬제로"
+            conLog(spans[0].getAttribute("zz-data")) 
+
+            //class - 배열
+            let bbbs = document.getElementsByClassName("bbb")
+            //conLog(bbbs.innerHTML)
+            console.log(bbbs)
+            conLog(bbbs[0].getAttribute("id")) 
+            conLog(bbbs[1].innerHTML) 
+            bbbs[2].style.color="#f00"  //style 변경
+            bbbs[1].removeAttribute("qwer")  //속성삭제
+
+            //id - 1개
+            let b1 = document.getElementById("b1")
+            conLog(b1.innerHTML)
+
+            // id 중첩될 경우 - 먼저 작성된 element 선택
+            let q1 = document.getElementById("q1")
+            conLog(q1.innerHTML) //qwer11
+
+
+            //생성
+            let newItem = document.createElement("div")
+            newItem.innerHTML = "새로운 div"
+            //추가
+            bbbs[2].appendChild(newItem)
+
+            //자신을 삭제
+            spans[1].remove()
+
+            let q2 = document.getElementById("q2")
+
+            //자식을 삭제
+            //q2.removeChild(div)
+            let q2child = q2.childNodes
+            console.log(q2child)
+            for (const q2c of q2child) {
+                conLog(q2c+" , "+q2c.tagName)
+                if(q2c.tagName=="DIV"){  //자식중 tagName == DIV
+                    q2.removeChild(q2c)      // 그 자식을 삭제
+                }
+            }
+            //자식을 삭제
+            //q2.removeChild(q2child[1])
+
+            //부모 노드
+            let q2Par = q2.parentNode
+            console.log(q2Par)
+            conLog(q2Par.getAttribute("zz-data"))
+
+            let preBro1 = q2.previousSibling  //앞의 형제 
+                                                //빈 문자열이 있을 경우 문자로 인식
+            console.log(preBro1)
+            let preBro2 = q2.previousElementSibling  //앞의 객체 형제 (문자열은 인식안함)
+            console.log(preBro2)
+            let nextBro1 = q2.nextSibling//다음 형제 
+                                            //빈 문자열이 있을 경우 문자로 인식
+            console.log(nextBro1)
+            let nextBro2 = q2.nextElementSibling //다음 객체 형제 (문자열은 인식안함)
+            console.log(nextBro2)
+
+
+
+            //querySelector -> style의 선택자 사용 : 여러개일 경우 첫번째 요소 리턴
+            //span 태그 첫번째 리턴
+            let spanOne = document.querySelector("span")
+            console.log(spanOne)
+
+            let aaaDiv = document.querySelector(".aaa > div")
+            aaaDiv.style.backgroundColor = "#ff0"
+
+            aaaDiv = document.querySelector(".aaa > div:nth-of-type(3)")
+            aaaDiv.style.backgroundColor = "#0f0"
+        }
+        //alert("나왔냐ㅐ?")
+
+        
+       
+        
+    </script>
+</head>
+<body>
+    <h1>01_dom</h1>
+    <div class="aaa">
+        aaa0
+        <div class="bbb" id="b1">bbb0</div>
+        <div qwer="11" id="q1">qwer11</div>
+        <div qwer="22" id="q1" class="bbb">qwer22 bbb1</div>
+        <span zz-data="1234">span0</span>
+        <span>span1</span>
+    </div>
+    <div zz-data="부모지롱">
+        <div class="bbb">bbb2</div>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div qwer="33" zz-data="5678">qwer33</div>
+        <div qwer="44" id="q2">
+            qwer44
+            <div zz-data="자식이지">자식자식</div>
+        </div>
+        <span class="bbb">span2</span>
+        <span>span3</span>
+
+        <div id="cons"></div>
+    </div>
+    
+</body>
+</html>
