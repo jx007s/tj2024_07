@@ -111,8 +111,28 @@
 
             aaaDiv = document.querySelector(".aaa > div:nth-of-type(3)")
             aaaDiv.style.backgroundColor = "#0f0"
+
+
+            let divs = document.getElementsByTagName("div")
+            for (const dd of divs) {
+                //conLog(dd.innerHTML.startsWith("box"))
+                if(dd.innerHTML.startsWith("box")){
+                    dd.style.color = "#00f"
+                }
+            }
+            
+            //querySelectorAll : style의 선택자 사용 --> 배열로 리턴
+            let aaaDivs = document.querySelectorAll(".aaa > div")
+            //aaaDivs.style.fontSize = "2rem"  //에러
+            //aaaDivs[0].style.fontSize = "2rem"
+            //console.log(aaaDivs)
+            for (const ad of aaaDivs) {
+                ad.style.fontSize = "2rem"
+            }
         }
         //alert("나왔냐ㅐ?")
+
+
 
         
        

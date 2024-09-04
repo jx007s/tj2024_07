@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_mouseEvent</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0; 
+        }
+        section{
+            width: 600px;
+            background-color: #ffa;
+        }
+        section > div > img{
+            width:100px;
+            height: 70px;
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid #ccc;
+
+        }
+        section > div{
+            width:122px;
+            height: 92px;
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            //alert("시작인가")
+            let divs = document.querySelectorAll("section > div")
+            divs[1].addEventListener('click',()=>{ console.log("divs[1] 눌렀으요")})
+            divs[2].onclick = function(){  console.log("divs[2] 눌렀지비") }
+            divs[3].onmouseover = function(e){  
+                console.log("divs[3] 마우스오버여",e.clientX,",",e.clientY) }
+            divs[4].onmouseout = e => {  
+                    console.log("divs[4] 마우스아웃인감",e.clientX,",",e.clientY) }
+            divs[5].onmousemove = e => {  
+                    console.log("divs[5] 마우스이동",e.clientX,",",e.clientY) }
+            divs[3].onmousedown = e => {  
+                        console.log("divs[3] 마우스다운",e.clientX,",",e.clientY) }
+            divs[4].onmouseup = e => {  
+                        console.log("divs[4] 마우스업",e.clientX,",",e.clientY) }
+        }
+        function dd0(){
+            alert("dd0를 눌렀다")
+        }
+    </script>
+</head>
+<body>
+    <H1>02_mouseEvent</H1>
+    <section>
+        <div><img src="../fff/son_2.jpg" onclick="dd0()" alt=""></div>
+        <div><img src="../fff/son_3.jpg" alt=""></div>
+        <div><img src="../fff/son_4.jpg" alt=""></div>
+        <div><img src="../fff/child_1.jpg" alt=""></div>
+        <div><img src="../fff/child_2.jpg" alt=""></div>
+        <div><img src="../fff/car.jpg" alt=""></div>
+    </section>
+</body>
+</html>
