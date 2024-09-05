@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script>
+        window.onload=function(){
+            let divs = document.querySelectorAll("div")
+            divs[0].style.fontSize = "2rem"
+            //divs.style.backgroundColor = "#ff0"
+            for (const dd of divs) {
+                dd.style.backgroundColor = "#ff0"
+            }
+           // $("div").eq(1).css("font-size","2rem")
+        }
+
+        $(function(){  //window.onload=function(){}과 같음
+            $("div").eq(1).css("font-size","2rem")
+            $("div").css("margin","30px")
+            $("div").eq(2).css({
+                "font-size":"1.5rem",
+                "color":"#f00",
+                transform:"rotate(5deg)",
+                backgroundColor : "#0ff"
+            })
+        })
+
+
+    </script>
+    <title>05_jquery</title>
+</head>
+<body>
+    <h1>05_jquery</h1>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+</body>
+</html>
