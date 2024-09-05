@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            width: 600px;
+            height: 400px;
+            position: relative;
+            border: 1px solid #333;
+            margin: 10px;
+        }
+        section > div{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            background-color: #ffa;
+            margin: 10px;
+            left:0px;
+        }
+    </style>
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script src="../jjss/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                /*
+                $("section > div").animate(
+                    {left:"400px"},
+                    2000,
+                    "easeInOutBack"
+                )*/
+                $("section > div").each(function(kk, vv){
+                    // kk : index
+                    // vv : 객체  == this
+                    //console.log(kk, $(vv).html(), $(this).html())
+
+                    //attr("ee-data") 속성 : ee-data 호출
+                    //console.log(kk, $(vv).attr("ee-data"))
+
+                    $(this).animate(
+                        {left:"400px"},     //변경될 스타일
+                        2000,               // 소요시간
+                        $(vv).attr("ee-data"),  //easing
+                        function(){             //애니메이션 종료후 작업
+                            console.log(kk," 종료입니다.")
+                        }
+                    )
+                })
+               
+            })
+        })
+    </script>
+    <title>08_animate</title>
+</head>
+<body>
+    <h1>08_animate</h1>
+    <button>출발</button>
+    <section>
+        <div ee-data="linear">linear</div>
+        <div ee-data="swing">swing</div>
+        <div ee-data="easeOutBounce">easeOutBounce</div>
+        <div ee-data="easeInElastic">easeInElastic</div>
+        <div ee-data="easeInOutBack">easeInOutBack</div>
+    </section>
+</body>
+</html>

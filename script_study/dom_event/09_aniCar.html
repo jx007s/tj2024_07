@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            width: 900px;
+            height: 600px;
+            position: relative;
+        }
+        section > img{
+            width: 900px;
+            height: 600px;
+            position: absolute;        
+            display: block;
+            left: 0px;
+            top:0px;
+        }
+        section > article{
+            width: 900px;
+            height: 600px;
+            position: absolute;        
+            display: block;
+            left: 0px;
+            top:0px;
+            
+        }
+        section > article > div{
+            width: 90px;
+            height: 60px;
+            float: left;
+            background-image: url(../fff/img/bg1.jpg);
+            
+        }
+    </style>
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script src="../jjss/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            for (let i = 0; i < 100; i++) {
+                $("section > article").append("<div></div>")
+            }
+
+            $("section > article > div").click(function(){
+                //console.log($(this).index(), "눌렀냐?")
+
+                if($(this).index() == 7){
+                    
+                    $("section > article > div").css({width:"0px"})
+                    alert("찾았다")
+                }else{
+                    $(this).animate(
+                        {"opacity":"0"},
+                    
+                        1000,
+                        function(){
+                            $(this).animate({"opacity":"1"})
+                        }
+                    )
+                }
+            })
+        })
+    </script>
+    <title>09_aniCar</title>
+</head>
+<body>
+    <h1>09_aniCar</h1>
+    <section>
+        <img src="../fff/car.jpg" alt="">
+        <article></article>
+    </section>
+</body>
+</html>

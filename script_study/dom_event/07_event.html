@@ -20,6 +20,7 @@
             height: 100px;
             float: left;
             margin: 5px;
+            overflow: auto;
         }
     </style>
     <script src="../jjss/jquery-3.7.1.min.js"></script>
@@ -44,7 +45,7 @@
             $("wrapper > div").on('click',function(){
                 $(this).css({color:"#f00"})
             })
-            
+
             $("wrapper > div").eq(2).mouseover(function(e){
                 
                 conLog($(this).html()+"-mouseover : "+e.clientX+" , "+e.clientY)
@@ -68,6 +69,48 @@
                 
                 conLog($(this).html()+"-mouseout : "+e.clientX+" , "+e.clientY)
             })
+
+            $("wrapper > div").eq(5)
+            .hover(
+                function(e){
+                
+                    conLog($(this).html()+"-hover-over : "+e.clientX+" , "+e.clientY)
+                },
+                function(e){
+                
+                    conLog($(this).html()+"-hover-out : "+e.clientX+" , "+e.clientY)
+                }
+            )
+            $("wrapper > div").eq(6).on('scroll',function(e){
+                
+                //conLog("6 : "+e.clientX+" , "+e.clientY)
+                conLog("6 : "+$(this).scrollLeft()+" , "+$(this).scrollTop())
+            })
+
+            /// 클래스 aaa 클릭시 자신을 45도 회전해 주세요
+            // id bbb 클릭할때마다 제목이 1도씩 회전해 주세요 
+            /// 9번 다운: 글자 2배, 업:원래크기
+
+            $(".aaa").click(function(){
+                
+                $(this).css("transform","rotate(45deg)")
+            })
+            let ang = 0
+            $("#bbb").click(function(){
+                ang++
+                $("h1").css("transform","rotate("+ang+"deg)")
+            })
+
+            $("wrapper > div").eq(8)
+            .mousedown(function(){
+                
+                $(this).css({fontSize:"2rem"})
+            })
+            .mouseup(function(){
+                
+                $(this).css({fontSize:"1rem"})
+            })
+
         })
     </script>
     <title>07_event</title>
@@ -81,7 +124,9 @@
         <div class="aaa">4번</div>
         <div class="aaa">5번</div>
         <div>6번</div>
-        <div id="bbb">7번</div>
+        <div id="bbb">7번
+            <img src="../fff/son_2.jpg" alt="">
+        </div>
         <div id="bbb">8번</div>
         <div>9번</div>
     </wrapper>
