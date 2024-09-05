@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            width:100%;
+            height: 100%;
+            /* background-color: #ffa; */
+        }
+    </style>
+    <script>
+        let downX = 0
+        window.onload = function(){
+            let body = document.querySelector("body")
+            
+            body.onmousedown = (e)=>{
+                //console.log("다운 : ", e.clientX)
+                downX = e.clientX
+            }
+            body.onmouseup = (e)=>{
+                //console.log("업 : ",downX," , ", e.clientX)
+                let direct = "<-"
+                if(downX > e.clientX){
+                    direct = "->"
+                }
+                console.log("업 : ",direct)
+            }
+        }
+    </script>
+    <title>04_drag</title>
+</head>
+<body>
+   
+</body>
+</html>
