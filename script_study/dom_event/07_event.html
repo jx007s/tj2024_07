@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        wrapper{
+            width: 600px;
+            height: 300px;
+            background-color: #ffa;
+            margin: 5px;
+            display: block;
+        }
+        wrapper > div{
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 5px;
+        }
+    </style>
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            function conLog(msg){
+                //$("#con").html() --> text node 호출
+                //console.log( $("#con").html())
+                $("#con").html($("#con").html()+"<br/>"+msg) // text node 대입
+            }
+            //conLog("뭐여")
+
+            $("wrapper > div").css({backgroundColor:"#0ff"})
+            $("wrapper > div:nth-child(1)").click(function(){
+                alert("1번 눌렀냐?")
+            })
+
+            $("wrapper > div").eq(1).click(function(){
+                //alert($(this).html())  // this : 실행되는 객체 자신
+                conLog($(this).html())
+            })
+            $("wrapper > div").on('click',function(){
+                $(this).css({color:"#f00"})
+            })
+            
+            $("wrapper > div").eq(2).mouseover(function(e){
+                
+                conLog($(this).html()+"-mouseover : "+e.clientX+" , "+e.clientY)
+            })
+            $("wrapper > div").eq(2).mouseout(function(e){
+                
+                conLog($(this).html()+"-mouseout : "+e.clientX+" , "+e.clientY)
+            })
+
+            $("wrapper > div").eq(3).on('mousemove',function(e){
+                
+                conLog($(this).html()+" : "+e.clientX+" , "+e.clientY)
+            })
+
+            $("wrapper > div").eq(4)
+            .mouseover(function(e){
+                
+                conLog($(this).html()+"-mouseover : "+e.clientX+" , "+e.clientY)
+            })
+            .mouseout(function(e){
+                
+                conLog($(this).html()+"-mouseout : "+e.clientX+" , "+e.clientY)
+            })
+        })
+    </script>
+    <title>07_event</title>
+</head>
+<body>
+    <h1>07_event</h1>
+    <wrapper>
+        <div>1번</div>
+        <div class="aaa">2번</div>
+        <div>3번</div>
+        <div class="aaa">4번</div>
+        <div class="aaa">5번</div>
+        <div>6번</div>
+        <div id="bbb">7번</div>
+        <div id="bbb">8번</div>
+        <div>9번</div>
+    </wrapper>
+    <div id="con">기본내용</div>
+</body>
+</html>

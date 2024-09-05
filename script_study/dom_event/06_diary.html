@@ -4,74 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>17_diary</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        section > div , article > div{
-            width: 40px;
-            height: 40px;
-            padding: 4px;
-            border: 1px solid #ccc;
-            margin: 5px;
-            float: left;
-            text-align: center;
-            line-height: 40px;
-        }
-        section > div:first-child{
-            background-color: #f00;
-            color: #fff;
-        }
-        section > div:last-child{
-            background-color: #00f;
-            color: #fff;
-        }
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+        $("*").css({
+            margin: 0,
+            padding: 0,
+        })
+        $("section > div , article > div").css({
+            width: "40px",
+            height: "40px",
+            padding: "4px",
+            border: "1px solid #ccc",
+            margin: "5px",
+            float: "left",
+            textAlign: "center",
+            lineHeight: "40px",
+        })
+        $("section > div:first-child").css({
+            backgroundColor: "#f00",
+            color: "#fff"
+        })
+        $("section > div:last-child").css({
+            backgroundColor: "#00f",
+            color: "#fff"
+        })
 
-        article > div:nth-of-type(7n+1){
-            color: #f00;
-        }
-        article > div:nth-of-type(7n){
-            color: #00f;
-        }
-        article > .now{
-            background-color: #ff0;
-        }
-        section {
-            clear: both;
-            width: 420px;
-            height: 60px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        article{
-            clear: both;
-            width: 420px;
-            height: 300px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        wrapper > img{
-            width: 420px;
-            height: 300px;
-            padding: 11px;
-        }
-        wrapper > h2{
-            width: 420px;
-            height: 40px;
-            padding: 11px;
-            text-align: center;
-            line-height: 40px;
-        }
-        wrapper {
-            width: 444px;
-            height: 788px;
-            padding: 11px;
-            border: 1px solid #ccc;
-            margin: auto;
-            display: block;
-        }
-    </style>
+        $("article > div:nth-of-type(7n+1)").css({
+            color: "#f00"
+        })
+        $("article > div:nth-of-type(7n)").css({
+            color: "#00f"
+        })
+        $("article > .now").css({
+            backgroundColor: "#ff0"
+        })
+        $("section").css({
+            clear: "both",
+            width: "420px",
+            height: "60px",
+            border: "1px solid #ccc",
+            padding: "10px",
+        })
+        $("article").css({
+            clear: "both",
+            width: "420px",
+            height: "300px",
+            border: "1px solid #ccc",
+            padding: "10px"
+        })
+        $("wrapper > img").css({
+            width: "420px",
+            height: "300px",
+            padding: "11px",
+        })
+        $("wrapper > h2").css({
+            width: "420px",
+            height: "40px",
+            padding: "11px",
+            textAlign: "center",
+            lineHeight: "40px"
+        })
+        $("wrapper").css( {
+            width: "444px",
+            height: "788px",
+            padding: "11px",
+            border: "1px solid #ccc",
+            margin: "auto",
+            display: "block"
+        })
+    })
+    </script>
 </head>
 <body>
     <h1>06_diary</h1>
