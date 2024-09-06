@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script src="../jjss/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+
+            $("input").focus(function(){
+                $(this).css({backgroundColor:"#ff0"})
+            }).blur(function(){
+                $(this).css({backgroundColor:"#fff"})
+            })
+
+            $("input[type='button']").on("click",function(){
+                //$("#pid").
+            })
+
+            //submit 버튼 클릭시 유효성 검사 통과 후 보내기
+            $("input[type='submit']").click(function(e){
+                //alert("간다")
+                e.preventDefault()   // 자신의 기본 기능 중지--> 여기서 submit중지
+                e.stopPropagation()  //부모객체에게 작업 중지
+
+                if(confirm("가요?")){
+                    $("#frm").submit()
+                }
+            })
+        })
+    </script>
+    <title>10_formEvent</title>
+</head>
+<body>
+    <h1>10_formEvent</h1>
+    <form id="frm" action="joinReg.html" method="get">
+        <table border="">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" id="pid" name="pid">
+                    <input type="button" value="중복확인">
+                </td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" id="pname" name="pname"></td>
+            </tr>
+            <tr>
+                <td>암호</td>
+                <td><input type="text" id="pw" name="pw"></td>
+            </tr>
+            <tr>
+                <td>암호확인</td>
+                <td><input type="text" id="pw2" name="pw2"></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+                    <input type="radio" class="gen" name="gender" value="m">남
+                    <input type="radio" class="gen" name="gender" value="f">여
+                    <input type="radio" class="gen" name="gender" value="it">it인
+                </td>
+            </tr>
+            <tr>
+                <td>취미</td>
+                <td>
+                    <input type="checkbox" class="hobby" name="hobby" value="ufc">ufc
+                    <input type="checkbox" class="hobby" name="hobby" value="cook">요리
+                    <input type="checkbox" class="hobby" name="hobby" value="swim">수영
+                </td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input type="text" id="email1" name="email1">@
+                    <select  id="email2" name="email2">
+                        <option value="naver.com">나베르</option>
+                        <option value="daum.net">....</option>
+                        <option value="google.com">구그레</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>가입인사</td>
+                <td><textarea id="content" name="content"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="가입">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
