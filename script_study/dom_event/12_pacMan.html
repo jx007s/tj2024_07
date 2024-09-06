@@ -30,7 +30,7 @@
         }
         .enemy{
             background-color: #f00;
-            left:300px;
+            left:100px;
             top:100px;   
         }
     </style>
@@ -40,28 +40,69 @@
         $(function(){
             let   meDX=5, meDY=5, enDX=3, enDY=3
 
+
+            /// 각 객체의 넓이, 높이변수
+            let sectionW = parseInt($("section").css("width"))
+            let sectionH = parseInt($("section").css("height"))
+
+            let enW = parseInt($(".enemy").css("width"))
+            let enH = parseInt($(".enemy").css("height"))
+
+            let meW = parseInt($("#me").css("width"))
+            let meH = parseInt($("#me").css("height"))
+
+            let seW_meW = sectionW-meW
+            let seH_meH = sectionH-meH
+
+            //적, 나의 위치
+            let enX = parseInt( $(".enemy").css("left"))
+            let enY = parseInt( $(".enemy").css("top")) 
+            let meX = parseInt( $("#me").css("left"))
+            let meY = parseInt( $("#me").css("top"))
+
+            //게임중 변수
+            let playing = true
+
+            //적 움직인다
+            function enemyMove(){
+                enX = parseInt( $(".enemy").css("left"))
+                enY = parseInt( $(".enemy").css("top"))
+
+                if(enX <0 || enX > sectionW-enW){
+                    enDX*=-1
+               }
+               if(enY <0 || enY > sectionH-enH ){
+                    enDY*=-1
+               }
+
+                enX+=enDX
+                enY+=enDY
+
+                $(".enemy").css({left : enX+"px", top: enY+"px"})
+            }
+
+            //적,나 부딛힘확인
+            function crash(){
+                //console.log("눌렀냐",$("#me").css("left"), $(".enemy").css("left"))
+                // 객체의 좌표문자열 -> 숫자
+
+                if( enX+enW > meX && enX < meX +meW && 
+                    enY+enH > meY && enY < meY +meH
+                ){
+                    console.log("잡혔다")
+                    playing = false
+                    clearInterval(timer)
+                }   
+            }
+
             function timerGo(){
                 //console.log("timerGo")
 
                 //적이 움직인다.
-                let enemyX = parseInt( $(".enemy").css("left"))
-                let enemyY = parseInt( $(".enemy").css("top"))
+                enemyMove()
 
-                if(enemyX <0 ||
-                enemyX > parseInt($("section").css("width"))-parseInt($(".enemy").css("width"))
-                ){
-                    enDX*=-1
-               }
-               if(enemyY <0 ||
-               enemyY > parseInt($("section").css("height"))-parseInt($(".enemy").css("height"))
-               ){
-                    enDY*=-1
-               }
-
-                enemyX+=enDX
-                enemyY+=enDY
-
-                $(".enemy").css({left : enemyX+"px", top: enemyY+"px"})
+                //적,나 부딛힘확인
+                crash()
             }
 
             let timer = setInterval(timerGo, 30)
@@ -70,8 +111,11 @@
 
             //// 내가 움직인다.
             $(this).keydown(function(e){
-                let xx = parseInt( $("#me").css("left"))
-                let yy = parseInt( $("#me").css("top"))
+                if(!playing){   //게임중이 아니라면 키이벤트 빠져나가기
+                    return false
+                }
+                meX = parseInt( $("#me").css("left"))
+                meY = parseInt( $("#me").css("top"))
                 /*
                 상 38
                 하 40
@@ -80,64 +124,40 @@
                 */
                switch(e.keyCode){
                     case 38: //상
-                        yy -= meDY
+                        meY -= meDY
                         break
 
                     case 40: //하
-                        yy += meDY
+                        meY += meDY
                         break
 
                     case 37: //좌
-                        xx -= meDX
+                        meX -= meDX
                         break
 
                     case 39: //우
-                        xx += meDX
+                        meX += meDX
                         break
 
                }
 
-            //    if(xx <0){
-            //         xx = 0
-            //    }
-            //    if(yy <0){
-            //         yy = 0
-            //    }
-
-            //    if(xx > 600-50){
-            //         xx = 600-50
-            //    }
-            //    if(yy > 500-50){
-            //         yy = 500-50
-            //    }
-
-               if(xx <0){
-                    xx = 0
+               if(meX <0){
+                    meX = 0
                }
-               if(yy <0){
-                    yy = 0
+               if(meY <0){
+                    meY = 0
                }
-               let meW = parseInt($("section").css("width"))-parseInt($("#me").css("width"))
-               let meH = parseInt($("section").css("height"))-parseInt($("#me").css("height"))
-               if(xx > meW){
-                    xx = meW
+              
+               if(meX > seW_meW){
+                    meX = seW_meW
                }
-               if(yy > meH){
-                    yy = meH
+               if(meY > seH_meH){
+                    meY = seH_meH
                }
                 
-                $("#me").css({left:xx+"px", top:yy+"px"})
+                $("#me").css({left:meX+"px", top:meY+"px"})
 
-                //console.log("눌렀냐",$("#me").css("left"), $(".enemy").css("left"))
-                // 객체의 좌표문자열 -> 숫자
-                let enemyX = parseInt( $(".enemy").css("left"))
-                let enemyY = parseInt( $(".enemy").css("top"))
-
-                if( enemyX+50 > xx && enemyX < xx +50 && 
-                    enemyY+50 > yy && enemyY < yy +50
-                ){
-                    console.log("잡혔다")
-                }
+                
             })
 
 
