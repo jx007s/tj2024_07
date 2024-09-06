@@ -13,12 +13,24 @@
     <script src="../jjss/jquery-ui.min.js"></script>
     <script>
         $(function(){
-            
+            /*
+            $("#ttt").keydown(function(e){
+                console.log("눌렀냐", e.keyCode)
+            }).keyup(function(e){
+                console.log("놨냐", e.keyCode)
+            })*/
+
+            $("#ttt").keypress(function(e){  //특정값(한글, del) 인지 못함
+                console.log("press", e.keyCode)
+            })
+
+            $("#ttt").focus()  //객체에게 focus를 준다
         })
     </script>
     <title>11_keyEvent</title>
 </head>
 <body>
     <h1>11_keyEvent</h1>
+    <input type="text" id="ttt">
 </body>
 </html>

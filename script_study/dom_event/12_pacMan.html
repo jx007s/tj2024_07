@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            width: 400px;
+            height: 300px;
+            position: relative;
+            margin: auto;
+            background-color: #ffa;
+            border: 1px solid #ccc;
+        }
+
+        section > div{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+        }
+
+        #me{
+            background-color: #0f0;
+            left:300px;
+            top:200px;   
+        }
+        .enemy{
+            background-color: #f00;
+            left:300px;
+            top:100px;   
+        }
+    </style>
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script src="../jjss/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            let   meDX=5, meDY=5, enDX=3, enDY=3
+
+            function timerGo(){
+                //console.log("timerGo")
+
+                //적이 움직인다.
+                let enemyX = parseInt( $(".enemy").css("left"))
+                let enemyY = parseInt( $(".enemy").css("top"))
+
+                if(enemyX <0 ||
+                enemyX > parseInt($("section").css("width"))-parseInt($(".enemy").css("width"))
+                ){
+                    enDX*=-1
+               }
+               if(enemyY <0 ||
+               enemyY > parseInt($("section").css("height"))-parseInt($(".enemy").css("height"))
+               ){
+                    enDY*=-1
+               }
+
+                enemyX+=enDX
+                enemyY+=enDY
+
+                $(".enemy").css({left : enemyX+"px", top: enemyY+"px"})
+            }
+
+            let timer = setInterval(timerGo, 30)
+
+
+
+            //// 내가 움직인다.
+            $(this).keydown(function(e){
+                let xx = parseInt( $("#me").css("left"))
+                let yy = parseInt( $("#me").css("top"))
+                /*
+                상 38
+                하 40
+                좌 37
+                우 39
+                */
+               switch(e.keyCode){
+                    case 38: //상
+                        yy -= meDY
+                        break
+
+                    case 40: //하
+                        yy += meDY
+                        break
+
+                    case 37: //좌
+                        xx -= meDX
+                        break
+
+                    case 39: //우
+                        xx += meDX
+                        break
+
+               }
+
+            //    if(xx <0){
+            //         xx = 0
+            //    }
+            //    if(yy <0){
+            //         yy = 0
+            //    }
+
+            //    if(xx > 600-50){
+            //         xx = 600-50
+            //    }
+            //    if(yy > 500-50){
+            //         yy = 500-50
+            //    }
+
+               if(xx <0){
+                    xx = 0
+               }
+               if(yy <0){
+                    yy = 0
+               }
+               let meW = parseInt($("section").css("width"))-parseInt($("#me").css("width"))
+               let meH = parseInt($("section").css("height"))-parseInt($("#me").css("height"))
+               if(xx > meW){
+                    xx = meW
+               }
+               if(yy > meH){
+                    yy = meH
+               }
+                
+                $("#me").css({left:xx+"px", top:yy+"px"})
+
+                //console.log("눌렀냐",$("#me").css("left"), $(".enemy").css("left"))
+                // 객체의 좌표문자열 -> 숫자
+                let enemyX = parseInt( $(".enemy").css("left"))
+                let enemyY = parseInt( $(".enemy").css("top"))
+
+                if( enemyX+50 > xx && enemyX < xx +50 && 
+                    enemyY+50 > yy && enemyY < yy +50
+                ){
+                    console.log("잡혔다")
+                }
+            })
+
+
+        })
+    </script>
+    <title>12_pacMan</title>
+</head>
+<body>
+    <h1>12_pacMan</h1>
+    <section>
+        <div class="enemy"></div>
+        <div id="me"></div>
+    </section>
+</body>
+</html>
