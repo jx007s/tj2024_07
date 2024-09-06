@@ -20,19 +20,118 @@
                 $(this).css({backgroundColor:"#fff"})
             })
 
+            let idChk = false
+
             $("input[type='button']").on("click",function(){
-                //$("#pid").
+                $("#pid").attr("readonly","true")
+                idChk = true
             })
 
+            
+            $("#email2").change(function(){
+                //console.log("바꾸어랐", $(this).val())
+                $("#email3").val($(this).val())
+            })
+            $(window).resize(function(){
+                console.log("사이즈", $(this).width()," , ",$(this).height())
+            })
+            
+            
             //submit 버튼 클릭시 유효성 검사 통과 후 보내기
             $("input[type='submit']").click(function(e){
                 //alert("간다")
                 e.preventDefault()   // 자신의 기본 기능 중지--> 여기서 submit중지
                 e.stopPropagation()  //부모객체에게 작업 중지
 
+                /*
                 if(confirm("가요?")){
                     $("#frm").submit()
-                }
+                }*/
+               //console.log( $("#pname").val() )
+
+
+               if($("#pid").val().trim()==""){
+                    alert("아이디!!!")
+                    $("#pid").val("")
+                    return false
+               }
+               if(!idChk){
+                    alert("또 아이디!!!")
+                    return false
+               }
+
+               //$("#pname").val()  value 호출
+               //$("#pname").val('abcd')  value = 'abcd' 입력
+               if($("#pname").val().trim()==""){
+                    alert("이름!!!")
+                    $("#pname").val("")
+                    return false
+               }
+
+
+               if($("#pw").val().trim()==""){
+                    alert("암호!!!")
+                    $("#pw").val("")
+                    return false
+               }
+
+               if($("#pw").val()!=$("#pw2").val()){
+                    alert("또 암호!!!")
+                    return false
+               }
+
+
+               //console.log( $(".gen").eq(0).attr(":checked") ) 
+               //console.log( $(".gen").eq(0).is(":checked") ) 
+
+               let genChk = false
+              /* $(".gen").each(function(){
+                    if($(this).is(":checked")){
+                        genChk = true
+                    }
+               }) */
+
+               //each 대신 for 문으로 처리
+              for(let gg of  $(".gen")){
+                  //console.log($(gg).is(":checked"))
+                  if($(gg).is(":checked")){
+                        genChk = true
+                    }
+              }
+
+               if(!genChk){
+                    alert("성별!")
+                    $(".gen").eq(2).attr("checked", true)
+                    return false
+               }
+
+
+               let hoChk = 0
+               $(".hobby").each(function(){
+                    if($(this).is(":checked")){
+                        hoChk++
+                    }
+               })
+
+               if(hoChk<2){
+                    alert("취미!")
+                    return false
+               }
+
+               if($("#email1").val().trim()=="" || $("#email3").val().trim()==""){
+                    alert("이메일!!!")
+                    return false
+               }
+
+               /*
+               id중복확인 
+               암호 일치 , 빈칸불가
+               취미 2개이상
+               email1,3 빈칸불가
+               
+               */
+
+                $("#frm").submit()
             })
         })
     </script>
@@ -79,6 +178,7 @@
             <tr>
                 <td>email</td>
                 <td><input type="text" id="email1" name="email1">@
+                    <input type="text" id="email3" name="email3" readonly>
                     <select  id="email2" name="email2">
                         <option value="naver.com">나베르</option>
                         <option value="daum.net">....</option>
