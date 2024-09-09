@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        section{
+            margin: 10px;
+            padding:5px;
+            border: 1px solid #ccc;
+            width: 500px;
+        }
+
+        section > div{
+            margin: 5px;
+            padding:2px;
+            border: 1px solid #ccc;
+            width: 400px;
+        }
+    </style>
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#plus").click(function(e){
+                let dd = $("<div></div>")
+                let ttt = $("<input type='text' readonly>")
+                ttt.val($("#content").val())
+                
+                let btn = $("<button>제거</button>")
+                btn.click(function(){
+                    dd.remove()
+                })
+                dd.append(ttt)
+                dd.append(btn)
+
+
+                $("section").append(dd)
+                
+                $("#content").val("")
+                e.preventDefault()
+            })
+        })
+    </script>
+    <title>14_board</title>
+</head>
+<body>
+    <h1>14_board</h1>
+
+    <input type="text" id="content"><button id="plus">추가</button>
+    <section>
+        <div>내용내용<button>제거</button><button>수정완료</button></div>
+    </section>
+</body>
+</html>

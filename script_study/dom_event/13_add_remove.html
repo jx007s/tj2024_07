@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_add_remove</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            width: 500px;
+            height: 700px;
+            background-color: #0ff;
+        }
+        div{
+            width: 100px;
+            height: 50px;
+            border: 1px solid #ccc;
+            margin: 2px;
+            background-color: #ff0;
+        }
+        .aaa{
+            color:#f00;
+        }
+    </style>
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+
+            //클래스 추가
+            $("section > div:nth-of-type(3)").addClass("aaa")
+            //클래스 확인
+            console.log($("section > div:nth-of-type(1)").hasClass("aaa"))
+            console.log($("section > div:nth-of-type(2)").hasClass("aaa"))
+            console.log($("section > div:nth-of-type(3)").hasClass("aaa"))
+            console.log($("section > div:nth-of-type(4)").hasClass("aaa"))
+            console.log($("section > div:nth-of-type(5)").hasClass("aaa"))
+            console.log("")
+
+            //클래스제거
+            $("section > div:nth-of-type(2)").removeClass("aaa")
+            
+            //속성으로 클래스 추가
+            $("section > div:nth-of-type(5)").attr("class","aaa")
+
+            console.log($("section > div:nth-of-type(1)").hasClass("aaa"))
+            console.log($("section > div:nth-of-type(2)").hasClass("aaa"))
+            console.log($("section > div:nth-of-type(3)").hasClass("aaa"))
+            console.log($("section > div:nth-of-type(4)").hasClass("aaa"))
+            console.log($("section > div:nth-of-type(5)").hasClass("aaa"))
+
+
+            console.log("")
+            //속성확인
+            console.log($("section > div:nth-of-type(1)").attr("tt-data"))
+            console.log($("section > div:nth-of-type(2)").attr("tt-data"))
+            console.log($("section > div:nth-of-type(3)").attr("tt-data"))
+            console.log($("section > div:nth-of-type(4)").attr("tt-data"))
+            console.log($("section > div:nth-of-type(5)").attr("tt-data"))
+            //hasAttr 은 없음
+            //console.log($("section > div:nth-of-type(4)").hasAttr("tt-data"))
+
+            //속성추가
+            $("section > div:nth-of-type(1)").attr("tt-data","아빠상어")
+            $("section > div:nth-of-type(3)").attr("tt-data","할머니상어")
+            //$("section > div:nth-of-type(2)").addAttr("tt-data","할아버지상어")
+
+            //속성제거 removeAttr("tt-data"), attr("tt-data",null) 둘다가능
+            //$("section > div:nth-of-type(4)").removeAttr("tt-data")
+            $("section > div:nth-of-type(4)").attr("tt-data",null)
+            $("section > div:nth-of-type(5)").attr("tt-data","")
+
+            console.log("")
+            console.log($("section > div:nth-of-type(1)").attr("tt-data"))
+            console.log($("section > div:nth-of-type(2)").attr("tt-data"))
+            console.log($("section > div:nth-of-type(3)").attr("tt-data"))
+            console.log($("section > div:nth-of-type(4)").attr("tt-data"))
+            console.log($("section > div:nth-of-type(5)").attr("tt-data"))
+
+            //객체 삭제
+            $("section > div:nth-of-type(6)").remove()
+            //jQuery removeChild  불가
+            //$("section").removeChild($("#bb7"))
+
+            //추가
+            // 부모.append(내용)  --> 부모객체 안에 요소들의 마지막에 추가
+            $("section").append("아보카도 추가추가")
+            let cc = $("<div>난 cc</div>")
+            $("section").append(cc)
+            // 부모.prepend(내용)  --> 부모객체 안에 요소들의 맨 앞에 추가
+            let dd = $("<div>난 dd</div>")
+            $("section").prepend(dd)
+            //내용.append(자식)  --> 부모객체 안에 요소들의 마지막에 추가
+            $("<div>난 appendTo</div>").appendTo($("section"))
+            // 부모.prepend(내용)  --> 부모객체 안에 요소들의 맨 앞에 추가
+            $("<div>난 prependTo</div>").prependTo($("section"))
+
+            // 부모.after(내용)  --> 부모객체  밑에 추가
+            //dd.clone()  dd를 복제(새로 생성) - 복사
+            $("section").after(dd.clone())
+            // 부모.before(내용)  --> 부모객체  위에 추가
+            //$("section").before($("<div>난 before</div>"))
+            // 기존객체를 추가? 하면 위치이동
+            $("section").before(cc)
+
+            //내용.insertAfter(자식)  --> 부모객체  밑에 추가
+            $("<div>난 insertAfter</div>").insertAfter($("section"))
+            //내용.insertAfter(자식)  --> 부모객체  위에 추가
+            $("<div>난 insertBefore</div>").insertBefore($("section"))
+        })
+    </script>
+</head>
+<body>
+    <h1>13_add_remove</h1>
+    <section>
+        <div>box1</div>
+        <div class="aaa">box2</div>
+        <div>box3</div>
+        <div tt-data="아기상어">box4</div>
+        <div>box5</div>
+        <div>box6</div>
+        <div id="bb7">box7</div>
+    </section>
+</body>
+</html>
