@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_regexForm</title>
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+
+            $("#smt").click(function(){
+             
+                if(!(
+                    $("#pid").val().match(/^[a-z0-9]{4,}$/i) &&
+                    $("#pid").val().match(/[a-z]/i) &&
+                    $("#pid").val().match(/[0-9]/i)
+                 )){
+                    alert("아이디")
+                    return false
+                }
+                  
+
+                if(!(
+                    $("#pw").val().trim().length > 3 &&
+                    $("#pw").val() == $("#pw2").val()
+                 )){
+                    alert("암호")
+                    return false
+                }  
+
+                if(!$("#email").val().match(/^[a-z0-9]{3,}@[a-z0-9]{3,}[.]([a-z]{3}|([a-z]{2}[.][a-z]{2}))$/i)
+                 ){
+                    alert("이메일")
+                    return false
+                }
+
+                if(!$("#tel").val().match(/^((\d{3}-\d{4})|(\d{2,3}-\d{3}))-\d{4}$/i)
+                 ){
+                    alert("전화번호")
+                    return false
+                }
+
+                if(!$("#pname").val().match(/^[가-힣]{2,}$/i)
+                 ){
+                    alert("이름")
+                    return false
+                }
+
+                if(!$("#jumin").val().match(/^\d{6}-\d{7}$/i)
+                 ){
+
+                    alert("주민번호")
+                    return false
+                }
+
+
+                let arr = []
+                
+                let k = $("#jumin").val().charCodeAt(7)-48
+                
+                for(let i = 0; i<3;i++){
+                    arr.push(eval($("#jumin").val().slice(i*2,i*2+2)))
+                }
+                let year =  (parseInt ((k-1)  %4      /2)  +19)  *100
+
+                arr[0]+= year
+                let birth = new Date(arr[0], arr[1]-1, arr[2])
+
+                if( arr[0]!= birth.getFullYear() ||
+                    arr[1]!= birth.getMonth()+1 ||
+                    arr[2]!= birth.getDate()){
+                    alert("주민번호")
+                    return false
+                }
+
+
+
+                $("#frm").submit()
+            })
+        })
+        /*
+        회원 가입 유효성 검사를 실시하세요
+        /* 1. 아이디 : 영문 숫자 조합
+        2. 비번 , 비번확인 
+        3. 이메일  -  아이디:영문,숫자   @  도메인 : 영문 점
+        4. 전화번호 - 숫자 :  ###-####-####,   ##(#)-###-####
+        5. 이름 (한글만 가능)
+        6. 주민번호 
+        
+        */
+    </script>
+</head>
+<body>
+    <h1>10_regexForm</h1>
+    <form id="frm" action="regexReg.html">
+        <table border="">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="pid" id="pid"></td>
+            </tr>
+            <tr>
+                <td>비번</td>
+                <td><input type="text" name="pw" id="pw"></td>
+            </tr>
+            <tr>
+                <td>비번확인</td>
+                <td><input type="text" name="pw2" id="pw2"></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="text" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>전화번호</td>
+                <td><input type="text" name="tel" id="tel"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="pname" id="pname"></td>
+            </tr>
+            <tr>
+                <td>주민번호</td>
+                <td><input type="text" name="jumin" id="jumin"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input id="smt" type="submit" value="가입"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
