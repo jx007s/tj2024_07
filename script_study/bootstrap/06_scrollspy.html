@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../jjss/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script src="../jjss/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .boxs{
+            width: 400px;
+            height: 300px;
+            margin: 20px;
+            padding: 30px;
+            overflow: auto;
+        }
+    </style>
+
+    <title>06_scrollspy</title>
+</head>
+<body>
+    <h1>06_scrollspy</h1>
+    <nav class="navbar navbar-light bg-warning nav-pills" id="menus">
+            <a href="#title1" class="nav-link">첫번째</a>
+            <a href="#title2" class="nav-link">두번째</a>
+            <a href="#title3" class="nav-link">세번째</a>
+            <div class="nav-item dropdown">
+                <a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">콤보박스</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#title4" class="dropdown-item">네번째</a></li>
+                    <li><a href="#title5" class="dropdown-item">다섯번째</a></li>
+                    <li><hr/></li>
+                    <li><a href="#title6" class="dropdown-item">여섯번째</a></li>
+                </ul>
+
+            </div>
+    </nav>
+
+    <div class="boxs" data-bs-spy="scroll" data-bs-target="#menus">
+        <h3 id="title1">첫번째 제목이지</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+        </p>
+
+        <h3 id="title2">두번째 제목이지</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+        </p>
+
+        <h3 id="title3">세번째 제목이지</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+        </p>
+
+        <h3 id="title4">네번째 제목이지</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+        </p>
+
+        <h3 id="title5">다섯번째 제목이지</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+        </p>
+
+        <h3 id="title6">여섯번째 제목이지</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nam repellendus illum quis reprehenderit et qui facilis minus! 
+            Placeat quo quidem praesentium sequi? Placeat, culpa! 
+            Itaque vitae iste aliquid similique a!
+        </p>
+    </div>
+</body>
+</html>

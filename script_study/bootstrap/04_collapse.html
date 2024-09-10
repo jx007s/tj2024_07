@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../jjss/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script src="../jjss/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <title>04_collapse</title>
+</head>
+<body>
+    <h1>04_collapse</h1>
+    <a href="#box1" class="btn btn-primary" data-bs-toggle="collapse">박스1</a>
+    <button  class="btn btn-success" data-bs-toggle="collapse" 
+      data-bs-target="#box2">박스2</button>
+
+    <div class="collapse" id="box1">
+        <div class="card card-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Officiis atque sunt ducimus, sapiente autem sequi 
+            a molestiae optio iure molestias at similique earum 
+            non aperiam in. Dolorum expedita consequatur saepe.
+        </div>
+    </div>
+
+    <div class="collapse" id="box2">
+        <div class="card card-body">
+            배가 고프면 밥을 먹어야지
+        </div>
+    </div>
+
+    <h2>가로</h2>
+    <a href="#box3" class="btn btn-primary" data-bs-toggle="collapse">박스3</a>
+    <button  class="btn btn-success" data-bs-toggle="collapse" 
+      data-bs-target="#box4">박스4</button>
+
+    <div class="row"> <!-- 가로1줄-->
+        <div class="col">  <!-- 세로 1-->
+            <div class="collapse" id="box3">
+                <div class="card card-body">
+                    ㄷㅈ개ㅑ ㅓ랟쟈ㅓ ㄹ어젤
+                    12345656787889900
+                    !@#$$%%^^&*(())
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="col"> <!-- 세로 2-->
+            <div class="collapse" id="box4">
+                <div class="card card-body">
+                    배가 고프면 간식도 먹어야지
+                </div>
+            </div>
+        </div>    
+
+    </div>
+    
+
+    
+</body>
+</html>

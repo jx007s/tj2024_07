@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../jjss/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script src="../jjss/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <title>05_accordion</title>
+</head>
+<body>
+    <H1>05_accordion</H1>
+
+    <h2>각자열리기</h2>
+    <div class="accordion" >
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button  class="accordion-button" data-bs-toggle="collapse" 
+                data-bs-target="#box1">메뉴1</button>
+            </div>    
+            <div id="box1" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button  class="accordion-button" data-bs-toggle="collapse" 
+                data-bs-target="#box2">메뉴2</button>
+            </div>    
+            <div id="box2" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    내용2내용2내용2내용2내용2내용2내용2내용2내용2내용2내용2내용2내용2
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button  class="accordion-button" data-bs-toggle="collapse" 
+                data-bs-target="#box3">메뉴3</button>
+            </div>    
+            <div id="box3" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <h2>1개 열리기</h2>
+    <div class="accordion" id="singles">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button  class="accordion-button" data-bs-toggle="collapse" 
+                data-bs-target="#single1">메뉴1</button>
+            </div>    
+            <div id="single1" class="accordion-collapse collapse" data-bs-parent="#singles">
+                <div class="accordion-body">
+                    내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button  class="accordion-button" data-bs-toggle="collapse" 
+                data-bs-target="#single2">메뉴2</button>
+            </div>    
+            <div id="single2" class="accordion-collapse collapse"  data-bs-parent="#singles">
+                <div class="accordion-body">
+                    내용2내용2내용2내용2내용2내용2내용2내용2내용2내용2내용2내용2내용2
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button  class="accordion-button" data-bs-toggle="collapse" 
+                data-bs-target="#single3">메뉴3</button>
+            </div>    
+            <div id="single3" class="accordion-collapse collapse"  data-bs-parent="#singles">
+                <div class="accordion-body">
+                    내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

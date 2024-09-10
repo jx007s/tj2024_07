@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../jjss/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script src="../jjss/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <title>02_menu</title>
+</head>
+<body>
+    <h1>02_menu</h1>
+    <div class="btn-group">
+        <button id="menus" class="btn btn-primary dropdown-toggle"  data-bs-toggle="dropdown" >primary</button>
+        <ul class="dropdown-menu" aria-labelledby="menus">
+            <li><a href="#" class="dropdown-item">메뉴1</a></li>
+            <li><a href="#" class="dropdown-item">메뉴2</a></li>
+            <li><a href="#" class="dropdown-item">메뉴3</a></li>
+        </ul>
+    </div>
+
+    <div class="btn-group">
+        <button id="menus" class="btn btn-success dropdown-toggle"  data-bs-toggle="dropdown" >success active</button>
+        <ul class="dropdown-menu" aria-labelledby="menus">
+            <li><a href="#" class="dropdown-item">메뉴1</a></li>
+            <li><a href="#" class="dropdown-item active">메뉴2</a></li>
+            <li><a href="#" class="dropdown-item">메뉴3</a></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button id="menus" class="btn btn-outline-success dropdown-toggle"  data-bs-toggle="dropdown" >outline disabled</button>
+        <ul class="dropdown-menu" aria-labelledby="menus">
+            <li><a href="#" class="dropdown-item">메뉴1</a></li>
+            <li><a href="#" class="dropdown-item disabled">메뉴2</a></li>
+            <li><hr></li>
+            <li><a href="#" class="dropdown-item">메뉴3</a></li>
+        </ul>
+    </div>
+
+    <div class="btn-group">
+        <button id="menus" class="btn btn-outline-success dropdown-toggle"  data-bs-toggle="dropdown" >메뉴dark</button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="menus">
+            <li><a href="#" class="dropdown-item">메뉴1</a></li>
+            <li><a href="#" class="dropdown-item active">메뉴2</a></li>
+            <li><hr></li>
+            <li><a href="#" class="dropdown-item">메뉴3</a></li>
+        </ul>
+    </div>
+
+    <h2>방향</h2>
+
+    <div class="btn-group dropup">
+        <button id="menus" class="btn btn-outline-success dropdown-toggle"  data-bs-toggle="dropdown" >dropup</button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="menus">
+            <li><a href="#" class="dropdown-item">메뉴1</a></li>
+            <li><a href="#" class="dropdown-item active">메뉴2</a></li>
+        </ul>
+    </div>
+
+
+    <div class="btn-group dropend">
+        <button id="menus" 
+        class="btn btn-outline-success dropdown-toggle"  
+        data-bs-toggle="dropdown" >dropend(오른쪽)</button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="menus">
+            <li><a href="#" class="dropdown-item">메뉴1</a></li>
+            <li><a href="#" class="dropdown-item active">메뉴2</a></li>
+            <li><hr></li>
+            <li><a href="#" class="dropdown-item">메뉴3</a></li>
+        </ul>
+    </div>
+
+    <div class="btn-group dropstart">
+        <button id="menus" class="btn btn-outline-success dropdown-toggle"  data-bs-toggle="dropdown" >dropstart(왼쪽)</button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="menus">
+            <li><a href="#" class="dropdown-item">메뉴1</a></li>
+            <li><a href="#" class="dropdown-item active">메뉴2</a></li>
+            <li><hr></li>
+            <li><a href="#" class="dropdown-item">메뉴3</a></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

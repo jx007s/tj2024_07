@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../jjss/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="../jjss/jquery-3.7.1.min.js"></script>
+    <script src="../jjss/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <title>07_modal</title>
+</head>
+<body>
+    <h1>07_modal</h1>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#box1">눌러</button>
+    <!-- modal 창이 열리면 마음의 소리 a 태그를 누를 수 없음-->
+    <a href="https://comic.naver.com/webtoon/detail?titleId=814543&no=57&week=tue">마음의소리</a>
+
+    <div class="modal" id="box1">
+        <!-- 모달사순 -->
+         <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>모달제목</h4>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    모달 내용-어머니는 짜장면대신 탕수육이라 하셨어
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+                    <button class="btn btn-success">저장</button>
+                </div>
+            </div>
+         </div>
+    </div>
+</body>
+</html>
