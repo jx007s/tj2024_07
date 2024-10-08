@@ -80,9 +80,9 @@ EXAM 테이블을 생성 및 데이터 입력하세요
 
 컬럼명
 
-시번,종류, 응시생,응시일,국어, 영어, 수학
-id,  name,  pid, reg_date, kor, eng, mat
-숫자 문자  문자   날짜     숫자  숫자 숫자
+시번,학기, 종류, 응시생,응시일,국어, 영어, 수학
+id,  hakgi, name,  pid, reg_date, kor, eng, mat
+숫자 숫자,   문자  문자   날짜     숫자  숫자 숫자
 
 
 
@@ -105,23 +105,17 @@ id,  name,  pid, reg_date, kor, eng, mat
 
 exam  
 
-title sid kor eng mat
+id, hakgi, name,  pid, reg_date, kor, eng, mat
 
-semi ddd 77 78 71
-
-semi eee 87 88 81
-
-semi fff 97 98 91
-
-semi mmm 67 68 61
-
-final ddd 56 65 71
-
-final fff 76 65 41
-
-final rrr 76 85 91
-
-final ttt 66 85 21
+1,1 , semi ddd 77 78 71
+2,1 , semi eee 87 88 81
+3,2 , semi fff 97 98 91
+4,2 , semi mmm 67 68 61
+5,1 , final ddd 56 65 71
+6,1 , final fff 76 65 41
+7,2 , final rrr 76 85 91
+8,2 , final ttt 66 85 21
+...
 
 */
 
