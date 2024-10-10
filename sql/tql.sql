@@ -74,3 +74,4 @@ select name, max(kor), max(eng), max(mat) from exam
 where (kor+eng+mat)/3 >= 70
 GROUP BY name
 ORDER BY name;
+

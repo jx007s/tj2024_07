@@ -40,7 +40,7 @@ select POSITION('Co' in '더조은 it com 더조 iit asco Com qwer');
 
 
 -- 변환
-SELECT ASCII('A');
+SELECT ASCII('A'),ASCII('a'), char(65), char(97);
 
 select UPPER('더조은 aBCd Efg'), LOWER('더조은 aBCd Efg');
 
@@ -68,3 +68,8 @@ select lpad('더조은0123456789',10,'@'), rpad('더조은0123456789',10,'@');
 select REVERSE('qwer tyui op');
 
 -- 1 ==> A학기, 2 ==> B학기 로 바꾸어 출력하세요
+select id, REPLACE(REPLACE(hakgi,2,'B학기'),1,'A학기') as hakgi, 
+name, pid, reg_date , kor, eng, mat from exam;
+
+
+select concat(char(hakgi+64),'학기') from exam;
