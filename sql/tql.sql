@@ -75,3 +75,40 @@ where (kor+eng+mat)/3 >= 70
 GROUP BY name
 ORDER BY name;
 
+select * from exam
+order by id desc
+limit 0,3;
+
+select pid, pname, year from person
+where pname = '장동건';
+
+select pid, pname, year from person
+where pname = '이';
+
+select pid, pname, year from person
+where pname = '이%';
+
+
+
+select pid, pname, year from person
+where pname like '이';
+
+select pid, pname, year from person
+where pname like '이%';
+select pid, pname, year from person
+where pname like '%이';
+
+select pid, pname, year from person
+where pname like '%이%';
+
+select pid, pname, year from person
+where pname like '%ㅇ%';
+
+select pid, pname, year from person
+where pname like '이__';
+
+select pid, pname, year from person
+where pname like '__이';
+
+select pid, pname, year from person
+where pname like '_이_';

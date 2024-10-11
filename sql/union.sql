@@ -75,3 +75,27 @@ menu_3
 
  메뉴판 
 */
+create table menu_3(
+    title text,
+    price int
+);
+
+
+insert into menu_3 (title, price) VALUES
+('물냉면',  5500),
+('만두',   4500),
+('비빔냉면', 6500);
+
+-- 제품목록
+select title from menu_1
+union
+select title from menu_2
+union
+select title from menu_3;
+
+--메뉴판
+select '메뉴1',title,price from menu_1
+union
+select '메뉴2', title,price from menu_2
+union
+select '메뉴3', title,price from menu_3;
