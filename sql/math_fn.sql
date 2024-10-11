@@ -85,3 +85,10 @@ HEX(AES_ENCRYPT('내용','qwer'));
 select AES_DECRYPT(UNHEX('7D5C7A40009B3836A6C35D2ED353DCA0'),'qwer');
 select pid, pname from person
 order by pid;
+
+
+
+select me.*, you.pname as fr_name, exam.* FROM
+person me, person you, exam
+where me.fr = you.pid and me.pid = exam.pid;
+
