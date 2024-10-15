@@ -112,3 +112,84 @@ where pname like '__이';
 
 select pid, pname, year from person
 where pname like '_이_';
+
+
+select pid, pname, year from person
+where pname REGEXP '이'; -- '이' 포함
+
+select pid, pname, year from person
+where pname REGEXP '.이'; 
+-- . : 문자 1개
+--  1글자+ '이'    포함
+
+select pid, pname, year from person
+where pname REGEXP '...'; -- ... : 문자 3개 포함
+
+select pid, pname, year from person
+where pname REGEXP '성건'; --  성건 포함 : 2개
+
+select pid, pname, year from person
+where pname REGEXP '성|건'; --  성 or 건 포함
+
+select pid, pname, year from person
+where pname REGEXP '[성건]'; --  성 or 건 포함 
+
+select pid, pname, year from person
+where pname REGEXP '[성건]'; --  성 or 건 포함 
+
+select pid, pname, year from person
+where pname REGEXP '[0-9]'; --  성 or 건 포함 
+
+select pid, pname, year from person
+where pname REGEXP '[a-z]'; -- 대문자 포함
+
+select pid, pname, year from person
+where pname REGEXP '[a-z0-9@.]';
+
+select pid, pname, year from person
+where pname REGEXP '^[0-9]'; -- ^ : 시작
+
+
+select pid, pname, year from person
+where pname REGEXP '성$'; -- $ : 끝
+
+select pid, pname, year from person
+where pname REGEXP '^이$'; --  '이'
+
+select pid, pname, year from person
+where pname REGEXP '^이+$'; -- + : 1회 이상
+
+select pid, pname, year from person
+where pname REGEXP '^이건*$';-- * : 건 : 0회 이상
+
+select pid, pname, year from person
+where pname REGEXP '^이건+$';-- + : 건 : 1회 이상
+
+select pid, pname, year from person
+where pname REGEXP '^이?$'; -- 0~1회
+select pid, pname, year from person
+where pname REGEXP '^이건?$';-- 0~1회
+
+
+select pid, pname, year from person
+where pname REGEXP '^[a-z0-9@.]+$';
+
+select pid, pname, year from person
+where pname REGEXP '^[a-z0-9@.]{3}$';  -- 3글자
+
+
+select pid, pname, year from person
+where pname REGEXP '^[a-z0-9@.]{3,4}$';  -- 3~4글자
+
+select pid, pname, year from person
+where pname REGEXP '^[a-z0-9@.]{3,}$'; -- 3글자 이상
+
+select pid, pname, year from person
+where pname REGEXP '^[^성건]*$'; -- 성 or 건 제외
+
+-- '이' 가 들어가는 3글자 이름을 가진 사람들의 친구들 성적을 출력하세요
+
+
+select * from exam 
+where pid in (select fr from person
+where pname regexp '^.{3}$' and pname regexp '이');

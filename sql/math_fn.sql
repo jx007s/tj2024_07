@@ -87,8 +87,3 @@ select pid, pname from person
 order by pid;
 
 
-
-select me.*, you.pname as fr_name, exam.* FROM
-person me, person you, exam
-where me.fr = you.pid and me.pid = exam.pid;
-
