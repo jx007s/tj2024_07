@@ -1,16 +1,12 @@
-if (false){
-    var {aa,bb} = require('./02_mmm')
-}else{
-    var {aa,bb} = require('./02_ppp')
+const now = require('./02_now')
+
+//console.log(now.ttt)
+
+const meal = require(now.ttt)
+
+for (const k in meal) {
+    console.log(k," : ", meal[k])    
 }
-console.log("02_다이나믹_total 입니다.")
-console.log(aa,bb)
-let rName = './02_qqq'
-if(aa === '폴리'){
-    rName = './02_rrr'
-}
-var {cc,dd} = require(rName)
-console.log(cc,dd)
 
 /*
 메뉴 : 주식 , 사이드, 후식
