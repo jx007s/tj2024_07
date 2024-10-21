@@ -77,9 +77,20 @@ fs.open('iii.txt','w',(err,fd)=>{
 // })
 
 //디렉토리 삭제
-fs.rmdir('asdf',(err)=>{
+// fs.rmdir('asdf',(err)=>{
+//     if(err){
+//         throw err;
+//     }
+//     console.log("디렉토리 삭제")
+// })
+
+
+/// 파일복사
+fs.copyFile('aaa.txt','new_aaa.txt' ,(err)=>{
+
     if(err){
-        throw err;
+        console.log("파일 복사에러")
+        return;
     }
-    console.log("디렉토리 삭제")
+    console.log("파일 복사완료")
 })
