@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 전달</title>
+    <script>
+        window.onload=function(){
+            var cons = document.querySelector('#cons')
+            // var msg = '{{msg}}'
+            // //cons.innerHTML = '{{msg}}'
+            // var arr = [
+            //     '하나면 하나지 둘이겠느냐',
+            //     '아주공갈 염소똥 십원에 열두개',
+            //     '타잔이 10원짜리 팬티를 입고 20원짜리 칼을 차고 노래를 한다',
+            //     '동동동대문을 열어라 남남남대문을 열어라'
+            // ]
+
+            var arr = '{{msg}}'
+
+            var i = 0
+            function consModule(){
+                cons.innerHTML = arr[i]
+                i++
+                if(i >= arr.length){
+                    i = 0
+                }
+                
+            }
+
+            function consRolling(){
+                setInterval(consModule, 3000)
+            }
+
+            consRolling()
+        }
+    </script>
+</head>
+<body>
+    <h1>변수 전달</h1>
+    <p>
+        <a href="?kind=sports">스포츠</a>
+        <a href="?kind=enter">연예</a>
+        <a href="?kind=finance">경제</a>
+    </p>
+    <div id="cons">여기에 전달 ㅎㅎ</div>
+</body>
+</html>
