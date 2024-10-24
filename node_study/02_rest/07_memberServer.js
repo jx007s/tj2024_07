@@ -35,12 +35,21 @@ http.createServer(async(req,res)=>{
 
     let ttt = '난 memberList 서버야'
     if(myUrl.pathname == '/'){
-        ttt = await fs.readFile('07_memberList.html')
 
-        let memsStr = JSON.stringify(mems)
-        console.log(memsStr)
-        ttt = ttt.toString().replaceAll("'{{mems}}'", memsStr)
+        if(req.method == 'GET'){
+            ttt = await fs.readFile('07_memberList.html')
 
+            let memsStr = JSON.stringify(mems)
+            console.log(memsStr)
+            ttt = ttt.toString().replaceAll("'{{mems}}'", memsStr)
+
+        }else if(req.method == 'DELETE'){
+            ttt = '아직삭제 안했어'
+            let delId = await reqParam(req)
+            //삭제
+            delete mems[delId]
+            ttt = '삭제 했어'
+        }
 
     }else if(myUrl.pathname == '/detail'){
         ttt = await fs.readFile('07_memberDetail.html')
@@ -82,6 +91,31 @@ http.createServer(async(req,res)=>{
             ttt = ttt.toString()
             .replaceAll('{{msg}}',msg)
             .replaceAll('{{dst}}',dst)
+        }
+    }else if(myUrl.pathname == '/modify'){
+        if(req.method == 'GET'){
+            console.log('GET 왔다')
+            ttt = await fs.readFile('07_memberModifyForm.html')
+            let nowId = myUrl.query.id
+            console.log(nowId)
+
+            let memsStr = JSON.stringify(mems[nowId])
+            console.log(memsStr)
+            ttt = ttt.toString().replaceAll("'{{mem}}'", memsStr)
+        }
+        if(req.method == 'PUT'){
+            console.log('put 왔다')
+            //let param = new URLSearchParams(await reqParam(req))
+            // json 문자열로 서버로 전달됨{"id":2,"pname":"장서건","age":27}
+            // 파싱하여 처리
+            let param = JSON.parse(await reqParam(req)) 
+            console.log(param)  // 수정 입력된 데이터
+            let nowMem = mems[param.pid]
+            console.log(nowMem) //mems의 원본데이터
+            nowMem.pname = param.pname
+            nowMem.age = param.age
+
+            ttt = "수정성공"
         }
     }
 

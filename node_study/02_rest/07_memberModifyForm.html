@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_회원수정</title>
+    <script>
+        let mem='{{mem}}'
+
+
+        window.onload=function(){
+
+            document.querySelector("#pid").value = mem.id
+            document.querySelector("#pname").value = mem.pname
+            document.querySelector("#age").value = mem.age
+        }
+
+        function detailGo(){
+            location.href = '/detail?id='+mem.id
+        }
+
+
+        const xhr = new XMLHttpRequest()
+
+        
+
+        function modifyGo(){
+
+            console.log("modifyGo 시작")
+            let myFrm = document.querySelector("#myFrm")
+            //form의 엘리먼트를 가져와 데이터화
+            let myData = new FormData(myFrm)
+            //console.log(myData)
+
+            let jsonData = {}
+            myData.forEach((vv,kk)=>{
+                //console.log(kk, vv)
+                jsonData[kk] = vv
+            })
+            console.log(jsonData)
+
+            xhr.open('PUT','/modify',false)
+            xhr.setRequestHeader('content-Type','application/json')
+            xhr.send(JSON.stringify(jsonData))
+            
+            
+            // 수정요청 후 서버에서 처리한 후의 응답처리
+           
+            if(xhr.status == 200){  //정상처리 했다
+                //console.log('서버 응답 : ', xhr.statusText)
+                console.log('서버 응답 : ', xhr.responseText)
+                alert('수정되었습니다')
+                detailGo()
+            }else{
+                console.log('서버 오류 : ', xhr.statusText) //오류메세지표시
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>07_회원수정</h1>
+    <!-- 기본 제출 기능 제거 및 사용자정의함수 실행-->
+    <form id="myFrm" onsubmit="event.preventDefault(); modifyGo();">
+        <table border="">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="pid" id="pid" readonly></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="pname" id="pname"></td>
+            </tr>
+            <tr>
+                <td>나이</td>
+                <td><input type="text" name="age" id="age"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" onclick="detailGo()" value="뒤로">
+                    <input type="submit" value="수정">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

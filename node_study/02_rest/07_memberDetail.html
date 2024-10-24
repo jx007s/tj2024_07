@@ -16,6 +16,43 @@
             document.querySelector("#pname").innerHTML = mem.pname
             document.querySelector("#age").innerHTML = mem.age
         }
+
+        function modify(){
+
+            location.href = '/modify?id='+mem.id
+        }
+
+        const xhr = new XMLHttpRequest()
+
+        
+
+        function del(){
+
+            xhr.open('DELETE','/',false)
+            xhr.setRequestHeader('content-Type','text/plain')
+            xhr.send(mem.id)
+            /*                       
+                                    detail.html
+               서버     <-----     xhr.send(삭제할 id)
+                ↓
+            id에 대한 삭제 처리
+                ↓
+            클라이언트에게
+            삭제했다고 보냄 ----- > xhr.status()
+            
+            */
+
+            //삭제요청 후 서버에서 처리한 후의 응답처리
+           
+            if(xhr.status == 200){  //정상처리 했다
+                //console.log('서버 응답 : ', xhr.statusText)
+                console.log('서버 응답 : ', xhr.responseText)
+                alert('삭제되었습니다')
+                location.href = '/'
+            }else{
+                console.log('서버 오류 : ', xhr.statusText) //오류메세지표시
+            }
+        }
     </script>
 </head>
 <body>
@@ -36,6 +73,8 @@
         <tr>
             <td colspan="2">
                 <a href="/">목록으로</a>
+                <input type="button" value="수정" onclick="modify()">
+                <input type="button" value="삭제" onclick="del()">
             </td>
         </tr>    
     </table>
