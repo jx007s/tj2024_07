@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_home</title>
+</head>
+<body>
+    <h1>07_home</h1>
+
+<script>
+
+    // 서버에 요청할 수 있는 객체생성 및 객체변수 선언
+    const xhr = new XMLHttpRequest()
+    
+    //내가만든 함수 : post로 보내고자 함
+    function sendPost(){
+
+        // 요청하는 페이지 정보 설정
+        //       method, 주소, 비동기식
+        xhr.open('POST','/', false)
+
+        // 보내고자 하는 데이터  설정 - 'text/plain' 일반 문자열
+        
+        //xhr.setRequestHeader('content-Type','text/plain')
+        //let data = 'qwertryuio'
+        // 요청하기-> 보내기
+        //xhr.send(data)
+
+        //                          -  'application/json' 
+        xhr.setRequestHeader('content-Type','application/json')
+        let data = {pname : 'abcd'}
+        // json 데이터 -> 문자열
+
+        //xhr.send('{"pname":"efg"}')
+        let ttt = JSON.stringify(data)
+        console.log(ttt)
+        xhr.send(ttt)
+    }
+
+    function sendGet(){
+
+        xhr.open('GET','/', false)
+
+        xhr.send()
+    }
+    function sendPut(){
+
+        xhr.open('PUT','/', false)
+        xhr.setRequestHeader('content-Type','application/json')
+        let data = {age : 27}
+
+        let ttt = JSON.stringify(data)
+        console.log(ttt)
+        xhr.send(ttt)
+        
+    }
+
+    function sendDelete(){
+
+        xhr.open('DELETE','/', false)
+
+        xhr.send()
+    }
+
+    // 실제 처리 되지 않음
+    // function sendFetch(){
+
+    //     xhr.open('FETCH','/', false)
+
+    //     xhr.send()
+    // }
+
+       
+    </script>
+
+    <span onclick="sendPost()">post보내기</span>
+    <span onclick="sendGet()">get보내기</span>
+    <span onclick="sendPut()">put보내기</span>
+    <span onclick="sendDelete()">delete보내기</span>
+    <span onclick="sendFetch()">gefetch보내기</span>
+</body>
+</html>

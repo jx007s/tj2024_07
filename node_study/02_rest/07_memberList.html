@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_memberList</title>
+    <script>
+        // let mems={
+        //     1:{pname:'장동건',age:37},
+        //     2:{pname:'장서건',age:27},
+        //     3:{pname:'장남건',age:47}
+        // }
+
+        let mems='{{mems}}'
+
+
+        window.onload=function(){
+
+            for (const i in mems) {
+                console.log(i, mems[i])
+                let newTr = document.createElement("tr")
+
+                let newId = document.createElement("td")
+                newId.innerHTML = i
+                newTr.appendChild(newId)
+
+                let newPname = document.createElement("td")
+
+                let pnameTTT = '<a href="/detail?id='+i+'">'+mems[i].pname+'</a>'
+                newPname.innerHTML = pnameTTT
+                newTr.appendChild(newPname)
+
+
+                document.querySelector("#mem_tb").appendChild(newTr)
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>07_member</h1>
+    <table border="" id="mem_tb">
+        <tr>
+            <td>id</td>
+            <td>이름</td>
+        
+        </tr>    
+    </table>
+</body>
+</html>
