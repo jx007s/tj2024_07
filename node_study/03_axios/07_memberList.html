@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_memberList</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // let mems={
+        //     1:{pname:'장동건',age:37},
+        //     2:{pname:'장서건',age:27},
+        //     3:{pname:'장남건',age:47}
+        // }
+
+        let mems='{{mems}}'
+
+
+        window.onload=function(){
+
+            for (const i in mems) {
+                console.log(i, mems[i])
+                let newTr = document.createElement("div")
+
+                let newId = document.createElement("input")
+                newId.value = i
+                newId.setAttribute('readonly',true)
+                newTr.appendChild(newId)
+
+                let newPname = document.createElement("input")
+                newPname.value = mems[i].pname
+                newTr.appendChild(newPname)
+
+                let newAge = document.createElement("input")
+                newAge.value = mems[i].age
+                newTr.appendChild(newAge)
+
+                let delBtn = document.createElement("button")
+                delBtn.innerHTML='삭제'
+
+                //삭제 작업
+                delBtn.addEventListener('click', async ()=>{
+                    //alert('삭제 눌렀냥'+i)
+                    let delData = {id: i}
+                    console.log(delData)
+                    try {
+                        
+                        //서버에 삭제 요청
+                        let res = await axios.delete('/',{data : delData})   
+                        //리턴 받은 내용을 출력 및 리스트 갱신
+                        msgGo(res.data) 
+                    } catch (error) {
+                        console.error('에러발생',err)
+                    }
+
+                })
+                newTr.appendChild(delBtn)
+
+
+
+                let modifyBtn = document.createElement("button")
+                modifyBtn.innerHTML='수정'
+
+                modifyBtn.addEventListener('click',async ()=>{
+                    //alert('수정 눌렀냐?')
+                    //console.log(i, newPname.value, newAge.value)
+                    let modifyData={
+                        id:i, 
+                        pname:newPname.value, 
+                        age:newAge.value
+                    }
+                    console.log(modifyData)
+
+                    try {
+                        let res = await axios.put('/', modifyData)
+                        msgGo(res.data)
+                    } catch (error) {
+                        console.error(error)
+                    }
+                })
+
+
+                newTr.appendChild(modifyBtn)
+
+
+
+                document.querySelector("#mem_tb").appendChild(newTr)
+            }
+
+        }
+
+        //추가
+        async function addGo(){
+            let addData = {
+                pname : addFrm.pname.value,
+                age : addFrm.age.value
+            }
+
+            console.log(addData)
+            try {
+                // '/' 에 post로 addData를 보냄
+                // 보낸 후 응답을 res로 받음
+                let res = await axios.post('/',addData)
+                msgGo(res.data)
+            } catch (error) {
+                console.error('에러발생',err)
+            }
+        }
+
+        function msgGo(msg){
+            alert(msg)
+            location.href='/'
+        }
+
+    </script>
+</head>
+<body>
+    <h1>07_member</h1>
+    <form name="addFrm">
+        <table border="">
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="pname"></td>
+            </tr>
+            <tr>
+                <td>나이</td>
+                <td><input type="text" name="age"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="추가" onclick="addGo()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="mem_tb"></div>
+</body>
+</html>
