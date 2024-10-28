@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_examrestful</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        let studs = [
+            {id:1, pname:'장동건', jum:[77,78,72]},
+            {id:2, pname:'장서건', jum:[57,58,52]},
+            {id:3, pname:'장남건', jum:[97,98,92]},
+            {id:4, pname:'장중건', jum:[67,68,62]},
+            {id:5, pname:'북두신건', jum:[87,88,82]}
+        ]
+
+        window.onload = function(){
+            //pname
+        }
+
+        async function addGo(){
+
+            let jums = []
+            //console.log("addFrm.jum : ",addFrm.jum.length )
+            for(e of addFrm.jum){
+                //console.log(e.value)
+                jums.push(e.value)
+            }
+            //console.log("----------------------")
+            console.log(jums)
+            let addData = {
+                pname:addFrm.pname.value,
+                jum:jums
+            }
+
+            await axios.post('/',addData)
+        }
+
+        async function viewGo(no){
+
+            await axios.get('/detail/'+no)
+        }
+
+        async function deleteGo(no){
+
+            await axios.delete('/?id='+no)
+            //await axios.delete('/'+no)
+        }
+
+        async function putGo(no){
+
+            await axios.put('/', studs[no])
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1>04_examrestful</h1>
+    <form name="addFrm">
+        <input type="text" name="pname">
+        <input type="text" name="jum">
+        <input type="text" name="jum">
+        <input type="text" name="jum">
+        <input type="button" value="추가" onclick="addGo()">
+    </form>
+    <table id="tbl" border="">
+        <tr>
+            <td><input type="button" onclick="viewGo(1)">
+                <input type="button" onclick="deleteGo(1)">
+                <input type="button" onclick="putGo(1)">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick=""><input type="button" onclick=""><input type="button" onclick=""></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick=""><input type="button" onclick=""><input type="button" onclick=""></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick=""><input type="button" onclick=""><input type="button" onclick=""></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick=""><input type="button" onclick=""><input type="button" onclick=""></td>
+        </tr>
+    </table>
+</body>
+</html>
