@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function postGo(){
+            //alert('postGo 실행')
+           let res =  await axios.post('/')
+           console.log(res.data)
+        }
+
+        async function putGo(){
+            //alert('putGo 실행')
+            await axios.put('/')
+        }
+
+        async function deleteGo(){
+            //alert('deleteGo 실행')
+            await axios.delete('/',{data : {delNo:3}})
+        }
+
+    </script>
+    <title>home</title>
+
+</head>
+<body>
+    <h1>home</h1>
+    <input type="button" value="post" onclick="postGo()">
+    <input type="button" value="put" onclick="putGo()">
+    <input type="button" value="delete" onclick="deleteGo()">
+</body>
+</html>
