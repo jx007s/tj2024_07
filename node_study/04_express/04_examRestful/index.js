@@ -56,6 +56,11 @@ app.put('/',(req,res)=>{
     res.send('put 도착')
 })
 
+app.use((req, res)=>{
+    console.log("404 에러다 ")
+    res.send('404 에러 페이지에요')
+})
+
 app.listen(3000,()=>{
 
     console.log('04_examrestful 서버 실행')
