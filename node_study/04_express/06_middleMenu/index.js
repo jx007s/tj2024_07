@@ -37,6 +37,8 @@ app.use((req,res, next)=>{
 })
 
 app.use('/myPage/',(req,res, next)=>{
+    req.age = 23
+    req.arr = [11,22,33,44]
     ttt = "회원님 안녕하세요<br/>"
     next()
 })
@@ -50,6 +52,13 @@ app.get('/info',(req,res)=>{
     ttt+="회사소개"
     res.send(ttt)
 })
+
+app.use((req,res, next)=>{
+    console.log('밑에 1 : ' , req.age)
+    console.log('밑에 2 : ' , req.arr)
+    next()
+})
+
 app.get('/prod',(req,res)=>{
 
     ttt+="제품"
@@ -57,12 +66,12 @@ app.get('/prod',(req,res)=>{
 })
 
 app.get('/myPage/order',(req,res)=>{
-
+    console.log('/myPage/order : ' , req.age)
     ttt+="주문내역"
     res.send(ttt)
 })
 app.get('/myPage/addr',(req,res)=>{
-
+    console.log('/myPage/order : ' , req.arr)
     ttt+="주소"
     res.send(ttt)
 })
