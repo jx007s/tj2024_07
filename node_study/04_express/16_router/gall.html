@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function postGo(){
+            //alert('postGo 실행')
+           let res =  await axios.post('/gall/board')
+           console.log(res.data)
+        }
+
+        async function putGo(){
+            //alert('putGo 실행')
+            await axios.put('/gall/board')
+        }
+
+        async function deleteGo(){
+            //alert('deleteGo 실행')
+            await axios.delete('/gall/board',{data : {delNo:3}})
+        }
+
+
+
+
+
+        async function postGo2(){
+            //alert('postGo 실행')
+           let res =  await axios.post('/gall/fnq')
+           console.log(res.data)
+        }
+
+        async function putGo2(){
+            //alert('putGo 실행')
+            await axios.put('/gall/fnq')
+        }
+
+        async function deleteGo2(){
+            //alert('deleteGo 실행')
+            await axios.delete('/gall/fnq',{data : {delNo:3}})
+        }
+
+    </script>
+
+    <title>gall</title>
+</head>
+<body>
+    <h1>/gall/board</h1>
+    <a href="/gall/board">get</a>
+    <input type="button" value="post" onclick="postGo()">
+    <input type="button" value="put" onclick="putGo()">
+    <input type="button" value="delete" onclick="deleteGo()">
+
+    <h1>/gall/fnq</h1>
+    <a href="/gall/fnq">get</a>
+    <input type="button" value="post" onclick="postGo2()">
+    <input type="button" value="put" onclick="putGo2()">
+    <input type="button" value="delete" onclick="deleteGo2()">
+</body>
+</html>
