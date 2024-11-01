@@ -1,6 +1,9 @@
 const express = require("express")
 const app = express()
 
+app.set('view engine','pug')
+app.set('views', __dirname+'/views')
+
 const {router:studRR, nowSt} = require('./stud')
 
 const exam = require('./exam')

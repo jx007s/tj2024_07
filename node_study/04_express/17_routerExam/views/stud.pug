@@ -1,0 +1,13 @@
+h1 학생목록
+
+table(border=1) 
+    tr 
+        td id 
+        td 이름
+        td 나이
+    each vv, kk in arr
+        tr 
+            td   #{vv.id}
+            td   
+                a(href=`/stud/detail/${vv.id}`) #{vv.pname}
+            td   #{vv.age}

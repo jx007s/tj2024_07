@@ -28,7 +28,14 @@ function createExamRouter(nowSt){
         if(nowSt.me!=null){
             for (const ex of exams) {
                 if(nowSt.me == ex.sid){
-                    nowExam.push(ex)
+                    let dupEx = {sid:ex.sid, jum:ex.jum}
+
+                    dupEx.tot = 0
+                    for (const j of dupEx.jum) {
+                        dupEx.tot += j
+                    }
+                    dupEx.avg = dupEx.tot / dupEx.jum.length
+                    nowExam.push(dupEx)
                 }
             }
             res.json(nowExam)
