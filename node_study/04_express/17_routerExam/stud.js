@@ -21,7 +21,8 @@ router.get('/',(req,res)=>{
 router.get('/detail/:id',(req,res)=>{
     
     nowSt.me = req.params.id
-    res.send(nowSt.me)
+    //res.send(nowSt.me)
+    res.render('st_detail',{data:nowSt.me})
 })
 
 

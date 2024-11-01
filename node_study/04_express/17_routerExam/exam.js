@@ -18,7 +18,10 @@ function createExamRouter(nowSt){
 
     router.get('/',(req,res)=>{
         //res.send('/exam 이지롱')
-        res.json(exams)
+        //res.json(exams)
+        //res.render('exam',{data: JSON.stringify(exams)})
+
+        res.render('exam.html',{data: exams})
         console.log(nowSt)
     })
 
@@ -38,9 +41,11 @@ function createExamRouter(nowSt){
                     nowExam.push(dupEx)
                 }
             }
-            res.json(nowExam)
+            res.render('ex/me',{data:JSON.stringify(nowExam)})
+            //res.json(nowExam)
         }else{
-            res.send('현재 선택한 학생이 없습니다.')
+            //res.send('현재 선택한 학생이 없습니다.')
+            res.render('exam/zero')
         }
     })
 

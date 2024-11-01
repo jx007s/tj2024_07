@@ -1,8 +1,14 @@
 const express = require("express")
 const app = express()
+const nunjucks = require('nunjucks')
 
 app.set('view engine','pug')
 app.set('views', __dirname+'/views')
+
+nunjucks.configure('views', {
+    autoescape:true,
+    express:app
+})
 
 const {router:studRR, nowSt} = require('./stud')
 

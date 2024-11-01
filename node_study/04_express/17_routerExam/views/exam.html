@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam</title>
+</head>
+<body>
+    <h1>exam</h1>
+    <table border="">
+        <tr>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+        </tr>
+        {% for st in data %}
+        <tr>
+            <td>{{st.sid}}</td>
+            {% for j in st.jum %}
+            <td>{{j}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
