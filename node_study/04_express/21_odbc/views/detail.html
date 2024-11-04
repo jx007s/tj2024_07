@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세보기 입니다.</title>
+</head>
+<body>
+    <h1>상세보기 입니다.</h1>
+    <table border="1">
+        <tr>
+            <td>학기</td><td>{{st.hakgi}}</td>
+        </tr><tr>
+            <td>종류</td><td>{{st.name}}</td>
+        </tr><tr>
+            <td>학생</td><td>{{st.pid}}</td>
+        </tr><tr>
+            <td>일자</td><td>{{st.reg_date}}</td> 
+        </tr><tr>
+            <td>국어</td><td>{{st.kor}}</td>
+        </tr><tr>
+            <td>영어</td><td>{{st.eng}}</td>
+        </tr><tr>
+            <td>수학</td><td>{{st.mat}}</td>   
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="/join">시험등록</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

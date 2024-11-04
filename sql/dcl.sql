@@ -154,6 +154,8 @@ create table stud4(
 -- 기존 컬럼에 PK + AUTO_INCREMENT 설정
 alter table stud4 modify sid int AUTO_INCREMENT PRIMARY key;
 
+alter table exam modify id int AUTO_INCREMENT PRIMARY key;
+
 
 create table stud5(
     sname text not null,
