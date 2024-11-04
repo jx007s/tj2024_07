@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const nunjucks =  require('nunjucks')
 const multer =  require('multer')
 const path =  require('path')
+const fs =  require('fs')
 
 nunjucks.configure('views',{
     autoescape : true,
@@ -18,7 +19,11 @@ const upload = multer({
         },
         filename:(req,file,cb)=>{
             const ext = path.extname(file.originalname)
-            cb(null, path.basename(file.originalname,ext)+Date.now()+ext)
+            let fName = path.basename(file.originalname,ext)+Date.now()+ext
+            //한글인코딩
+            let newFName = Buffer.from(fName,'latin1').toString('utf8')
+
+            cb(null, newFName)
         }
     }),
     limits:{fileSize:5*1024*1024}
@@ -83,8 +88,73 @@ app.get('/join',(req,res)=>{
 })
 
 app.post('/join',upload.single('upfile'),(req,res)=>{
+   
+    console.log(req.file)
+ 
+    let sql = 'insert into exam (name,hakgi,pid,kor,eng,mat,upSystem, upOri, reg_date)'
+        sql +=' values (?,?,?,?,?,?,?,?,sysdate())'
+    
+    //한글인코딩
+    let newFName = Buffer.from(req.file.originalname,'latin1').toString('utf8')
+           
+    let data = [
+        req.body.name,
+        req.body.hakgi,
+        req.body.pid,
+        req.body.kor,
+        req.body.eng,
+        req.body.mat,
+        req.file.filename,
+        newFName
+    ]   
+    
+    console.log(data)
+    conn.query(sql,
+        data,
+    (err, ret)=>{
+        if(err){
+            console.log('sql 실패 : ', err.message)
+        }else{
+            //res.json(ret)
+            res.send('join post')
+        }
+    }) 
+})
 
-    res.sendFile(__dirname+'/joinForm.html')
+app.delete('/:id',(req,res)=>{
+    console.log('삭제 진입:'+req.params.id)
+    console.log(req.body)
+
+    //파일삭제
+    //파일에 작성한 내용이 있다면
+    if(req.body.delUPfile){
+    //파일이 존재한다면
+        fs.access('fff/'+req.body.delUPfile, fs.constants.F_OK,(err)=>{
+            if(!err){
+                fs.unlink('fff/'+req.body.delUPfile,(err)=>{
+                    console.log(req.body.delUPfile+" 삭제")
+                })
+            }
+        })
+    }
+    
+        
+    
+    
+/*
+    conn.query('delete from exam where id = ?',
+        [req.params.id],
+        (err, ret)=>{
+        if(err){
+            res.status(500).send(err)
+        }else{
+            //res.json(ret)
+            res.send('삭제 성공:'+req.params.id)
+        }
+    })
+
+*/
+    
    
 })
 /*

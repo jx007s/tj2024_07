@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function deleteGo(){
+            try {
+                let ddd = await axios.delete('/{{st.id}}',{data:{delUPfile:'{{st.upSystem}}' }})
+                alert('삭제되었습니다.')
+                location.href = '/'
+            } catch (error) {
+                console.log('삭제실패:'+error)
+            }
+            
+        }
+    </script>
     <title>상세보기 입니다.</title>
 </head>
 <body>
@@ -21,11 +34,16 @@
         </tr><tr>
             <td>영어</td><td>{{st.eng}}</td>
         </tr><tr>
-            <td>수학</td><td>{{st.mat}}</td>   
+            <td>수학</td><td>{{st.mat}}</td> 
+        </tr><tr>
+            <td>파일</td><td>{{st.upSystem}}<br/>
+                {{st.upOri}}</td>   
         </tr>
         <tr>
             <td colspan="2">
-                <a href="/join">시험등록</a>
+                <a href="/">목록으로</a>
+                <a href="/modify/{{st.id}}">수정</a>
+                <input type="button" onclick="deleteGo()"  value="삭제">
             </td>
         </tr>
     </table>
