@@ -116,7 +116,9 @@ app.post('/join',upload.single('upfile'),(req,res)=>{
             console.log('sql 실패 : ', err.message)
         }else{
             //res.json(ret)
-            res.send('join post')
+            res.render('alert.html',
+            {title:'등록성공',msg:'등록되었습니다.',dst:'/'}
+            )
         }
     }) 
 })
@@ -132,16 +134,15 @@ app.delete('/:id',(req,res)=>{
         fs.access('fff/'+req.body.delUPfile, fs.constants.F_OK,(err)=>{
             if(!err){
                 fs.unlink('fff/'+req.body.delUPfile,(err)=>{
-                    console.log(req.body.delUPfile+" 삭제")
+                    if(!err){
+                        console.log(req.body.delUPfile+" 삭제")
+                    }
                 })
             }
         })
     }
     
-        
-    
-    
-/*
+
     conn.query('delete from exam where id = ?',
         [req.params.id],
         (err, ret)=>{
@@ -152,11 +153,54 @@ app.delete('/:id',(req,res)=>{
             res.send('삭제 성공:'+req.params.id)
         }
     })
-
-*/
-    
+ 
    
 })
+
+
+app.get('/modify/:id',(req,res)=>{
+
+    console.log(req.params.id)
+    
+    conn.query('select * from exam where id = ?',
+                [req.params.id],
+    (err, ret)=>{
+        if(err){
+            console.log('sql 실패 : ', err.message)
+        }else{
+            //res.json(ret)
+            res.render('modifyForm.html',{st: ret[0]})
+        }
+    })
+})
+
+app.put('/modify',(req,res)=>{
+
+    //console.log(req.body)
+    let data = [
+        req.body.name,
+        req.body.hakgi,
+        req.body.pid,
+        req.body.kor,
+        req.body.eng,
+        req.body.mat,
+        parseInt(req.body.id) 
+    ]
+    console.log(data)
+    conn.query('update exam set name=?, hakgi = ?, pid=?, kor=?, eng=?,mat=? where id = ?',
+               data,
+    (err, ret)=>{
+        if(err){
+            console.log(err.stack)
+            res.status(500).send(err)
+        }else{
+            //res.json(ret)
+            res.send('수정성공')
+        }
+    })
+})
+
+
 /*
 21_odbc_tran
 */

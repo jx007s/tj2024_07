@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        window.onload=function(){
+            //document.querySelector("#frm").addEventListener('submit',async function(event){
+            document.querySelector("#frm").addEventListener('submit', async (event)=>{
+                event.preventDefault()
+
+                //function(event){}  일경우 this : document.querySelector("#frm")
+                //(event)=>{} 일 경우   this : (event)=>{}
+                //const frmData = new FormData(this)
+
+                const frmData = new FormData(document.myFrm)
+                const data = Object.fromEntries(frmData) //frmData를 일반객체로 변환
+                console.log(frmData)
+                console.log(data)
+
+                try {
+                    let dd = await axios.put('/modify', data)
+                    alert('수정되었습니다.')
+                    location.href = '/detail/{{st.id}}'
+                } catch (error) {
+                    console.log('수정실패')
+                }
+
+            })
+        }
+    </script>
+    <title>시험수정</title>
+</head>
+<body>
+    <h1>시험수정</h1>
+    <form id="frm" name="myFrm" action="">
+        <input type="hidden" name="id" value="{{st.id}}">
+        <table border="">
+            <tr>
+                <tr>
+                    <td>학기</td>
+                    <td>
+                        {% if st.hakgi=='1'%} 
+                        <input type="radio" name="hakgi" value="1" checked>1학기
+                        <input type="radio" name="hakgi" value="2">2학기
+                        {% else %}
+                        <input type="radio" name="hakgi" value="1">1학기
+                        <input type="radio" name="hakgi" value="2"  checked>2학기
+                        {% endif %}
+                    </td>
+                </tr>
+
+                <td>종류</td>
+                <td>
+                {% if st.name=='semi'%}    
+                    <input type="radio" name="name" value="semi" checked>중간
+                    <input type="radio" name="name" value="final">기말
+                {% else %}
+                    <input type="radio" name="name" value="semi">중간
+                    <input type="radio" name="name" value="final" checked>기말
+                {% endif %}
+                </td>
+            </tr>
+            
+            <tr>
+                <td>학생</td>
+                <td><input type="text" name="pid" value="{{st.pid}}"></td>
+            </tr>
+            <tr>
+                <td>국어</td>
+                <td><input type="text" name="kor" value="{{st.kor}}"></td>
+            </tr>
+            <tr>
+                <td>영어</td>
+                <td><input type="text" name="eng"  value="{{st.eng}}"></td>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td><input type="text" name="mat"  value="{{st.mat}}"></td>
+            </tr>
+            <tr>
+                <td>파일</td>
+                <td>{{st.upSystem}}<br/>
+                    {{st.upOri}}</td>
+            </tr>
+            <tr>
+                <td>시험일</td>
+                <td>{{st.reg_date}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="/detail/{{st.id}}">뒤로</a>
+                    <input type="submit" value="수정">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
