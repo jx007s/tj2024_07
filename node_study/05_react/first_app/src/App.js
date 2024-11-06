@@ -6,6 +6,8 @@ import MyCla from './components/MyClass'
 import Stud from './components/prop/stud'
 import StudArr from './components/prop/studArr'
 import StudProp from './components/prop/studProp'
+import PersonList from './components/prop/personList'
+import LifeCycle from './components/state/LifeCycle'
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
         <Stud pname="장서건" gender="m" marriage/>
         <hr/>
         <StudArr/> */}
-        <StudProp/>
+        {/* <StudProp/> */}
+        {/* <PersonList/> */}
+        {/* <LifeCycle/> */}
       </div>
   );
 }
