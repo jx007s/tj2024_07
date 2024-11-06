@@ -5,6 +5,7 @@ import Arr2 from './components/array2'
 import MyCla from './components/MyClass'
 import Stud from './components/prop/stud'
 import StudArr from './components/prop/studArr'
+import StudProp from './components/prop/studProp'
 
 function App() {
   return (
@@ -18,11 +19,12 @@ function App() {
         {/* <MyCla/> */}
         {/* 숫자 전달 {} */}
         {/* <Stud pname={1234} age={54} gender="m"/> */}
-        <Stud pname="장동건" age={54} gender="m" marriage/>
+        {/* <Stud pname="장동건" age={54} gender="m" marriage/>
         <Stud age={27} gender="f"/>
         <Stud pname="장서건" gender="m" marriage/>
         <hr/>
-        <StudArr/>
+        <StudArr/> */}
+        <StudProp/>
       </div>
   );
 }
