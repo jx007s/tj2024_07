@@ -36,7 +36,7 @@ function MyThemeComp(){
     const {theme, toggleTheme} = useContext(MyThemeContext)
 
     return (
-        <div>
+        <div style={{background : theme === 'light' ? '#fff':'#0f0'}}>
             <h2>나의 테마 컴퍼넌트</h2>
             <div>테마 : {theme}</div>
             <button onClick={toggleTheme}>테마변경</button>
