@@ -8,7 +8,12 @@ import StudArr from './components/prop/studArr'
 import StudProp from './components/prop/studProp'
 import PersonList from './components/prop/personList'
 import LifeCycle from './components/state/LifeCycle'
-
+import Renders from './components/state/renders'
+import RenderExam from './components/state/RenderExam'
+import UseEffectGo from './components/state/UseEffectGo'
+import UseEffectCleanup from './components/state/UseEffectCleanup'
+import UseEffectClock from './components/state/UseEffectClock'
+import UseContextGo from './components/state/UseContextGo'
 function App() {
   return (
       <div>
@@ -29,6 +34,12 @@ function App() {
         {/* <StudProp/> */}
         {/* <PersonList/> */}
         {/* <LifeCycle/> */}
+        {/* <Renders/> */}
+        {/* <RenderExam/> */}
+        {/* <UseEffectGo/> */}
+        {/* <UseEffectCleanup/> */}
+        {/* <UseEffectClock/> */}
+          <UseContextGo/>
       </div>
   );
 }
