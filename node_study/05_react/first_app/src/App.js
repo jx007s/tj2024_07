@@ -15,6 +15,7 @@ import UseEffectCleanup from './components/state/UseEffectCleanup'
 import UseEffectClock from './components/state/UseEffectClock'
 import UseContextGo from './components/state/UseContextGo'
 import UseContextApp from './components/state/conttt/UseContextApp'
+import UseReducerGo from './components/state/UseReducerGo'
 function App() {
   return (
       <div>
@@ -41,7 +42,8 @@ function App() {
         {/* <UseEffectCleanup/> */}
         {/* <UseEffectClock/> */}
         {/* <UseContextGo/> */}
-        <UseContextApp/>
+        {/* <UseContextApp/> */}
+        <UseReducerGo/>
       </div>
   );
 }
