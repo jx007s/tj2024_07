@@ -16,6 +16,8 @@ import UseEffectClock from './components/state/UseEffectClock'
 import UseContextGo from './components/state/UseContextGo'
 import UseContextApp from './components/state/conttt/UseContextApp'
 import UseReducerGo from './components/state/UseReducerGo'
+import UseReducerRectangle from './components/state/UseReducerRectangle'
+import UseMemoGo from './components/state/UseMemoGo'
 function App() {
   return (
       <div>
@@ -43,7 +45,9 @@ function App() {
         {/* <UseEffectClock/> */}
         {/* <UseContextGo/> */}
         {/* <UseContextApp/> */}
-        <UseReducerGo/>
+        {/* <UseReducerGo/> */}
+        {/* <UseReducerRectangle/> */}
+        <UseMemoGo/>
       </div>
   );
 }

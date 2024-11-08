@@ -1,0 +1,34 @@
+import {BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import About from './components/About';
+import Prod from './components/rrr/Prod';
+
+function Home(){
+  return (
+    <div>
+        <h2>나는 홈이야</h2>
+        <p>홈은 럭키비키자나</p>
+    </div>
+  )  
+}
+
+
+function App() {
+  return (
+
+      <BrowserRouter>
+        <ul>
+          <li><Link to="/">홈</Link></li>
+          <li><Link to="/about">about</Link></li>
+          <li><Link to="/prod">제품</Link></li>
+        </ul>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/prod' element={<Prod/>}/>
+        </Routes> 
+      </BrowserRouter>
+  
+  );
+}
+
+export default App;
