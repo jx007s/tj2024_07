@@ -105,3 +105,18 @@ insert into stud (sid, sname) VALUES
 -- 2명더 입력하세요
 -- 1분 뒤 되돌리세요
 
+
+CREATE TABLE posts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  author VARCHAR(100) NOT NULL,
+  image_url VARCHAR(255),
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+
+
+INSERT INTO posts (title, content, author, image_url) 
+VALUES ('새로운 게시글', '이것은 새로운 게시글 내용입니다.', '홍길동', '/uploads/new_image.jpg');
