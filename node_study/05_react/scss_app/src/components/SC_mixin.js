@@ -17,6 +17,14 @@ function SC_mixin(props) {
             <div className={styles.kkk}>kkk</div>
             <div className={styles.mmm}>mmm</div>
             <div className={styles.nnn}>nnn</div>
+            <div className={styles.ooo}>ooo</div>
+            <div className={styles.ppp}>ppp
+                <div>
+                    ppp &gt; div
+                </div>
+            </div>
+            <div className={styles.qqq}>qqq</div>
+            <div className={styles.rrr}>rrr</div>
         </div>
     );
 }

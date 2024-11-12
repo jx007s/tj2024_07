@@ -99,9 +99,43 @@
     @include ffoonntt();
 }
 .nnn{
-    $fv : ($st:italic, $si:3rem);
+    $fv : (st:italic, si:3rem);
     // $fv 의 항목을 나열하여 매개변수로 사용
     @include ffoonntt($fv...);  
 }
 
 
+@mixin colorsss($cc : #00f){
+    @content;
+    background-color: $cc;
+    
+}
+
+.ooo{
+    @include colorsss(){
+        width: 400px;
+        height: 100px;
+    }
+}
+
+.ppp{
+    @include colorsss(){
+        width: 400px;
+        height: 100px;
+        
+        div{
+            color: #f00;
+            background-color: #ff0;
+        }
+    }
+}
+
+.qqq{
+    background-color: #ff0;
+    font-size: 3rem;
+}
+
+.rrr{
+    @extend .qqq;
+    color:#f00;
+}

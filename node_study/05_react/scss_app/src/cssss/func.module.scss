@@ -1,0 +1,34 @@
+@function fn_1($aa:4px, $bb:1){
+
+    @return  ($aa*100 / $bb)
+}
+
+@function fn_2($aa:4px, $bb:1){
+    @if $bb == 0{
+        $bb : 1;
+    }
+
+    @return  ($aa*100 / $bb)
+}
+
+.aaa{
+    width: fn_1();
+    background-color: #ff0;
+}
+.bbb{
+    width: fn_1(4px,2);
+    background-color: #fa0;
+}
+.ccc{
+    width: fn_1(4px,0);
+    background-color: #f0f;
+}
+
+.ddd{
+    width: fn_2(4px,2);
+    background-color: #0ff;
+}
+.eee{
+    width: fn_2(4px,0);
+    background-color: #ff0;
+}

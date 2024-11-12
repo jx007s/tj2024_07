@@ -3,6 +3,8 @@ import SC_nesting from "./components/SC_nesting";
 import SC_calc from "./components/SC_calc";
 import SC_import from "./components/SC_import";
 import SC_mixin from "./components/SC_mixin";
+import SC_func from "./components/SC_func";
+import SC_for from "./components/SC_for";
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
         {/* <SC_nesting/> */}
         {/* <SC_calc/> */}
         {/* <SC_import/> */}
-        <SC_mixin/>
+        {/* <SC_mixin/> */}
+        {/* <SC_func/> */}
+        <SC_for/>
     </div>
   );
 }

@@ -1,0 +1,79 @@
+.aaa{
+    background-color: #ff0;
+    margin: 5px;
+}
+
+// 1-> 3
+@for $i from 1 through 3{
+    .aaa:nth-child(#{$i}){
+        width: 20px * $i;
+    }
+}
+
+.bbb{
+    background-color: #fa0;
+    margin: 5px;
+}
+
+// 1-> 2
+@for $i from 1 to 3{
+    .bbb:nth-child(#{$i}){
+        width: 20px * $i;
+    }
+}
+
+//List 생성
+$arr : (2rem, 5rem, 1rem, 3rem);
+
+$no : 1;
+//열거형 데이터 반복
+@each $e in $arr{
+   
+    .ccc:nth-child(#{$no}){
+        font-size: $e;
+    }
+    $no : $no+1;
+}
+
+
+
+$arr2 : (
+    eee:2rem, 
+    fff:5rem, 
+    ggg:1rem 
+    //eee:6rem 중복 허용 안함
+);
+
+@each $k, $e in $arr2{
+   
+    .#{$k}{
+        font-size: $e;
+    }
+}
+
+$q:(hhh , 2rem);
+$w:(iii , 4rem);
+$r:(jjj , 1rem);
+
+
+@each $k, $e in $q , $w, $r{
+   
+    .#{$k}{
+        font-size: $e;
+    }
+}
+
+$s : 10;
+
+@while $s < 100 {
+
+    .xxx_#{$s} {
+        width : 300px + $s;
+        background-color: #ff0;
+        margin: 5px;
+    }
+
+    $s: $s + 10;
+}
+
+
