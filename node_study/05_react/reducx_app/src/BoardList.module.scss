@@ -1,0 +1,11 @@
+li{
+    padding: 10px;
+    margin: 5px;
+    
+    &:nth-child(even){
+        background-color: #ddd;
+    }
+    &:nth-child(odd){
+        background-color: #999;
+    }
+}

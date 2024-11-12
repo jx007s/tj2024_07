@@ -1,4 +1,5 @@
 import {useSelector,useDispatch} from 'react-redux';
+import styles from './BoardList.module.scss'
 
 function BoardList(props) {
 
