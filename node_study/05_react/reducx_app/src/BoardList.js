@@ -1,9 +1,16 @@
-import {useSelector} from 'react-redux';
+import {useSelector,useDispatch} from 'react-redux';
 
 function BoardList(props) {
 
+    const dispatch = useDispatch()
+
     const arr = useSelector( state=>state.arr)
     //console.log(arr)
+
+    function delGo(delNo){
+       console.log("delGo 실행")
+       dispatch({type : 'DEL', asdf : delNo})
+    }
 
     return (
         <div>
@@ -11,10 +18,13 @@ function BoardList(props) {
             <ul>
                 {
                     arr.map((ee, i)=>(
-                        <li key={i}>{ee}</li>
+                        <li key={i}>{ee}
+                            <button onClick={()=>delGo(i)}>삭제</button>
+                        </li>
                     ))
                 }
             </ul>
+            
         </div>
     );
 }

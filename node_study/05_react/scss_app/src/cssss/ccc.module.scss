@@ -1,0 +1,38 @@
+$ggg : #00f;  //전역변수 선언
+$ww : 250px;
+
+.box2{
+    width: $ww;   //변수적용
+    height: 100px;
+    background-color: $ggg;
+}
+
+.box3{
+    $hh : 200px;
+    $hh2 : 300px !global;  //전역변수 선언
+    width: $ww;     //지역변수   
+    height: $hh;
+    background-color: $ggg;
+}
+$ggg : #0ff;  //변수 재할당
+.box4{
+    width: $ww;   
+    //height: $hh;  다른 영역의 지역변수 접근불가
+    height: $hh2;
+    background-color: $ggg;
+}
+
+$bbgg : #fa0;
+.box5{
+    $bbgg : #afa;
+    width: 100px;   
+    height: 50px;
+    background-color: $bbgg;
+}
+.box6{
+    // 매개변수의 초기값과 비슷 , 선언된 변수가 없을 경우 초기값으로 대입
+    $bbgg : #afa  !default;  
+    width: 100px;   
+    height: 50px;
+    background-color: $bbgg;
+}

@@ -14,6 +14,17 @@ function MyReducer(state = initState, action) {
             return {
                 ...state,
                 arr : [...state.arr, action.asdf]}
+        
+        case 'DEL':
+            
+            
+            const newArr = [...state.arr]
+            //console.log('삭제 번호 : ', action.asdf, newArr)
+            newArr.splice(action.asdf,1)
+            //console.log('삭제완료 : ', newArr)
+            return {
+                ...state,
+                arr : newArr}
     
         default:
             return state;

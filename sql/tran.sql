@@ -116,7 +116,14 @@ CREATE TABLE posts (
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-
-
 INSERT INTO posts (title, content, author, image_url) 
 VALUES ('새로운 게시글', '이것은 새로운 게시글 내용입니다.', '홍길동', '/uploads/new_image.jpg');
+
+
+CREATE TABLE files (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  post_id INT NOT NULL,
+  filename VARCHAR(255) NOT NULL,
+  file_path VARCHAR(255) NOT NULL,
+  FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE
+);

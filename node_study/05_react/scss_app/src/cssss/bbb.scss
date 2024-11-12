@@ -1,0 +1,8 @@
+$ggg : #0f0;  //변수선언
+$ww : 200px;
+
+.box2{
+    width: $ww;   //변수적용
+    height: 100px;
+    background-color: $ggg;
+}
