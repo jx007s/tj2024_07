@@ -1,0 +1,20 @@
+.aaa{
+    height : 20px + 40px;
+    //height: 50% + 20px;  단위는 같아야 한다
+    width: calc(50% + 20px);   //연산가능
+    background-color: #ff0;
+}
+.bbb{
+    $ww : 400px;
+    height : 10px * 10;
+    font-size: 5px * 5;
+    //width: (200px / 2);
+    //width: $ww / 2;
+    width: 600px / 2 - 50px;
+    background-color: #0f0;
+}
+.ccc{
+    position: abso + lu + te;  // + 문자열 결합 연산
+    left: 400px;
+    top: 200px;
+}

@@ -1,0 +1,107 @@
+@mixin aaa{  //정의
+    font: {
+        size: 3rem;
+        family: sans-serif;
+    }
+    color : #00f;
+
+    span{
+        background-color: #ff0;
+    }
+}
+
+.bbb{
+    @include aaa;
+}
+
+.ccc{
+    @include aaa;
+}
+
+// 매개변수 $ww, $cc
+@mixin bod($ww, $cc){
+    border: $ww solid $cc;
+}
+
+.ddd{
+    // 호출시 매개변수 입력 필요
+    @include bod(2px, #f00);
+}
+
+.eee{
+    // 호출시 매개변수 입력 필요
+    @include bod(4px, #00f);
+}
+
+
+
+// 매개변수 $ww, $cc  기본값 설정
+@mixin bod2($ww:8px, $cc:#0f0){
+    border: $ww dashed $cc;
+}
+
+.fff{
+    //초기값 생략 가능
+    @include bod2;
+}
+
+.ggg{
+    
+    @include bod2(4px, #00f);
+}
+
+.hhh{
+    
+    @include bod2(6px);
+}
+
+.iii{
+    
+    @include bod2(#fa0);
+    // $ww : #fa0 으로 인식
+    // border: #fa0 dashed #0f0;
+}
+
+.jjj{
+    
+    @include bod2($cc:#fa0);
+    //명시적으로 매개변수 $cc로 지정함
+    // border:8px dashed #fa0;
+}
+
+
+
+@mixin bgs($ww:200px, $hh:50px, $uu...){
+    width : $ww;
+    height: $hh;
+    background: $uu;
+}
+
+.kkk{
+    //@include bgs(300px, 100px);
+    @include bgs(300px, 100px, 
+    url('../../public/fff/small01.jpg'),
+    url('../../public/fff/small02.jpg'),
+    url('../../public/fff/small03.jpg'),
+    url('../../public/fff/small04.jpg')
+    );
+}
+
+@mixin ffoonntt($st:normal, $si:2rem, $fm:sans-serif){
+    font: {
+        style:$st;
+        size: $si;
+        family: $fm;
+    }
+}
+
+.mmm{
+    @include ffoonntt();
+}
+.nnn{
+    $fv : ($st:italic, $si:3rem);
+    // $fv 의 항목을 나열하여 매개변수로 사용
+    @include ffoonntt($fv...);  
+}
+
+

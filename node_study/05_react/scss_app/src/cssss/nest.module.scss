@@ -1,0 +1,31 @@
+.section{
+    width : 100%;
+    background-color: #ff0;
+    div{  //  .section div
+        padding : 20px;
+        color: #f00;
+
+        h3{
+            color: #0f0;
+        }
+    }
+}
+.aaa{
+    background-color: #faa;
+    &div{    // & : 글자결합  .aaadiv
+        color: #00f;
+    }
+}
+
+.bbb{
+    background-color: #0ff;
+    div{  // .bbb div
+        color: #f0f;
+    }
+
+    // @at-root 중첩을 벗어남
+    @at-root .ccc{   //   .ccc
+        font-size: 3rem;
+    }
+}
+
