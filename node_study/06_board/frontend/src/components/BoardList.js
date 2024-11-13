@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 
+const bkURL = process.env.REACT_APP_BACK_URL;
+
 function BoardList(props) {
 
     const [arr, setArr] = useState([])
@@ -8,7 +10,9 @@ function BoardList(props) {
     useEffect(()=>{
         document.title = "목록";
 
-        axios.get('http://localhost:5000/')
+        //console.log(bkURL)
+
+        axios.get(bkURL)
         .then(
             res =>{
                 //console.log("갔다옴 : ", res.data)

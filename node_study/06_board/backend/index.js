@@ -119,7 +119,7 @@ app.post('/join',upload.single('upfile'),(req,res)=>{
     }) 
 })
 
-app.delete('/:id',(req,res)=>{
+app.delete('/delete/:id',(req,res)=>{
     console.log('삭제 진입:'+req.params.id)
     console.log(req.body)
 
