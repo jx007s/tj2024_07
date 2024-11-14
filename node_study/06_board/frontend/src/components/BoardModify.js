@@ -27,7 +27,7 @@ function BoardModify(props) {
         .catch(err=>{
             console.error("정보받기 실패 ",err)
         })
-    },[])
+    },[id])
 
 
     if(!st){
@@ -47,7 +47,13 @@ function BoardModify(props) {
             //                     st[pname] === ee.value 
             //         ))
 
-            const rb = <RadioButton/>
+            const rb = <RadioButton
+                            pname={pname} 
+                            vv= {ee.value} 
+                            tt= {ee.title} 
+                            chGo = {stChange}
+                            chk={st[pname] == ee.value} 
+                        />
             ret.push(rb)
         }
         //[chkInput("hakgi",1,"1학기"),
@@ -65,11 +71,39 @@ function BoardModify(props) {
                 </label>
     }
 
+    function stChange(kk,me){
+
+        setSt({...st,
+            [kk] : me.value
+        })
+    }
+
+    function submitGo(e){
+        e.preventDefault()
+        const frmData = new FormData(document.myFrm)
+        const myData = Object.fromEntries(frmData)
+        console.log(myData)
+
+
+        axios.put(`${bkURL}/modify`,myData)
+        .then(res=>{
+            console.log("정보수정 성공 ",res.data)
+            alert("수정되었습니다")
+            navigate(`/detail/${id}`)
+        })
+        .catch(err=>{
+            console.error("정보수정 실패 ",err)
+        })
+     
+
+
+    }
+
 
     return (
         <div>
             <h1>수정</h1>
-            <form id="frm" name="myFrm" action="">
+            <form name="myFrm">
             <input type="hidden" name="id" value={st.id}/>
             <table border="">
                 <tr>
@@ -92,19 +126,27 @@ function BoardModify(props) {
             
             <tr>
                 <td>학생</td>
-                <td><input type="text" name="pid" value={st.pid}/></td>
+                <td><input type="text" name="pid" value={st.pid} 
+                     onChange={(e)=>stChange("pid",e.target)}
+                     /></td>
             </tr>
             <tr>
                 <td>국어</td>
-                <td><input type="text" name="kor" value={st.kor}/></td>
+                <td><input type="text" name="kor" value={st.kor}
+                onChange={(e)=>stChange("kor",e.target)}
+                /></td>
             </tr>
             <tr>
                 <td>영어</td>
-                <td><input type="text" name="eng"  value={st.eng}/></td>
+                <td><input type="text" name="eng"  value={st.eng}
+                onChange={(e)=>stChange("eng",e.target)}
+                /></td>
             </tr>
             <tr>
                 <td>수학</td>
-                <td><input type="text" name="mat"  value={st.mat}/></td>
+                <td><input type="text" name="mat"  value={st.mat}
+                onChange={(e)=>stChange("mat",e.target)}
+                /></td>
             </tr>
             <tr>
                 <td>파일</td>
@@ -118,7 +160,7 @@ function BoardModify(props) {
             <tr>
                 <td colspan="2">
                     <Link to={`/detail/${st.id}`}>뒤로</Link>
-                    <input type="submit" value="수정"/>
+                    <button onClick={submitGo}>수정</button>
                 </td>
             </tr>
         </table>
