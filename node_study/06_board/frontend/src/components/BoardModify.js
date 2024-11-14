@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import {Link, useParams, useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import RadioButton from './RadioButton';
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
@@ -33,16 +34,35 @@ function BoardModify(props) {
         return <div> id 없음</div>;
     }
 
+    function chkInputModule(pname, arr){
+        const ret = []
+        
+        for(let ee of arr){
+            //console.log(ee)
+            
+            // ret.push(chkInput(
+            //                     pname,
+            //                     ee.value,
+            //                     ee.title, 
+            //                     st[pname] === ee.value 
+            //         ))
+
+            const rb = <RadioButton/>
+            ret.push(rb)
+        }
+        //[chkInput("hakgi",1,"1학기"),
+        // chkInput("hakgi",2,"2학기", true)]
+        return <div>
+                    {ret}
+                </div>
+    }
+
 
     function chkInput(pname, vv, tt, chk=false){
-
-        const arr = {1:"1학기", 2:"2학기"}
-
         return  <label>
                     <input type="radio" name={pname} 
                     value={vv} checked={chk}/>{tt}
                 </label>
-
     }
 
 
@@ -55,22 +75,18 @@ function BoardModify(props) {
                 <tr>
                 
                     <td>학기</td>
-                    <td>
-                        {chkInput("hakgi",1,"1학기")}
-                        {chkInput("hakgi",2,"2학기", true)}
-                       
-                    </td>
+                    <td>{chkInputModule(
+                        "hakgi", 
+                        [{value:1, title:"1학기"},{value:2, title:"2학기"}]
+                        )}</td>
                 </tr>
                 <tr>
                 <td>종류</td>
                 <td>
-                  
-                    <input type="radio" name="name" value="semi" checked/>중간
-                    <input type="radio" name="name" value="final"/>기말
-               
-                    <input type="radio" name="name" value="semi"/>중간
-                    <input type="radio" name="name" value="final" checked/>기말
-                
+                {chkInputModule(
+                    "name", 
+                    [{value:"semi", title:"중간"},{value:"final", title:"기말"}]
+                )}
                 </td>
             </tr>
             
@@ -101,7 +117,7 @@ function BoardModify(props) {
             </tr>
             <tr>
                 <td colspan="2">
-                    <a href="/detail/{{st.id}}">뒤로</a>
+                    <Link to={`/detail/${st.id}`}>뒤로</Link>
                     <input type="submit" value="수정"/>
                 </td>
             </tr>
