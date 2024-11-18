@@ -114,6 +114,11 @@ app.post('/join',upload.single('upfile'),(req,res)=>{
         if(err){
             console.log('sql 실패 : ', err.message)
         }else{
+
+             // 삽입된 id를 ret.insertId에서 추출 가능
+            const insertId = ret.insertId;
+            console.log('삽입된 ID:', insertId);
+
             res.json(ret)
         }
     }) 
