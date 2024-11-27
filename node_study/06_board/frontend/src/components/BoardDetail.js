@@ -37,7 +37,7 @@ function BoardDetail(props) {
 
 
     if(!st){
-        return <div> id 없음</div>;
+        return <div> 데이터 없음</div>;
     }
 
 

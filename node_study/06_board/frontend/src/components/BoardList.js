@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import Login from './Login'
 
 const bkURL = process.env.REACT_APP_BACK_URL;
 
@@ -29,6 +30,7 @@ function BoardList(props) {
 
     return (
         <div>
+            <Link to="/Login">로그인</Link>
             <h1>목록</h1>
             <table border="1">
             <tr>

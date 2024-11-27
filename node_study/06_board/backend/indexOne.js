@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session');
 const app = express()
 const db = require('mysql2')
 const bodyParser = require('body-parser')
@@ -27,9 +28,35 @@ const upload = multer({
     
 })
 
-app.use(cors())
+// 세션 설정
+app.use(session({
+    secret: '1234',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      httpOnly: true, // 클라이언트에서 접근 불가
+      secure: false,  // 개발 환경에서는 false, 프로덕션 환경에서는 true (HTTPS 사용시)
+      maxAge: 60000,  // 쿠키 유효 시간 (1분)
+    },
+  }));
+
+  // CORS 설정
+const corsOptions = {
+    origin:  ['http://192.168.0.50:3000','http://localhost:3000'],  // 여러 도메인 허용
+    //origin : '*',
+    credentials: true,  // 쿠키를 클라이언트에 전달하려면 이 옵션을 true로 설정
+    //allowedHeaders: ['Content-Type', 'Authorization'],
+  };
+
+
+app.use(cors(corsOptions));
+//app.use(cors());
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
+
+
+
+
 
 //static 폴더 설정 --> 이미지 파일 프론트앤드에 서빙 
 app.use('/bk/fff',express.static(path.join(__dirname,"fff")))
@@ -183,6 +210,27 @@ app.put('/bk/modify',(req,res)=>{
         }
     })
 })
+
+// 세션 사용 예시
+app.get('/bk/loginMake', (req, res) => {
+    console.log('loginMake');
+    req.session.user = { pid :'aaa', pname: '아기상어' };
+    console.log(req.session);
+    
+    res.send('로그인생성');
+  });
+  
+  app.get('/bk/loginRead', (req, res) => {
+    console.log('loginRead');
+    console.log(req.session);
+    if (req.session.user) {
+      res.send(`로그인정보, ${req.session.user.pname}`);
+    } else {
+      res.send('로그인 정보 없음');
+    }
+  });
+
+
 
 
 //위에 거론하지 않은 라우팅 주소는 프론트앤드(qwer)의 index.html 로 접근

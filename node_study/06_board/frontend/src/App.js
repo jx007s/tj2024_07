@@ -3,11 +3,13 @@ import BoardList from './components/BoardList';
 import BoardDetail from './components/BoardDetail';
 import BoardJoin from './components/BoardJoin';
 import BoardModify from './components/BoardModify';
+import Login from './components/Login'
 
 function App() {
   return (
       <BrowserRouter>
         <Routes>
+        <Route path="/login"  element={<Login/>} />
           <Route path="/"  element={<BoardList/>} />
           <Route path="/detail/:id"  element={<BoardDetail/>} />
           <Route path="/join"  element={<BoardJoin/>} />
