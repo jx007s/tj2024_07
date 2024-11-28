@@ -230,6 +230,15 @@ app.get('/bk/loginMake', (req, res) => {
     }
   });
 
+  app.get('/bk/logOut', (req, res) => {
+    console.log('logOut');
+    console.log(req.session);
+    let pname = req.session.user.pname
+    req.session.destroy()
+    res.send(`로그아웃, ${pname}`);
+    
+  });
+
 
 
 

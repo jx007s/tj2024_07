@@ -41,12 +41,28 @@ function Login(props) {
             console.error("readGo 오류 ", err)
         }) 
     }
+
+    function deleteGo(){
+        console.log("deleteGo() 진입")
+
+        axios.get(`${bkURL}/logOut`,{
+            withCredentials: true  // 쿠키를 서버로 전송
+          })
+        .then(res=>{
+            console.log("logOut ", res.data)
+            alert(res.data)
+            
+        })
+        .catch(err=>{
+            console.error("readGo 오류 ", err)
+        }) 
+    }
     
     return (
         <div>
            <button onClick={makeGo}>로그인생성</button>
            <button onClick={readGo}>로그인보기</button>
-           
+           <button onClick={deleteGo}>로그아웃</button>
         </div>
     );
 }

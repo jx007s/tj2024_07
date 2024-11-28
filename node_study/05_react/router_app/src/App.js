@@ -47,12 +47,15 @@ function App() {
             <Route path='/prod/aaa' element={<ProdHome/>}/> 
             <Route path='/stud/:sid' element={<Stud/>}/> 
             <Route path='/exam' element={<Exam/>}> 
+              
               <Route path=':eid' element={<ExamSub/>}/>
               <Route path='detail' element={<ExamDetail/>}/> 
             </Route>
 
             <Route path='*' element={<PageFour/>}/>
         </Routes> 
+
+
       </BrowserRouter>
   
   );
