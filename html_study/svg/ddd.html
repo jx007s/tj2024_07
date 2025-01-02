@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Path Drawing Animation</title>
+  <style>
+    /* SVG 크기 */
+    svg {
+      width: 666px;
+      height: 242px;
+    }
+
+    /* path 애니메이션 */
+    path {
+      fill: none;
+      stroke: #00FF00; /* 초록색 선 */
+      stroke-width: 10;
+      stroke-dasharray: 1500; /* 경로의 총 길이 설정 */
+      stroke-dashoffset: 0; /* 경로가 그려지지 않도록 설정 */
+      /* animation: drawPath 10s ease forwards; 4초 동안 애니메이션 */
+    }
+
+    /* 애니메이션 정의 */
+    @keyframes drawPath {
+      0% {
+        stroke-dashoffset: 1500; /* 애니메이션 시작 시 선이 그려지지 않음 */
+      }
+      50% {
+        stroke-dashoffset: 0; /* 경로가 완전히 그려짐 */
+      }
+
+    
+      100% {
+        stroke-dashoffset: 1000; /* 경로가 완전히 그려짐 */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG 경로 -->
+  <svg width="666" height="242" viewBox="0 0 666 242" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 153C35 185.667 100.6 247.8 115 235C133 219 218 131 257 139C296 147 353 227 391 235C429 243 485 185 483 169C481 153 460 50 499 44C538 38 599 111 621 125C643 139 672 47 656 2" stroke="#00FF00" stroke-width="10"/>
+  </svg>
+
+</body>
+</html>

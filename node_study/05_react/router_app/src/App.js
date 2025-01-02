@@ -1,4 +1,5 @@
 import {BrowserRouter, Route, Routes } from 'react-router-dom'
+import {useEffect} from 'react';
 import About from './components/About';
 import Prod from './components/rrr/Prod';
 import HeaderNav from './components/HeaderNav';
@@ -35,6 +36,11 @@ function PageFour(){
 }
 
 function App() {
+
+  useEffect(()=>{
+    console.log("useEffect 실행"); //link 에 의해서 호출되지 않음 --> 화면 갱신되었다고 요청하지 않음
+  },[])
+
   return (
 
       <BrowserRouter future={{v7_relativeSplatPath:true, v7_startTransition:true}}>

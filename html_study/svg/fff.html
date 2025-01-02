@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Left to Right Fill Animation</title>
+  <style>
+    /* SVG 크기 */
+    svg {
+      width: 666px;
+      height: 242px;
+    }
+
+    /* path 애니메이션 */
+    path {
+      fill: none; /* 초기에는 면을 채우지 않음 */
+      stroke: #00FF00; /* 선 색상 */
+      stroke-width: 10;
+      stroke-dasharray: 1500; /* 경로의 길이를 설정 */
+      stroke-dashoffset: 1500; /* 경로가 그려지지 않도록 설정 */
+      animation: drawAndFill 4s ease forwards; /* 4초 동안 선 그리기 및 면 채우기 */
+    }
+
+    /* 애니메이션 정의 */
+    @keyframes drawAndFill {
+      0% {
+        stroke-dashoffset: 1500; /* 처음에는 선이 그려지지 않음 */
+        fill: none; /* 면을 채우지 않음 */
+      }
+      50% {
+        stroke-dashoffset: 1500; /* 선은 그려지지 않음 */
+        fill: #00FF00; /* 면이 초록색으로 채워짐 */
+      }
+      100% {
+        stroke-dashoffset: 0; /* 경로가 완전히 그려짐 */
+        fill: #00FF00; /* 경로가 모두 그려지면 초록색으로 면을 채움 */
+      }
+    }
+
+    /* 왼쪽에서 오른쪽으로 채워지는 애니메이션 */
+    path {
+      animation: fillLeftToRight 4s ease forwards;
+    }
+
+    @keyframes fillLeftToRight {
+      0% {
+        fill: none;
+      }
+      100% {
+        fill: #00FF00;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- SVG 경로 -->
+  <svg width="666" height="242" viewBox="0 0 666 242" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 153C35 185.667 100.6 247.8 115 235C133 219 218 131 257 139C296 147 353 227 391 235C429 243 485 185 483 169C481 153 460 50 499 44C538 38 599 111 621 125C643 139 672 47 656 2" stroke="#00FF00" stroke-width="10"/>
+  </svg>
+
+</body>
+</html>
