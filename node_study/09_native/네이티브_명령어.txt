@@ -1,0 +1,4 @@
+리액트네이티브 설치
+npm install @react-native-community/cli --save-dev
+리액트네이티브 프로젝트 생성
+npx @react-native-community/cli init nativeProj
