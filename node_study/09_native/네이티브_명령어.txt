@@ -34,3 +34,5 @@ emulator-5554   device
 npm i
 npm start
 
+
+변경
