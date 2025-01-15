@@ -35,4 +35,5 @@ npm i
 npm start
 
 
-변경
+picker 설치
+npm install @react-native-picker/picker
