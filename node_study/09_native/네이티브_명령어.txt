@@ -37,3 +37,9 @@ npm start
 
 picker 설치
 npm install @react-native-picker/picker
+
+slider
+npm install @react-native-community/slider
+
+datetimepicker
+npm install @react-native-community/datetimepicker
